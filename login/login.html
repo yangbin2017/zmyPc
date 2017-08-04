@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 移动端浏览器识别-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- IE 兼容模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--国产浏览器高速模式-->
+    <meta name="renderer" content="webkit">
+    <title>掌麦云商户</title>
+    <link type="image/x-icon" href="../img/favicon.ico" rel="shortcut icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css" />
+    <![endif]-->
+    <!-- page specific plugin styles -->
+    <!-- fonts -->
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css" />
+    <!-- ace styles -->
+    <link rel="stylesheet" href="../assets/css/ace.min.css" />
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css" />
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- fontawesome-->
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <!-- 全局css-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <!--<script src="../js/jquery.js"></script>-->
+    <script type="text/javascript">
+        var _hmt = _hmt || [];
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol +
+                "hm.baidu.com/h.js%3F84c55d593eb62c608555a3695e8f66aa' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<style type="text/css">
+    #loadinggif {
+        background-color: #000;
+        opacity: 0.5;
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+
+    .sweet-alert h2 {
+        font-size: 18px
+    }
+
+    .sweet-alert p {
+        color: #4a4a4a
+    }
+
+    .has-error .chosen-container, .form-group .Validform_error, .Validform_error, .boxpart .inpt .Validform_error {
+        border: none;
+    }
+</style>
+<body class="denglubody" style="min-width: 900px">
+<!--yun-->
+<div class="yunpiaofu"></div>
+<!--跳转链接-->
+<div class="tiaozhuandl"><a href="../login/login.html" target="_blank">掌麦官网</a> | <a
+        href="../login/register.html">注册</a></div>
+<!--标题头-->
+<div class="biaotitoulogo text-center">
+    <img src="../img/denglu/denglu-1.png">
+
+    <div>掌麦云商户</div>
+</div>
+<!--表单-->
+<div class="biaodangdenglu">
+    <form class="login-form" id="login" role="form" action="" method="GET">
+        <input type="hidden" name="hash" id="hash" value=""/>
+        <div class="biaodanglist">
+            <img src="../img/denglu/tubiao-1.png" class="qianicon">
+            <input type="text" placeholder="请输入手机号码" value="" id="username" class="shurukuan iptnostyle" name="username"
+                   datatype="mobile|n" maxlength="11"
+                   style="width:265px;font-size: 14px">
+        </div>
+        <div class="biaodanglist">
+            <img src="../img/denglu/tubiao-2.png" class="qianicon">
+            <input type="password" placeholder="请输入密码" value="" class="shurukuan iptnostyle" id="password" name="password"
+                   datatype="*6-16" maxlength="18"
+                   style="width:265px;font-size: 14px">
+        </div>
+        <div class="biaodanglist veify-code" style="display:none">
+            <input type="text" placeholder="请输入验证码" class="shurukuan iptnostyle" name="veify_code" datatype="*"
+                   nullmsg="请填写验证码！" ignore="ignore" style="width: 200px;font-size: 14px">
+            <img src="../img/captcha.gif" class="pull-right check_code chang_code">
+        </div>
+        <div class="clearfix qitaxinxidlu">
+            <label class="pull-left"><input type="checkbox" id="remember-pwd" name="auto_login" value="yes" checked="checked">
+                <dl>记住密码</dl>
+            </label>
+            <a href="../login/iforget.html" class="pull-right">忘记密码?</a>
+        </div>
+        <div class="text-center">
+            <input class="denglubtn" type="submit" value="登录">
+        </div>
+    </form>
+</div>
+<!--浏览器提示-->
+<div class="popupBg" style="display:none;position: fixed"></div>
+<div class="popup" style="width:600px; height:320px; margin:-170px 0 0 -300px;  display:none;">
+    <div class="popupTitle bg">
+        <h1 class="margin-0">温馨提示</h1>
+
+        <div class="popupClose" title="关闭"> X</div>
+    </div>
+    <div class="popupArea">
+        <div class="popupAreaCenter">
+            <p class="title">很抱歉，当前浏览器无法完美呈现页面。</p>
+
+            <p class="remark">推荐使用以下浏览器：</p>
+
+            <p class="line"></p>
+
+            <div class="browserList">
+                <ul>
+                    <li><a href="https://dl.google.com/chrome/win/776B03BEAFB2810D/42.0.2311.152_chrome_installer.exe"
+                           target="_blank" title="谷歌Chrome浏览器"><img
+                            src="../img/denglu/chrome.jpg"><span>Chrome浏览器</span></a></li>
+                    <li><a href="http://www.firefox.com.cn/download/" target="_blank" title="火狐浏览器"><img
+                            src="../img/denglu/fireFox.jpg"><span>火狐浏览器</span></a></li>
+                    <li><a href="http://se.360.cn/" target="_blank" title="360安全浏览器"><img
+                            src="../img/denglu/360.jpg"><span>360安全浏览器</span></a></li>
+                    <li><a href="http://www.opera.com/zh-cn" target="_blank" title="Opera浏览器"><img
+                            src="../img/denglu/opera.jpg"><span>Opera浏览器</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal  fade  in" id="page-modal" tabindex="-1" role="dialog" aria-hidden="true"
+     style="display: none; padding-right: 21px;">
+</div>
+<!--jq-->
+
+<!--btjs-->
+
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+<script src="../js/eosgi-test.js"></script>
+<script src="../js/server.js"></script>
+
+<script>
+    // 手机号码验证
+    jQuery.validator.addMethod("isMobile", function(value, element) {
+        var length = value.length;
+        var mobile = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
+        return this.optional(element) || (length == 11 && mobile.test(value));
+    }, "请正确填写您的手机号码");
+    $('#login').validate({
+        rules: {
+            username: {
+                required: true,
+                minlength : 11,
+                // 自定义方法：校验手机号在数据库中是否存在
+                // checkPhoneExist : true,
+                isMobile : true
+            },
+            password: {
+                required: true,
+            }
+        },
+        messages: {
+            username:  {
+                required : "请输入手机号",
+                minlength : "确认手机不能小于11个字符",
+                isMobile : "请正确填写您的手机号码"
+            },
+            password: "请输入密码！"
+        },
+        onfocusout: function(element){
+            $(element).valid();
+        },
+
+        submitHandler: function (form) {
+//            $('#btn_login').on('click',function () {
+            var username=$('#username').val();
+            var password=$('#password').val();
+//            password=$.base64.decode(password)
+            var loginInfo={
+                spId:"1",
+                appId:"1",
+                loginType:"1",
+                loginName:username,
+                loginPwd:password
+            }
+//            console.log(password)
+//                debugger;
+            $.appServer.login(loginInfo,function(data){
+                console.log(data)
+                if(data.flag==true){
+                    localStorage.setItem('loginToken',data.output.flag)
+                    //获取客户列表
+                    $.appServer.qryMenuList(function(list){
+                        console.log(list)
+                    })
+                    localStorage.removeItem('frameidSrc')
+                    window.location.href='../main/index.html';
+                    //判断是否记录密码
+//                    debugger;
+                }
+            })
+            var rememberpwd=$('#remember-pwd').prop('checked');
+            console.log(rememberpwd)
+            if(rememberpwd==true){
+                localStorage.setItem('username',username)
+                localStorage.setItem('password',password)
+                localStorage.setItem('changeStatus',true)
+            }else if(rememberpwd==false){
+                localStorage.setItem('username','')
+                localStorage.setItem('password','')
+                localStorage.setItem('changeStatus',false)
+            }
+        },
+        debug: true,
+        success:function(){
+
+        }
+    })
+    $(document).ready(function () {
+        var username=localStorage.getItem('username');
+        var password=localStorage.getItem('password');
+        var changeStatus=localStorage.getItem('changeStatus')
+        console.log(changeStatus)
+        $('#username').val(username);
+        $('#password').val(password);
+        if(changeStatus=='true'){
+            $('#remember-pwd').addClass('inputChecked')
+        }else if(changeStatus=='false'){
+            $('#remember-pwd').removeClass('inputChecked')
+        }
+    })
+
+</script>
+</body>
+</html>

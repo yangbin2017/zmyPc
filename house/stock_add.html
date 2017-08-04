@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 移动端浏览器识别-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- IE 兼容模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--国产浏览器高速模式-->
+    <meta name="renderer" content="webkit">
+    <title>掌麦云商户</title>
+    <!--<link type="image/x-icon" href="../img/favicon.ico"  rel="shortcut icon" />-->
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- fontawesome-->
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <link rel="stylesheet" href="../font-awesome/font-awesome.min.css">
+    <!-- 下拉框-->
+    <link href="../css/plugins/chosen/chosen.css" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- 全局css-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link rel="stylesheet" type="text/css" href="../css/daterangepicker-bs3.css"/>
+    <link rel="stylesheet" href="../css/jquery.datetimepicker.css" type="text/css"/>
+    <link rel="stylesheet" href="../js/plugins/autocomplete/jquery.autocomplete.css">
+    <link href="../css/animate.css" rel="stylesheet">
+    <link href="../css/city_select.css" rel="stylesheet">
+    <!--jq-->
+    <script type="text/javascript">
+        window.shop_id = '2943';
+        var _hmt = _hmt || [];
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol +
+                "hm.baidu.com/h.js%3F84c55d593eb62c608555a3695e8f66aa' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/zm_ajax.js"></script>
+
+    <!--树形分类rely-->
+    <link rel="stylesheet" href="../js/plugins/ztree/css/zTreeStyle.css" type="text/css">
+    <script type="text/javascript" src="../js/plugins/ztree/js/jquery.ztree.core-3.5.js"></script>
+    <script type="text/javascript" src="../js/plugins/ztree/js/jquery.ztree.excheck-3.5.js"></script>
+    <script type="text/javascript" src="../js/plugins/ztree/js/jquery.ztree.exedit-3.5.js"></script>
+    <!--树形分类rely-->
+    <script type="text/javascript" src="../js/jquery.base64.js"></script>
+
+</head>
+<style type="text/css">
+    .pagemain .txt1 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .pagemain .txt2 {
+        font-size: 13px;
+    }
+
+    .pagemain .txt2 span {
+        font-weight: bold;
+    }
+</style>
+<body class="bg-hui1">
+<!--导航-->
+<div class="daohang-main">
+    <div class="mainchose">
+        <div class="logo">
+            <img src="../img/main/logo-x1.png">
+        </div>
+        <div style="float: left;padding-top: 14px; color:#FFFFFF;padding-right: 40px">
+            <h4 style="font-size: 22px;margin: 0;margin-bottom: 4px;font-weight:100;">掌麦云商户</h4>
+            <p style="margin: 0; font-size:14px;">客服电话：400-8815661</p>
+
+            <!--
+            <p style="margin: 0">在线客服：<a style="text-decoration: underline;" href="">QQ交谈</a></p>
+            -->
+
+
+        </div>
+        <a href="../main/index.html" class="haohangteam dao1" style="text-decoration:none;">
+            <span>报 表</span>
+        </a>
+        <a href="../shop/manage.html" class="haohangteam dao2 active" style="text-decoration:none;">
+            <span>商 品</span>
+        </a>
+        <a href="../online/online.html" class="haohangteam dao2" style="text-decoration:none;">
+            <span>网店</span>
+        </a>
+        <a href="../buy/buy.html" class="haohangteam dao4" style="text-decoration:none;">
+            <span>采 购</span>
+        </a>
+        <a href="../transfer/transfer.html" class="haohangteam dao6" style="text-decoration:none;">
+            <span>调 拨</span>
+        </a>
+        <a href="../vipuser/vipuser.html" class="haohangteam dao6" style="text-decoration:none;">
+            <span>营 销</span>
+        </a>
+        <a href="../member/member.html" class="haohangteam dao7" style="text-decoration:none;">
+            <span>员 工</span>
+        </a>
+        <a href="../system/system_info.html" class="haohangteam dao7" style="text-decoration:none;">
+            <span>系 统</span>
+        </a>
+        <div class="yonghuxingxi">
+            <div style="float: left;color:#ffffff;padding-right: 10px;padding-top: 22px">
+
+
+            </div>
+
+            <div class="yonghu   "
+                 style="width: 60px;height:70px;padding: 0;border-left: 1px solid #2b88ec;position: relative;">
+                <a href="tencent://message/?Menu=yes&amp;uin=938052757&amp;Service=58&amp;SigT=A7F6FEA02730C9885B037155C864771FF9789A1C2B336ED8238CBCB1FA375BE8805210098C30A6A07607749B9D08B8E7C26C661FDA7ACB50E0A7C486BBEAF3F1BC2B80BF4A374F6A6CD6ADA44A289AE968C90A4594F90AECF3622DA6BDA957379EC9F31A1E8668F807A6BD66B38DADF512BBA8A8F0E2F8C2&amp;SigU=30E5D5233A443AB22DF0BA4CB55362055D8DCDA4D734F5B5BEF486463F3E2CBC9F88833EF33AE864634711F9A84A1E2DB4101B1C29699C208FF3C3DE5E9EC0C0A29CA3F24518673E">
+                    <div style="width: 60px;height: 70px;padding:17px 0 0 10px;">
+                        <div style='width:22px;height:24px;margin-left:10px;margin-bottom:5px;background: url(../img/main/daohangiconxx1.png) center no-repeat;background-size: 90%;'
+                             class="iconbellalt"></div>
+                        <p>QQ客服</p></div>
+                </a>
+            </div>
+
+            <div class="yonghu   dropdown">
+                <div class="dropdown-toggle" data-toggle="dropdown" id="new-count"><span class="iconbellalt"
+                                                                                         style="background-size: 90%;"></span><i
+                        style="display:none;"></i>
+                    <p class="dibuwenzitdaoh">消息</p></div>
+                <ul class="dropdown-menu">
+                    <!-- 免费版不显示新订单消息 -->
+                    <li style=""></li>
+                    <li style="">
+                        <a href="#goods/price"
+                           onclick="$('#new-count i').hide();$('#new-price-num').removeClass('text-danger').text('0');">
+                            进价变动 （<span class="" id="new-price-num">0</span>）</a>
+                    </li>
+                    <li class="divider" style=""></li>
+                    <li style="">
+                        <a href="#system/message"
+                           onclick="$('#new-count i').hide();$('#new-msg-num').removeClass('text-danger').text('0');">
+                            系统消息 （<span class="" id="new-msg-num">0</span>）</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div style="border-right: 1px solid #2b88ec;" class="yonghu  dropdown ">
+                <div class="dropdown-toggle" data-toggle="dropdown"><span class="iconuser"
+                                                                          style='width:24px; right: 2px; background: url(..//img/main/daohangiconxx.png) center no-repeat;background-size: 90%;'></span>
+                    <p class="dibuwenzitdaoh" style="padding-left: 3px;">设置</p></div>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="javascript:;" class="btn-base-info">基本信息</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="javascript:;" data-toggle="modal" data-target="#password-modal">修改密码</a>
+                    </li>
+
+                    <li class="divider"></li>
+                    <li>
+                        <a href="javascript:;" data-toggle="modal" data-target="#newfunction-modal">新增功能</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="../common/logout">退出</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="chaoshiqiehuan dropdown" style="min-width:172px;padding-right: 20px;">
+                <div class="dropdown-toggle" data-toggle="dropdown" style="line-height: 23px;padding-top: 16px">
+                    连锁总部 <i class="icon-caret-down"></i>                    <!--<p style="font-size: 12px">到期时间：</p>-->
+                </div>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="javascript:;" data-shop-id="2943" class=" no-confirm"
+                           data-url="../shop/switch_shop?shop_id=2943" title="连锁总部">连锁总部</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="javascript:;" data-shop-id="305" class="btn-switch no-confirm"
+                           data-url="../shop/switch_shop?shop_id=305" title="黎蓉干杂店">黎蓉干杂店</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="javascript:;" data-shop-id="2942" class="btn-switch no-confirm"
+                           data-url="../shop/switch_shop?shop_id=2942" title="测试1">测试1</a>
+                    </li>
+                    <li class="divider"></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="erjifenlie" id="menus">
+
+
+        <div class="erji">
+            <div>
+                <a href="/sales"></a>
+            </div>
+        </div>
+
+
+        <div class="erji" style="display: block">
+            <div>
+                <a href="manage.html">商品管理</a>
+
+                <a href="category_manage.html">分类管理</a>
+                <a href="house_manage.html">商品库存</a>
+
+                <a href="goods_price.html">进价变动</a>
+
+                <a href="stock_stock_list.html" class="active">库存盘点</a>
+
+                <a href="goods_use_list.html">领用单</a>
+
+            </div>
+        </div>
+
+
+        <div class="erji">
+            <div>
+                <a href="#buy/order">我的进货单</a>
+
+                <a href="#refund/manage">我的退货单</a>
+
+                <a href="#shop/supplier">我的供应商</a>
+
+                <a href="#buy/supplier_order_pay">供应商结算</a>
+
+                <a target="_blank" href="../mall/goods">在线采购</a>
+
+            </div>
+        </div>
+
+        <div class="erji">
+            <div>
+                <a href="#transfer/manage"></a>
+
+            </div>
+        </div>
+
+
+        <div class="erji">
+            <div>
+                <a href="#shop/member">我的员工</a>
+
+                <a href="#shop/roles">角色权限</a>
+
+            </div>
+        </div>
+
+        <div class="erji">
+            <div>
+                <a href="#system/account">账户信息</a>
+
+                <a href="#shop/manage">我的店铺</a>
+
+                <a href="#system/logs">系统日志</a>
+
+                <a href="#system/message">消息中心</a>
+
+                <a href="#system/set">系统设置</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $('.erji').on('click', 'a', function () {
+        if ($(this).attr('href') == '#system/set') {
+            window.location.href = '../system/set';
+            return false;
+        }
+
+    });
+    //绑定代理商
+    $('body').on('click', '.btn-agent', function () {
+        var href = $(this).attr('data-url');
+        $('#agent-modal').load(href, function (result) {
+            try {
+                var json = $.parseJSON(result);
+                check_logout(json);//登录超时检验
+            } catch (error) {
+            }
+            $('#agent-modal').modal('show');
+        });
+        return false;
+    });
+</script>
+<!--内容区域开始-->
+<style>
+    #shangpingzhanshi, #tab-content-box {
+        min-height: 250px;
+    }
+</style>
+<!--内容框架-->
+<div id="contentbox" class="porela" data-ajax-content="true"><div class="tabs-container" style="margin-top:10px;">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="stock_noinventory.html">未盘点(<span id="stocking_num">5</span>)</a></li>
+        <li class=""><a href="stock_finish.html" aria-expanded="false">已盘点(<span id="stocked_num">0</span>)</a></li>
+        <a class="btn-back pull-right" href="stock_stock_list.html" style="margin-right: 20px">&lt; 返回上一页</a>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active">
+            <div class="panel-body">
+                <div class="zmbox clearfix margin-left-right-0  page-search-area">
+                    <form role="form" id="search-form" class="form-inline" method="get" action="https://b.izhangmai.com/stock/stocking?id=5902f60f5b6c242b428b4568">
+                        <div class="boxpart">
+                            <div class="t">商品名称/条码：</div>
+                            <div class="inpt">
+                                <input type="text" class="form-control" name="keyword" id="keyword">
+
+                            </div>
+                            <div class="boxbtn">
+                                <button type="submit" class="btn btn-primary">查询</button>
+                            </div>
+                        </div>
+                        <!-- 下拉框-->
+                        <div class="boxpart" style="padding-right: 15px">
+                            <div class="t">分类筛选：</div>
+                            <div class="inpt chosenchang120">
+                                <select class="chosen-select goods_type_id" name="cate" style="display: none;">
+                                    <option value="">全部</option>
+                                    <option value="7561">休闲食品</option>
+                                    <option value="7562">饮料</option>
+                                    <option value="7563">烟酒</option>
+                                    <option value="7564">熟食速食</option>
+                                    <option value="7565">生活日用</option>
+                                    <option value="7566">粮油调味</option>
+                                    <option value="7567">母婴中心</option>
+                                    <option value="7568">进口食品</option>
+                                    <option value="0">未分类</option>
+                                </select>
+                                <!--<div class="chosen-container chosen-container-single chosen-container-single-nosearch" style="width: 110px;" title=""><a class="chosen-single" tabindex="-1"><span>全部</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" readonly=""></div><ul class="chosen-results"></ul></div></div>-->
+                            </div>
+                            <div class="inpt chosenchang120">
+                                <select class="chosen-select goods_son_id" name="son" style="display: none;">
+                                    <option value="">全部</option>
+                                </select>
+                                <!--<div class="chosen-container chosen-container-single chosen-container-single-nosearch" style="width: 110px;" title=""><a class="chosen-single" tabindex="-1"><span>全部</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" readonly=""></div><ul class="chosen-results"></ul></div></div>-->
+                            </div>
+                        </div>
+                        <div class="boxpart">
+                            <a class="reset" href="javascript:;">清空筛选条件</a>
+                        </div>
+
+                    </form>
+                </div>
+                <!--功能条-->
+                <div class="zmbox clearfix margin-left-right-0 page-title-area">
+                    <div class="boxpart page-title">
+                        <span class="txt1">未盘点商品列表</span>
+                    </div>
+                    <button class="btn btn-success pull-right btn-iframe" type="button" style="margin-left: 20px;" data-url="https://b.izhangmai.com/stock/stocking_export?id=5902f60f5b6c242b428b4568" data-form="#search-form">导出盘点单</button>
+                    <button class="btn btn-primary pull-right margin-right-10 btn-ajax" type="button" data-msg="确定要终止该盘点单吗？" data-url="https://b.izhangmai.com/stock/stop_stock?id=5902f60f5b6c242b428b4568">终止盘点单</button>
+                </div>
+                <div id="shangpingzhanshi" class="porela">
+                    <div class="table-responsive margin-left-right-0">
+                        <div class="new-table-headinfo" style="min-width: 1254px;">
+                            <span class="txt1">未盘点商品列表</span>
+                        </div>
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th style="width: 60px">序号</th>
+                                <th>条码</th>
+                                <th>商品名称</th>
+                                <th>规格</th>
+                                <th>单位</th>
+                                <th>分类</th>
+                                <th>盘点库存</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td style="width: 60px">1</td>
+                                <td>121</td>
+                                <td style="text-align: left">123121</td>
+                                <td>1袋</td>
+                                <td>袋</td>
+                                <td>饮料</td>
+                                <td>
+                                    <div class="input-group" style="width:150px;margin: 0 auto">
+                                        <input type="text" tabindex="100" class="form-control inventory" id="inventory_58f96b985b6c2440088b4568" data-id="58f96b985b6c2440088b4568" data-code="121" name="inventory">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary btn-stock-save" maxlength="10" data-type="single" type="button" tabindex="-1">保存</button>
+                    </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 60px">2</td>
+                                <td>12345</td>
+                                <td style="text-align: left">12345</td>
+                                <td></td>
+                                <td>袋</td>
+                                <td>休闲食品/饼干糕点</td>
+                                <td>
+                                    <div class="input-group" style="width:150px;margin: 0 auto">
+                                        <input type="text" tabindex="101" class="form-control inventory" id="inventory_58f968825b6c24b7058b4567" data-id="58f968825b6c24b7058b4567" data-code="12345" name="inventory">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary btn-stock-save" maxlength="10" data-type="single" type="button" tabindex="-1">保存</button>
+                    </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 60px">3</td>
+                                <td>1234</td>
+                                <td style="text-align: left">1234</td>
+                                <td></td>
+                                <td>袋</td>
+                                <td>休闲食品/零食</td>
+                                <td>
+                                    <div class="input-group" style="width:150px;margin: 0 auto">
+                                        <input type="text" tabindex="102" class="form-control inventory" id="inventory_58f9684e5b6c248a058b4567" data-id="58f9684e5b6c248a058b4567" data-code="1234" name="inventory">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary btn-stock-save" maxlength="10" data-type="single" type="button" tabindex="-1">保存</button>
+                    </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 60px">4</td>
+                                <td>123</td>
+                                <td style="text-align: left">123测试1</td>
+                                <td></td>
+                                <td>袋</td>
+                                <td>饮料/碳酸饮料</td>
+                                <td>
+                                    <div class="input-group" style="width:150px;margin: 0 auto">
+                                        <input type="text" tabindex="103" class="form-control inventory" id="inventory_58f964655b6c247b028b4568" data-id="58f964655b6c247b028b4568" data-code="123" name="inventory">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary btn-stock-save" maxlength="10" data-type="single" type="button" tabindex="-1">保存</button>
+                    </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 60px">5</td>
+                                <td>1123</td>
+                                <td style="text-align: left">233222</td>
+                                <td></td>
+                                <td>袋</td>
+                                <td>饮料/饮用水</td>
+                                <td>
+                                    <div class="input-group" style="width:150px;margin: 0 auto">
+                                        <input type="text" tabindex="104" class="form-control inventory" id="inventory_58f967aa5b6c2411058b4567" data-id="58f967aa5b6c2411058b4567" data-code="1123" name="inventory">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary btn-stock-save" maxlength="10" data-type="single" type="button" tabindex="-1">保存</button>
+                    </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="6"></td>
+                                <td>
+                                    <button class="btn btn-primary btn-stock-save pull-left" data-type="batch" type="button" style="width:150px;margin: 0 auto">保存全部</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--分页居右-->
+                    <div id="ajax-page" class="pagemain page-you margin-left-right-0">
+                        <div id="url" class="hide">https://b.izhangmai.com/stock/stocking?id=5902f60f5b6c242b428b4568&amp;round=1493366288</div>    </div>
+                    <script type="text/javascript">
+                        if(window.localStorage){
+                            var storage = window.localStorage;
+                            for(var i=0;i<storage.length;i++){
+                                $('#inventory_' + storage.key(i)).val(storage.getItem(storage.key(i)));
+                            }
+                        }
+                        $('#stocking_num').text('5');
+                        $('#stocked_num').text('0');
+                    </script>                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="page-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog goods-modal"></div>
+    </div>
+    <script type="text/javascript">
+
+        var reg_inventory = /^([\d]+|([\d]+[.]?|[\d]+[.]?[\d]+))$/;
+        var $modal = $('#page-modal');
+        $('#shangpingzhanshi').on('click','.btn-edit',function(){
+            var $overlay = $('<div id="loadinggif"></div>').css({height:$(document).height()});
+            var barcode = $('#search-form').find('input[name="keyword"]').val();
+            var url = $(this).attr('data-url');
+            if(!isNaN(barcode)){
+                url += '&barcode='+barcode;
+            }
+            //$("body").append($overlay);
+            $('.modal-dialog',$modal).load(url,function(result){
+                //$overlay.remove();
+                try{
+                    var json = $.parseJSON(result);
+                    check_logout(json);//登录超时检验
+                }catch(error){}
+
+                $modal.modal('show');
+                if(!isNaN(barcode)){
+                    $('#bar_code',$modal).val(barcode);
+                }else{
+                    $('#goods_name',$modal).val(barcode);
+                }
+                $('#search-form #keyword').val('');
+                //validationForm($('#goods-modify-form',$('#page-modal')));
+            });
+            return false;
+        });
+        $modal.on('click','.close',function(){
+            $('#search-form').submit();
+        });
+        function loading_goods(goods_id,type){
+            var $overlay = $('<div id="loadinggif"></div>');
+            var continue_check = 0;
+            if($('#continue_checkbox').length > 0 && $('#continue_checkbox').is(':checked')){
+                continue_check = 1;
+            }
+            $modal.find('.modal-content').append($overlay);
+            $('.modal-dialog',$modal).load('https://b.izhangmai.com/goods/modify'+'?type='+type+'&id='+goods_id,{continue_check:continue_check},function(){
+                $overlay.remove();
+                //$modal.modal('show');
+            });
+        }
+
+        function stocking_goods(params,obj){
+            if(!obj){
+                obj = '';
+            }
+            var $overlay = $('<div id="loadinggif"></div>').css({height:$(document).height()});
+            //$("#shangpingzhanshi").append($overlay);
+            $.ajax({type: 'POST',async: false, dataType: 'json', data: {stock_id:'5902f60f5b6c242b428b4568',goods:params}, url: 'https://b.izhangmai.com/stock/save_stock', success: function(json){
+                $overlay.remove();
+                if(json.status == 1){
+                    check_logout(json);
+                    if(window.localStorage){
+                        localStorage.clear();
+                    }
+
+                    if(json.item && json.item.url){
+                        window.location.href = json.item.url;
+                    }else{
+                        if(obj){
+                            //单个商品盘点不刷新页面
+                            var bar_code = obj.find('.inventory').attr("data-code");
+                            var data_url = "https://b.izhangmai.com/stock/restock?stock_id=5902f60f5b6c242b428b4568&bar_code="+bar_code;
+                            var html = "<button class='btn btn-link btn-restock' data-url='"+data_url+"'>重盘</button>";
+                            obj.html(html);
+                            //已盘点数目加一
+                            var num = parseInt($('#stocked_num').html());
+                            $('#stocked_num').html(num+1);
+                            //未盘点数减一
+                            num = parseInt($('#stocking_num').html());
+                            if(num > 0){
+                                $('#stocking_num').html(num-1);
+                            }
+                        }else{
+                            if($('#url').length > 0 && !$('#keyword').val() && !$('#goods_type_id').val() && !$('#goods_son_id').val()){
+                                $(this).zm_ajax({content_area : '#shangpingzhanshi',content_url: $('#url').text()});
+                                //$('#stocked_num').text(Number($('#stocked_num').text()) + params.length);
+                            }else{
+                                $('#search-form').submit();
+                            }
+                        }
+                    }
+                }else{
+                    swal(json.item && json.item.msg ? json.item.msg : '系统繁忙，请稍后再试', false, "error");
+                }
+            },
+                error: function(){
+                    $overlay.remove();
+                    swal('系统繁忙，请稍后再试', false, "error");
+                }
+            });
+        }
+        $(document).ready(function () {
+            $(".chosen-select").chosen({disable_search:true,width:'110px'});
+
+
+
+            $('#shangpingzhanshi').on('click','#ajax-page a',function(){
+                if(window.localStorage){
+                    $('.inventory').each(function(){
+                        var inventory = $.trim($(this).val());
+                        if(reg_inventory.test(inventory)){
+                            localStorage.setItem($(this).attr("data-id"),inventory);
+                        }
+                    });
+                }
+                $(this).zm_ajax({content_area : '#shangpingzhanshi'});
+                return false;
+            });
+
+            $("#shangpingzhanshi").on("keydown", '.inventory', function(evt) {
+                var tabIndex = parseInt($(this).attr("tabindex"));
+                var keyCode = evt.which;
+                if(keyCode == 38){
+                    tabIndex--;
+                    if (tabIndex > 0) {
+                        $(".inventory[tabindex=" + tabIndex + "]").focus();
+                        return false;
+                    }
+                }else if(keyCode == 9 || keyCode == 40){
+                    tabIndex++;
+                    $(".inventory[tabindex=" + tabIndex + "]").focus();
+                    return false;
+                }else if((keyCode >= 48 && keyCode <= 57) || (keyCode >= 96 && keyCode <= 105) || keyCode == 8 || keyCode == 46 || keyCode == 110 || keyCode == 190){
+                    return true;
+                }else{
+                    return false;
+                }
+            }).on("keyup", '.inventory', function(evt) {
+                if(!reg_inventory.test($(this).val())){
+                    $(this).val('');
+                }
+            });
+
+            $("#shangpingzhanshi").on('click','.btn-stock-save',function(){
+                var type = $(this).attr('data-type');
+                var params = [];
+                if(type == 'batch'){
+                    $('.inventory').each(function(){
+                        var inventory = $.trim($(this).val());
+                        if(reg_inventory.test(inventory)){
+                            params.push({ goods_id: $(this).attr("data-id"), inventory:inventory});
+                        }
+                    });
+                }else if(type == 'single'){
+                    var $input = $(this).closest('.input-group').find('.inventory');
+                    var inventory = $.trim($input.val());
+
+                    //单个商品盘点不刷新页面
+                    var obj = $(this).closest('td');
+                    if(reg_inventory.test(inventory)){
+                        params.push({ goods_id: $input.attr("data-id"), inventory:inventory});
+                    }
+                }
+                if(params.length > 0){
+                    stocking_goods(params,obj);
+                }else{
+                    swal('没有可保存的数据', false, "error");
+                }
+                return false;
+            });
+            var $modal = $('#common-modal');
+            $('#shangpingzhanshi').on('click','.btn-restock',function(){
+                var data_url = $(this).attr('data-url');
+                $modal.load(data_url,function(result){
+                    try{
+                        var json = $.parseJSON(result);
+                        check_logout(json);//登录超时检验
+                    }catch(error){
+
+                    }
+                    $modal.modal('show');
+                });
+                return false;
+            });
+            $modal.on('submit','#restock-form',function(){
+                var number = $('#restock-number').val();
+                if(!/^\d+(\.\d+)?$/.test(number)){
+                    swal({
+                        title: '请输入一个数字',
+                        text: false,
+                        type: "error",
+                        timer:1000
+                    }, function () {
+                        sweetAlert.close();
+                        $('#restock-number').val('').focus();
+                    });
+                    return false;
+                }
+                var $overlay = $('<div id="loadinggif"></div>').css({height:$modal.find(".modal-content").height()});
+                $modal.find(".modal-content").append($overlay);
+
+                $.ajax({type: 'POST',data:$(this).serialize(), dataType: 'json', url: 'https://b.izhangmai.com/stock/save_stock', success: function(json){
+                    $overlay.remove();
+                    $modal.modal('hide');
+
+                    var item = json.item;
+                    if(json.status == 1){
+                        check_logout(json);
+
+                    }else{
+                        swal(item.msg ? item.msg : '系统繁忙，请稍后再试', false, "warning",1500);
+                    }
+                },error: function(){
+                    $overlay.remove();
+                    swal('系统繁忙，请稍后再试', false, "warning");
+                }});
+                return false;
+            });
+        });
+    </script></div>
+
+
+<script type="text/javascript">
+    $('.tip-close').click(function () {
+        $('#contentbox').removeAttr('style');
+    })
+</script>
+<!--编辑-->
+<div class="modal  fade " id="open-online-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+<!--修改密码-->
+<div class="modal  fade " id="password-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title text-left">修改密码</h4>
+            </div>
+            <form class="form-horizontal" action="../shop/modify_pwd" method="post">
+                <div class="modal-body bg-white">
+                    <div class="padding-btm10">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">原密码：</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" name="old_password" value=""
+                                       datatype="*6-16" nullmsg="请输入原密码！" errormsg="密码格式错误！">
+                                <span class="help-block m-b-none"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">新密码：</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" name="password" value="" datatype="*6-16"
+                                       nullmsg="请设置密码！" errormsg="6-16位字符！">
+                                <span class="help-block m-b-none"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">确认密码：</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" name="password_again" value="" datatype="*"
+                                       recheck="password" nullmsg="请再次输入密码！" errormsg="两次密码输入不一致！">
+                                <span class="help-block m-b-none"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">确定</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<!--基本信息-->
+<div class="modal  fade " id="baseinfo-modal" tabindex="-1" role="dialog" aria-hidden="true">
+
+</div>
+
+<!--绑定代理商-->
+<div class="modal  fade " id="agent-modal" tabindex="-1" role="dialog" aria-hidden="true">
+
+</div>
+<!--新增功能幻灯片-->
+
+<!-- Modal -->
+<div class="modal fade" id="newfunction-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document" style="width:843px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">新增功能</h4>
+            </div>
+            <div class="modal-body">
+
+
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <style rel="stylesheet">
+                        #newfunctioncar .active {
+                            background: #3696FD;
+                        }
+
+                        #newfunction-modal .carousel-caption h3 {
+                            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+                        }
+
+                        #newfunction-modal .carousel-caption {
+                            background: white;
+                        }
+
+                    </style>
+                    <ol class="carousel-indicators" id="newfunctioncar">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"
+                            style="border: 1px solid #3696FD;"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"
+                            style="border: 1px solid #3696FD;"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"
+                            style="border: 1px solid #3696FD;"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="3"
+                            style="border: 1px solid #3696FD;"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="4"
+                            style="border: 1px solid #3696FD;"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="5"
+                            style="border: 1px solid #3696FD;"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="6"
+                            style="border: 1px solid #3696FD;"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <style rel="stylesheet">
+
+                        #carousel-innerxbox1 .item img {
+
+                            margin: auto;
+                            display: block;
+                            padding-top: 72px;
+
+                        }
+
+                    </style>
+                    <div class="carousel-inner" role="listbox" id="carousel-innerxbox1">
+
+                        <div class="item active" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;">
+                                <img src="../img/newfx1.png" alt="...">
+                            </div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">1、新增五项报表，经营数据一目了然</h3>
+                            </div>
+                        </div>
+
+
+                        <div class="item" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img
+                                    src="../img/newfx42.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">2、新增会员价、批量操作、保质期管理等多项商品便捷操作功能</h3>
+                            </div>
+                        </div>
+
+                        <div class="item" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img
+                                    src="../img/newfx3.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">3、新增调拨单和退货单功能，优化了进货单功能，单据管理更方便</h3>
+                            </div>
+                        </div>
+
+                        <div class="item" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img
+                                    src="../img/newfx24.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">4、新增会员导入和编辑功能，会员管理更快捷</h3>
+                            </div>
+                        </div>
+
+                        <div class="item" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img
+                                    src="../img/newfx5.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">5、新增其它收支功能</h3>
+                            </div>
+                        </div>
+
+                        <div class="item" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img
+                                    src="../img/newfx6.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">6、新增供应商管理功能</h3>
+                            </div>
+                        </div>
+
+                        <div class="item" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img
+                                    src="../img/newfx7.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">7、新增POS收银端自定义支付模式，并且支持支付宝和微信支付</h3>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">知道了</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--新增功能幻灯片-->
+
+
+<!--公共弹框-->
+<div class="modal  fade " id="common-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true"></div>
+
+<!--内容区域结束-->
+<!--btjs-->
+<script src="../js/bootstrap.js"></script>
+<!--下拉框-->
+<script src="../js/plugins/chosen/chosen.jquery.js"></script>
+<!-- Sweet alert -->
+<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+<!--<script src="js/alert_ie8.js"></script>-->
+<!--pagejs-->
+<script src="../js/Validform_v5.3.2_min.js"></script>
+<script src="../js/ajaxfileupload.js"></script>
+<script src="../js/echarts-all.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/moment.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/daterangepicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery.datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/plugins/autocomplete/jquery.autocomplete.min.js"></script>
+<script src="../js/city_select.js"></script>
+<script src="../js/jquery.slimscroll.js"></script>
+<script src="../js/stickUp.js"></script>
+<script src="../js/dataTables/jquery.dataTables.js"></script>
+<script src="../js/dataTables/jquery.dataTables.bootstrap.js"></script>
+<script src="../js/dataTables/extensions/TableTools/dataTables.tableTools.js"></script>
+<script src="../js/dataTables/extensions/ColVis/dataTables.colVis.js"></script>
+<script src="../js/zhangmai.js"></script>
+<script type="text/javascript" src="../js/floattablehead.js"></script>
+<!-- 百度地图抓到本地 -->
+<!--<script type="text/javascript" src="js/baiduMap.js"  async="async"></script>-->
+<!--
+<script src="https://sapi.map.baidu.com/api?v=2.0&s=1&ak=KackR6TA9CAAdNfa09wLB1m6&language=zh_cn&callback=baiduloadedMapApi&_st_=1438393791266" type="text/javascript"></script>
+ -->
+<!-- <script src="https://sapi.map.baidu.com/api?v=2.0&s=1&ak=KackR6TA9CAAdNfa09wLB1m6&language=zh_cn&callback=baiduloadedMapApi&_st_=1438393791266" type="text/javascript"></script> -->
+<script>
+
+    //公共iframe
+    $('body').append('<iframe id="common-iframe" src="about:blank" marginheight="0" marginwidth="0" style="display: none;"></iframe>');
+    var daohangs = $(".haohangteam");
+    var erjifu = $(".erjifenlie .erji");
+    var erji = $(".erjifenlie .erji div a");
+    var daohangjib1 = $(".haohangteam ");
+    var daohangjib2 = $(".erjifenlie .erji ");
+    var daohangjib3 = $(".erjifenlie a ");
+    var erjileft = $(".erjifenlie");
+    $(function () {
+        //导航切换
+
+        $('.daohang-main').on('click', 'a', function () {
+            var hash = $.trim(window.location.hash);
+            if (hash == $(this).attr('href')) {
+                window.location.reload();
+            }
+            if ($(this).hasClass('haohangteam')) {
+                $('.daohang-main .logo').click();
+            }
+        });
+//        $('#contentbox').menu_ajax({
+//            default_url: 'analysis/sales',
+//            content_url: function (hash) {
+//                return '../' + hash;
+//            }
+//        });
+
+        $('#password-modal').on('show.bs.modal hidden.bs.modal', function () {
+            $('#password-modal input').val('');
+            $('#password-modal .form-group').removeClass('has-error').removeClass('has-success');
+            $('#password-modal .help-block').text('');
+
+        });
+        validationForm($('#password-modal form'));
+
+        var $online_modal = $('#open-online-modal');
+        $online_modal.on('show.bs.modal', function () {
+            validationForm($online_modal.find('form'));
+            $(".chosen-select").chosen({disable_search: true, width: '100%'});
+            $online_modal.find('.form_time1').datetimepicker({
+                datepicker: false,
+                format: 'H:i',
+                step: 30,
+                allowTimes: allow_times(5, 11)
+            });
+            $online_modal.find('.form_time2').datetimepicker({
+                datepicker: false,
+                format: 'H:i',
+                step: 30,
+                allowTimes: allow_times(16, 23)
+            });
+        });
+        $('.btn-base-info').on('click', function () {
+            $("#baseinfo-modal").load('../main/user_info', function (json) {
+                try {
+                    json = $.parseJSON(json);
+                    check_logout(json);//登录超时检验
+                } catch (error) {
+                }
+                $("#baseinfo-modal").modal('show');
+            });
+        });
+        getNews();
+        setInterval(function () {//新订单提示获取
+            getNews();
+        }, 30000);
+        $('#contentbox').on('click', '.echart-legend dl', function () {
+            var echart_legend = $(this).closest('.echart-legend');
+            $('dl', echart_legend).removeClass('active');
+            $(this).addClass('active');
+        });
+//搜索表单提交
+        $('#contentbox').on('submit', '#search-form', function () {
+            $('#batch-form').html('');
+            var data = $(this).serialize();
+            $(this).zm_ajax({content_area: '#shangpingzhanshi', content_data: data});
+            return false;
+        });
+        //下拉提交表单
+        $('#contentbox').on('change', '#search-form select', function () {
+            if ($(this).hasClass('goods_type_id')) {
+                $('#search-form').find(".goods_son_id").val('');
+            }
+            $(this).closest('form').submit();
+        });
+        //快捷时间筛选
+        $('#contentbox').on('click', '.quick-select a', function () {
+            var $sub_form = $(this).closest('form');
+            var data_daterange = $(this).attr('data-daterange');
+            $sub_form.find('input[name=date_range]').val(data_daterange);
+            $(this).closest('.quick-select').find('a').removeClass('active');
+            $(this).addClass('active');
+            $sub_form.submit();
+            return false;
+        });
+        //分页
+        $('#contentbox').on('click', '#shangpingzhanshi #ajax-page a', function () {
+            $(this).zm_ajax({content_area: '#shangpingzhanshi'});
+            return false;
+        });
+
+        //排序
+        $('#contentbox').on('click', 'a.sort-link', function () {
+            $(this).zm_ajax({content_area: '#shangpingzhanshi'});
+            return false;
+        });
+        //打印/导出
+        $('#contentbox').on('click', '.btn-iframe', function () {
+            var data_url = $(this).attr('data-url');
+            var search_form = $(this).attr('data-form');
+            if (search_form) {
+                var post_data = $(search_form).serialize();
+                data_url = data_url + '&' + post_data
+            }
+            $('#common-iframe').attr('src', data_url);
+            return false;
+        });
+    });
+
+    //获取新消息
+    function getNews() {
+        $.ajax({
+            url: "../data/get_news.json",
+            type: 'post',
+            dataType: 'json',
+            success: function (json) {
+                var item = json.item;
+                if (json.status === 1) {
+                    if (json.item.mark != 9999) {
+                        var order_num = parseInt(item.order_count);
+                        var price_num = parseInt(item.price_count);
+                        var msg_num = parseInt(item.sys_count);
+                        var new_count = order_num + price_num;
+                        $('#new-order-num').text(order_num);
+                        $('#new-price-num').text(price_num);
+                        $('#new-msg-num').text(msg_num);
+                        if (new_count > 0) {
+                            $('#new-count').find('i').show();
+                        } else {
+                            $('#new-count').find('i').hide();
+                        }
+                        if (order_num > 0) {
+                            $('#new-order-num').addClass('text-danger');
+                        } else {
+                            $('#new-order-num').removeClass('text-danger');
+                        }
+                        if (price_num > 0) {
+                            $('#new-price-num').addClass('text-danger');
+                        } else {
+                            $('#new-price-num').removeClass('text-danger');
+                        }
+                        if (msg_num > 0) {
+                            $('#new-msg-num').addClass('text-danger');
+                        } else {
+                            $('#new-msg-num').removeClass('text-danger');
+                        }
+
+                        if (item.order_html) {
+                            if ($('#new_order_window').length > 0) {
+                                $('#new_order_window').remove();
+                            }
+                            $("body").append(item.order_html);
+                            if (order_num > 0) {
+                                sound(1);//新订单提示
+                            } else {
+                                sound(2);//其它提示
+                            }
+                        } else {
+                            if ($('#new_order_window').length > 0) {
+                                $('#new_order_window').remove();
+                            }
+                        }
+
+                    }
+                }
+            }
+        });
+    }
+
+
+    /*播放声音*/
+    function sound(type) {
+        $("#bgs,#chatAudio").remove();
+        var url = '../img/';
+        if (navigator.userAgent.indexOf("MSIE") != -1) { //ie
+            $('<bgsound loop="1" id="bgs"/>').appendTo('body');
+            if (type == 1) {
+                //新订单提示
+                document.all.bgs.src = url + "sound/notify.wav";
+            } else {
+                //其它提示
+                document.all.bgs.src = url + "sound/Orion.wav";
+            }
+
+        }
+        if (window.applicationCache) { //html5
+            if (type == 1) {
+                //新订单提示
+                $('<audio id="chatAudio"><source src="' + url + 'sound/notify.mp3" type="audio/mpeg"><source src="' + url + 'sound/notify.wav" type="audio/wav"></audio>').appendTo('body'); //载入声音文件
+            } else {
+                //其它提示
+                $('<audio id="chatAudio"><source src="' + url + 'sound/Orion.mp3" type="audio/mpeg"><source src="' + url + 'sound/Orion.wav" type="audio/wav"></audio>').appendTo('body'); //载入声音文件
+            }
+
+            $('#chatAudio')[0].play();
+        }
+    }
+    //营业时间优化
+    function allow_times(start_num, end_num) {
+        var times_data = [];
+        var num = '';
+
+        times_data.push('00:00');
+        for (var i = start_num; i <= end_num; i++) {
+            num = i < 10 ? '0' + i : i;
+            times_data.push(num + ':00');
+            times_data.push(num + ':30');
+        }
+
+        return times_data;
+    }
+    $(function () {
+        //设置每页显示条数
+        $('#contentbox').on('change', '#ajax-page .size-select', function () {
+            var size_val = $(this).val();
+            $.ajax({
+                url: "../main/page_size?size=" + size_val,
+                type: 'get',
+                dataType: 'json',
+                success: function (json) {
+                    $('#search-form').submit();
+                }
+            });
+        });
+        //清空筛选条件
+        $('#contentbox').on('click', '.reset', function () {
+            var form_obj = $(this).closest('form');
+            var nav_type = form_obj.find('input[name=nav_type]').val();
+            form_obj.find('input').val('');
+            form_obj.find('select').val('');
+            $('.quick-select a,.quick-select .btn', form_obj).removeClass('btn-success').addClass('btn-white');
+            //下拉框
+            form_obj.find("select").trigger("chosen:updated.chosen");
+            form_obj.find('input[name=nav_type]').val(nav_type);
+            form_obj.submit();
+            return false;
+        });
+        //初始化分类筛选
+        select_goods_type('#search-form');
+    })
+    //公共分类选择
+    function select_goods_type(dom) {
+        $('body').on('change', dom + ' .goods_type_id', function (evt, params) {
+            var $obj = $('body ' + dom);
+            $obj.find(".goods_son_id option").remove();
+            $obj.find(".goods_son_id").val('').append("<option value=''>全部</option>");
+            if (params.selected > 0) {
+                $.ajax({
+                    type: 'POST',
+                    async: false,
+                    dataType: 'json',
+                    data: {id: params.selected},
+                    url: '../main/get_category',
+                    success: function (json) {
+                        check_logout(json);//登录超时检验
+                        if (json.status == 1) {
+                            $.each(json.item.list, function (index, val) {
+                                $obj.find(".goods_son_id").append("<option value='" + val['type_id'] + "'>" + val['type_name'] + "</option>");
+                            });
+                        }
+                    }
+                });
+            }
+            $obj.find(".goods_son_id").trigger("chosen:updated.chosen");
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "rows":[
+    {
+      "id":"1",
+      "shopName":"111234",
+      "barcode":"2222",
+      "unit":"袋",
+      "storeNum":"4",
+      "purchasePrice":"23.00",
+      "salePrice":"111.00"
+    },
+    {
+      "id":"2111",
+      "shopName":"测试",
+      "barcode":"12343",
+      "unit":"",
+      "storeNum":"8",
+      "purchasePrice":"11.50",
+      "salePrice":"111.00"
+    }
+
+  ]
+}

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.datetimepicker.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script>
+    <style>
+        .tabs-container {
+            margin: 0;
+            padding: 20px;
+        }
+
+        #tab-1 {
+            background-color: #f6f6f6;
+            padding: 15px;
+        }
+
+        .ui-jqgrid tr.jqgrow td {
+            overflow: inherit;
+            white-space: normal;
+        }
+
+        .payMoney input {
+            margin-bottom: 8px;
+        }
+    </style>
+    <style rel="stylesheet">
+
+        .collecttablewrap {
+            position: relative;
+            overflow: hidden;
+            min-height: 350px;
+        }
+
+        .collecttablewrapinner {
+            position: absolute;
+            left: -0.5%;
+            right: -0.5%;
+            top: 0;
+        }
+
+        .collecttable {
+            width: 19%;
+            float: left;
+            margin-right: 0.5%;
+            margin-left: 0.5%;
+        }
+
+        .collecttableicon {
+            height: 151px;
+            overflow: hidden;
+            font-size: 24px;
+            color: #FFfFff;
+            line-height: 232px;
+            text-align: center;
+        }
+
+        .collecttableicon.icon1 {
+            background: url("../img/icon07081.png") center 27px no-repeat #ff7474;
+        }
+        .collecttableicon.icon2 {
+            background: url("../img/icon07082.png") center 27px no-repeat #ffa448;
+        }
+
+        .collecttableicon.icon3 {
+            background: url("../img/icon07083.png") center 27px no-repeat #55c763;
+        }
+
+        .collecttableicon.icon4 {
+            background: url("../img/icon07084.png") center 27px no-repeat #3696fd;
+        }
+
+        .collecttableicon.icon5 {
+            background: url("../img/icon07085.png") center 27px no-repeat #ae5da1;
+        }
+
+
+        .collecttablelist {
+            height: 40px;
+            line-height: 40px;
+            padding: 0 17px;
+            font-size: 14px;
+            background: #ffeaea;
+        }
+
+        .collecttablelist:nth-child(odd) {
+            background: #ffdcdc;
+        }
+
+        .libg2{
+            background: #ffe8d1;
+        }
+        .libg2:nth-child(odd){
+            background: #fff1e4;
+        }
+        .libg3{
+            background: #d4f1d8;
+        }
+        .libg3:nth-child(odd){
+            background: #e6f7e8;
+        }
+        .libg4{
+            background: #cde5fe;
+        }
+        .libg4:nth-child(odd){
+            background: #e1efff;
+        }
+        .libg5{
+            background: #ebd6e7;
+        }
+        .libg5:nth-child(odd){
+            background: #f3e7f1;
+        }
+
+        .collecttablelist .l {
+            float: left;
+        }
+
+        .collecttablelist .r {
+            float: right;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+
+        <div class="main-content-right">
+            <div class="body-content body-content-bg" style="overflow-y: scroll">
+
+                <div class="inner-scollcontent">
+                    <div class="ibox" style="margin-bottom: 0" id="modify-shop">
+                        <div class="tabs-container">
+                            <div class="clearfix page-search-area">
+                                <form role="form" id="search-form" class="form-inline">
+                                    <div class="boxpart">
+                                        <div class="t" style="margin-left: 10px">时间：</div>
+                                        <div class="inpt">
+                                            <input type="text" class="pintxt datepicker" name="date_range"
+                                                   style="width: 140px;" value="">
+                                        </div>
+                                        <div class="t" style="font-size: 18px;margin-right: 5px">-</div>
+                                        <div class="inpt">
+                                            <input type="text" class="pintxt datepicker" name="date_range"
+                                                   style="width: 140px;" value="">
+                                        </div>
+
+                                    </div>
+                                    <input type="hidden" class="cate-id" value="">
+
+                                    <div class="boxpart form-group">
+                                        <div class="btn-group">
+                                            <button type="button" style="margin-right:5px;" class="btn default datetype btn-success" data-type="1" data-daterange="2017-04-25 - 2017-04-25">今天</button>
+                                            <button type="button" style="margin-right:5px;" class="btn datetype btn-white" data-type="7" data-daterange="2017-04-24 - 2017-04-24">昨天</button>
+                                            <button type="button" style="margin-right:5px;" class="btn datetype btn-white" data-type="2" data-daterange="2017-04-18 - 2017-04-25">近一周</button>
+                                            <button type="button" style="margin-right:5px;" class="btn datetype btn-white" data-type="4" data-daterange="2017-03-25 - 2017-04-25">近一个月</button>
+                                            <button type="button" style="margin-right:5px;" class="btn datetype btn-white" data-type="5" data-daterange="2016-10-25 - 2017-04-25">近半年</button>
+                                            <button type="button" style="margin-right:5px;" class="btn datetype btn-white" data-type="6" data-daterange="2016-04-25 - 2017-04-25">近一年</button>
+                                        </div>
+                                    </div>
+                                    <div class="boxpart">
+                                        <a class="reset" href="javascript:;">清空筛选条件</a>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="clearfix" style="margin:5px 0;"></div>
+                            <div style="margin-top: 10px">
+                                <div id="table-list" style="min-height: 200px">
+                                    <div class="collecttablewrap">
+                                        <div class="collecttablewrapinner">
+                                            <div class="collecttable">
+                                                <div class="collecttableicon icon1">
+                                                    交易
+                                                </div>
+                                                <div class="collecttablelist libg1">
+                                                    <div class="l">销售单总额</div>
+                                                    <div class="r pos_sale">¥<span>0.00</span></div>
+                                                </div>
+                                                <div class="collecttablelist  libg1">
+                                                    <div class="l">销售退货</div>
+                                                    <div class="r pos_return">¥<span>0.00</span></div>
+                                                </div>
+                                                <div class="collecttablelist libg1">
+                                                    <div class="l">进货付款</div>
+                                                    <div class="r payed_money">¥<span>0.00</span></div>
+                                                </div>
+                                                <div class="collecttablelist libg1">
+                                                    <div class="l">进货退款</div>
+                                                    <div class="r received_money">¥<span>0.00</span></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="collecttable">
+                                                <div class="collecttableicon icon2">
+                                                    采购
+                                                </div>
+                                                <div class="collecttablelist libg2">
+                                                    <div class="l">进货下单</div>
+                                                    <div class="r stock_money">¥<span>0.00</span></div>
+                                                </div>
+                                                <div class="collecttablelist libg2">
+                                                    <div class="l">进货入库</div>
+                                                    <div class="r stock_store">¥<span>0.00</span></div>
+                                                </div>
+                                                <div class="collecttablelist libg2">
+                                                    <div class="l">进货未入库</div>
+                                                    <div class="r stock_unstore">¥<span>0.00</span></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="collecttable">
+                                                <div class="collecttableicon icon3">
+                                                    库存
+                                                </div>
+                                                <div class="collecttablelist libg3">
+                                                    <div class="l">库存总成本</div>
+                                                    <div class="r goods_money_cost">¥<span>828.00</span></div>
+                                                </div>
+                                                <div class="collecttablelist libg3">
+                                                    <div class="l">库存总价值</div>
+                                                    <div class="r goods_money_sale">¥<span>1284.00</span></div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="collecttable">
+                                                <div class="collecttableicon icon4">
+                                                    供应商结算
+                                                </div>
+                                                <div class="collecttablelist libg4">
+                                                    <div class="l">应收</div>
+                                                    <div class="r need_receive">¥<span>0.00</span></div>
+                                                </div>
+                                                <div class="collecttablelist libg4">
+                                                    <div class="l">应付</div>
+                                                    <div class="r need_pay">¥<span>0.00</span></div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="collecttable">
+                                                <div class="collecttableicon icon5">
+                                                    其它收支
+                                                </div>
+                                                <div class="collecttablelist libg5">
+                                                    <div class="l">其它收入</div>
+                                                    <div class="r payment_in">¥<span>0.00</span></div>
+                                                </div>
+                                                <div class="collecttablelist libg5">
+                                                    <div class="l">其它支出</div>
+                                                    <div class="r payment_out">¥<span>0.00</span></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>-->
+
+<!--<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>-->
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+<!--<script src="../js/jqGrid.js"></script>-->
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"></script>-->
+<script src="../assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<script src="../js/jquery.datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/chosen.jquery.min.js"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script src="../js/eosgi-test.js"></script>
+<script src="../js/server.js"></script>
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+
+<script type="text/javascript">
+
+
+</script>
+</body>
+</html>

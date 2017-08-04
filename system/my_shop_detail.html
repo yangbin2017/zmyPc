@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if !IE]> -->
+
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script>
+
+    <!-- <![endif]-->
+    <style type="text/css">
+        .pagemain .txt1 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .pagemain .txt2 {
+            font-size: 13px;
+        }
+
+        .pagemain .txt2 span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+
+        <div class="main-content-right">
+            <div class="body-content body-content-bg">
+                <div class="inner-scollcontent">
+                    <div id="contentbox" class="porela" data-ajax-content="true">
+                        <style type="text/css">
+                            .xdsoft_datetimepicker .xdsoft_timepicker {
+                                width: 116px
+                            }
+
+                            .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev, .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_next {
+                                margin-left: 45px
+                            }
+
+                            .base-info .form-group {
+                                margin-bottom: 0px
+                            }
+
+                            .form-group input, .base-info .form-group textarea {
+                                margin-bottom: 15px
+                            }
+
+                            .form-group label.error {
+                                color: #f00;
+                                position: relative;
+                                top: -15px;
+                                margin-bottom: 0;
+                            }
+
+                            .input-group label.error {
+                                color: #f00;
+                                position: absolute;
+                                top: 100%;
+                                left: 0;
+                                margin-bottom: 10px;
+                            }
+
+                            .input-group {
+                                margin-bottom: 20px;
+                            }
+
+                            #contentbox {
+                                top: 15px;
+                            }
+
+                            #store-selector {
+                                height: 34px;
+                            }
+
+                            #store-selector .text {
+                                height: 34px;
+                                border-color: #d4dfed;
+                                line-height: 34px
+                            }
+
+                            #store-selector .text b {
+                                top: 6px
+                            }
+
+                            #store-selector .content {
+                                top: 33px;
+                                border-color: #d4dfed;
+                            }
+
+                            .required {
+                                color: red
+                            }
+
+                            #tab-1 {
+                                background-color: #f6f6f6;
+                                padding: 15px
+                            }
+
+                            .ygzdpsz_t {
+                                border-left: 3px solid #3696FD;
+                                font-size: 16px;
+                                font-weight: bold;
+                                margin: 10px 0;
+                                padding-left: 10px;
+                            }
+
+                            .choseover .chosen-drop {
+                                height: 192px;
+                                overflow-y: scroll;
+                            }
+
+                            .form-group {
+                                font-size: 13px
+                            }
+
+                            #shopInfo .panel-body {
+                                width: 780px;
+                                background-color: #ffffff;
+                                margin: 0 auto;
+                                padding: 10px 30px 50px 30px;
+                                border: 1px solid #ebebeb;
+                            }
+
+                            #shopInfo {
+                                padding-top: 20px;
+
+                            }
+
+                            #shopInfo form {
+                                padding: 20px;
+                                background: #f5f5f5;
+                            }
+
+                            .quick-select .btn {
+                                border: none;
+                            }
+                        </style>
+                        <div class="ibox" style="margin-bottom: 0" id="modify-shop">
+                            <div class="tabs-container menu-tabs">
+                                <ul class="nav nav-tabs" role="presentation">
+                                    <li class="active"><a href="#shopInfo" role="tab" data-toggle="tab">店铺信息</a></li>
+                                    <li class=""><a href="#ortherPay" role="tab" data-toggle="tab">其它收支</a></li>
+                                    <a class="btn-back pull-right" href="../system/my_shop.html">&lt; 返回上一页</a>
+                                </ul>
+                                <div class="tab-content" style="border: none;">
+                                    <div id="shopInfo" role="tabpanel" class="tab-pane active">
+                                        <form class="form-horizontal validation shop-form" id="shopBaseInfo" action=""
+                                              method="post" data-reload="#contentbox">
+                                            <input type="hidden" name="shop_id" value="2942">
+                                            <input type="hidden" name="is_online" value="1">
+                                            <div class="panel-body" style="min-height: 400px;">
+                                                <div class="ygzdpsz_t">基本信息</div>
+                                                <div class="clearfix base-info">
+
+                                                    <div class="col-lg-8" style="width: 450px">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">超市名称：</label>
+                                                            <div class="col-sm-9">
+                                                                <p style="line-height: 33px">测试1</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">所在地区：</label>
+                                                            <div class="col-sm-9">
+                                                                <p style="line-height: 33px">四川省 - 成都市 - 金牛区</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label"><span
+                                                                    class="required">*</span>详细地址：</label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control " name="address"
+                                                                       value="测试"
+                                                                       datatype="*" maxlength="50" nullmsg="请填写超市地址">
+                                                                <span class="help-block m-b-none"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group" id="coordinate-parent">
+                                                            <label class="col-sm-3 control-label"><span
+                                                                    class="required">*</span>超市坐标：</label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control"
+                                                                       name="coordinate" id="coordinate"
+                                                                       data-wd="30.616069" data-jd="104.057993"
+                                                                       value="104.057993 - 30.616069" datatype="*"
+                                                                       nullmsg="请拾取超市坐标！">
+                                                                <span class="help-block m-b-none"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label"><span
+                                                                    class="required">*</span>负责人：</label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control" name="boss_name"
+                                                                       value="测试"
+                                                                       datatype="font_cn" maxlength="10"
+                                                                       nullmsg="请填写负责人姓名"
+                                                                       errormsg="请正确填写负责人姓名"
+                                                                       style="padding-left:4px;padding-right: 0">
+                                                                <span class="help-block m-b-none"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label"><span
+                                                                    class="required">*</span>联系方式：</label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control" name="mobile"
+                                                                       value="18908086680"
+                                                                       datatype="n6-14" maxlength="14"
+                                                                       nullmsg="请填写负责人联系方式"
+                                                                       errormsg="请正确填写负责人联系方式"
+                                                                       style="padding-left:4px;padding-right: 0">
+                                                                <span class="help-block m-b-none"></span>
+                                                            </div>
+                                                        </div>
+                                                        <!--<div class="form-group">
+                            <label class="col-sm-3 control-label">负责人：</label>
+                            <div class="col-sm-9">
+                                <p style="line-height: 33px"></p>
+                            </div>
+
+                        </div>-->
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">代理商：</label>
+                                                            <div class="col-sm-9">
+                                                                <p style="line-height: 33px">四川掌麦科技</p>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">当月销售额：</label>
+                                                            <div class="col-sm-3">
+                                                                <p style="line-height: 33px;color: red">￥102.00</p>
+                                                            </div>
+                                                            <label class="col-sm-3 control-label">当月毛利：</label>
+                                                            <div class="col-sm-3">
+                                                                <p style="line-height: 33px;color: red">￥32.00</p>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-lg-3" style="width: 266px;">
+
+                                                        <div class="shangchuantupian "
+                                                             style="width:130px;margin: 0 auto">
+                                                            <div class="shangchuankuang"
+                                                                 style="margin-bottom: 0;width: 120px;height:120px">
+                                                                <input style="width: 100%;height:100%" type="file"
+                                                                       name="image" id="image" class="uploadImg">
+                                                                <img src="../img/default.png" class="img"
+                                                                     style="width: 100%;height:100%">
+                                                                <input type="hidden" name="logo" id="logo_img_up"
+                                                                       value="150410/201504101422251661.png">
+                                                                <div class="wangshantishi">
+                                                                    <div class="Validform_checktip"></div>
+                                                                </div>
+                                                            </div>
+                                                            <p style="width: 120px;text-align: center;margin-top: 10px">
+                                                                超市LOGO<br>(点击图片上传)
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="map-container"
+                                                     style="width: 100%; height:500px; display: none">
+                                                    <div class="form-group" style="margin-bottom: 0">
+                                                        <div class="col-sm-4">
+                                                            <div class="input-group">
+                                                                <input class="form-control" id="keyword" type="text"
+                                                                       placeholder="请输入关键字进行搜索">
+                                            <span class="input-group-btn">
+                                            <button class="btn btn-primary btn-search" type="button"
+                                                    style="padding: 7px 12px;"> 搜索
+                                            </button>
+                                            </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <div style="width: 400px;float: left;"><span
+                                                                    style="line-height: 35px;">单击地图拾取坐标：<b
+                                                                    id="show-zb"></b></span></div>
+                                                            <button id="mapBtn" class="btn btn-primary btn-hide"
+                                                                    type="button"
+                                                                    style="margin-left: 10px;float: right"> 确 定
+                                                            </button>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <div id="allmap" style="width: 100%; height:85%;"></div>
+
+                                                </div>
+                                                <!--标准版网店功能-->
+                                                <!--开通网店-->
+                                                <div class="ygzdpsz_t">网店营业信息</div>
+                                                <div class="clearfix">
+                                                    <div class="col-lg-8 choseover" style="width: 450px">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">营业时间：</label>
+                                                            <div class="col-sm-9">
+                                                                <div class="input-group">
+                                                                    <input type="time" data-date-format="hh:ii"
+                                                                           class="form-control form_time1"
+                                                                           name="start_date" value="08:00">
+                                                                    <span class="input-group-addon">—</span>
+                                                                    <input type="time" data-date-format="hh:ii"
+                                                                           class="form-control form_time2"
+                                                                           name="end_date" value="22:00">
+                                                                </div>
+                                            <span class="help-block m-b-none"
+                                                  style="display: inline-block;height: 8px ;margin-bottom: 0">若24小时营业，请设置为“00:00 - 00:00”</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">配送电话：</label>
+                                                            <div class="col-sm-9"><input type="text"
+                                                                                         class="form-control"
+                                                                                         name="phone"
+                                                                                         placeholder="手机号或座机号，多个用逗号','分隔"
+                                                                                         value="18908086680"
+                                                                                         datatype="/^[0-9][0-9|,|-]*[0-9]$/"
+                                                                                         errormsg="请正确填写配送电话"></div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">配送距离：</label>
+                                                            <div class="col-sm-6 ">
+                                                                <select class="form-control" name="send_distance"
+                                                                        style="display: block;">
+                                                                    <option value="10000">10 公里</option>
+                                                                    <option value="9000">9 公里</option>
+                                                                    <option value="8000">8 公里</option>
+                                                                    <option value="7000">7 公里</option>
+                                                                    <option value="6000">6 公里</option>
+                                                                    <option value="5000">5 公里</option>
+                                                                    <option value="4000">4 公里</option>
+                                                                    <option value="3000">3 公里</option>
+                                                                    <option value="2000">2 公里</option>
+                                                                    <option value="1000">1 公里</option>
+                                                                    <option value="900">900 米</option>
+                                                                    <option value="800" selected="selected">800 米
+                                                                    </option>
+                                                                    <option value="700">700 米</option>
+                                                                    <option value="600">600 米</option>
+                                                                    <option value="500">500 米</option>
+                                                                    <option value="400">400 米</option>
+                                                                    <option value="300">300 米</option>
+                                                                    <option value="200">200 米</option>
+                                                                    <option value="100">100 米</option>
+                                                                </select>
+                                                                <!--<div class="chosen-container chosen-container-single chosen-container-single-nosearch" style="width: 100%;" title=""><a class="chosen-single" tabindex="-1"><span>800 米</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" readonly=""></div><ul class="chosen-results"></ul></div></div>-->
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">起送金额：</label>
+                                                            <div class="col-sm-6">
+                                                                <div class="input-group">
+                                                                    <input class="form-control" type="text" value="10"
+                                                                           name="send_price"
+                                                                           datatype="n" ignore="ignore"
+                                                                           nullmsg="请填写起送金额"
+                                                                           errormsg="起送金额必须为整数">
+                                                                    <span class="input-group-addon">元</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">配送范围：</label>
+                                                            <div class="col-sm-9">
+                                            <textarea class="form-control" name="send_range"
+                                                      maxlength="100">金牛区</textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group"><label class="col-sm-3 control-label">店铺公告：</label>
+                                                            <div class="col-sm-9">
+                                                                <textarea class="form-control" name="notice"
+                                                                          maxlength="100">测试</textarea>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-lg-3" style="width: 266px;">
+
+                                                        <div class="shangchuantupian "
+                                                             style="width:130px;margin: 0 auto">
+                                                            <div class="shangchuankuang"
+                                                                 style="margin-bottom: 0;width: 120px;height:120px">
+                                                                <img id="logo_img_up_view"
+                                                                     src="https://b.izhangmai.com/upload/qrcode/2942/qrcode_logo.png"
+                                                                     style="width: 100%;height:100%">
+                                                            </div>
+                                                            <p style="width: 120px;text-align: center;margin-top: 10px">
+                                                                网店二维码</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix">
+                                                    <div class="col-lg-8 " style="width: 450px">
+                                                        <div style="width:200px;margin: 0 auto;padding-left:10px;padding-top: 10px">
+                                                            <input type="hidden" name="is_online" value="1">
+                                                            <button type="submit" class="btn btn-primary btn-submit"
+                                                                    style="width: 200px">保
+                                                                存
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="ortherPay" role="tabpanel" class="tab-pane">
+                                        <div class="clearfix page-search-area"
+                                             style="padding-left: 30px;padding-bottom: 5px">
+                                            <form id="search-form" class="info-form" action="" method="get">
+
+                                                <div class="boxpart data-range" style="padding-right: 5px">
+                                                    <div class="t ">时间：</div>
+                                                    <div class="inpt ">
+                                                        <input type="text" class="pintxt" name="date_range"
+                                                               style="width: 160px;" id="date-range-picker">
+                                                    </div>
+                                                </div>
+                                                <div class="boxpart" style="padding-right: 5px">
+                                                    <div class="boxbtn">
+                                                        <input type="hidden" name="datetype" value="" id="datetype">
+                                                        <button type="submit" class="btn btn-primary">查询</button>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="boxpart other-select"
+                                                     style="margin-left:20px;padding-right: 5px">
+                                                    <div class="t">收支类型：</div>
+                                                    <div class="inpt ">
+                                                        <select class=" supplier-select" name="type"
+                                                                style="width: 100px; display: block;">
+                                                            <option value="">请选择</option>
+                                                            <option value="1">收入</option>
+                                                            <option value="2">支出</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <!-- 下拉框-->
+                                                <div class="boxpart quick-select" style="padding-right: 5px">
+                                                    <label style="margin-left: 20px">快捷查询： </label>
+                                                    <button class="btn btn-white date_type" type="button" data-type="1">
+                                                        今天
+                                                    </button>
+                                                    <button class="btn btn-white date_type" type="button" data-type="2">
+                                                        昨天
+                                                    </button>
+                                                    <button class="btn btn-white date_type" type="button" data-type="3">
+                                                        近一周
+                                                    </button>
+                                                    <button class="btn btn-white date_type" type="button" data-type="4">
+                                                        近一月
+                                                    </button>
+                                                </div>
+                                                <div class="boxpart" style="padding-right: 5px">
+                                                    <a class="reset" href="javascript:;">清空筛选条件</a>
+                                                </div>
+                                                <div class="pull-right" >
+                                                    <i class="jiange"></i>
+                                                    <button type="button" class="btn btn-primary open-modals btn-add-payments"
+                                                         data-open="addPay" data-head="新增支出" data-type="2"
+                                                            style="margin-top: 9px;">新增支出
+                                                    </button>
+                                                    <i class="jiange"></i>
+                                                </div>
+                                                <div class="pull-right" >
+                                                    <i class="jiange"></i>
+                                                    <button type="button" class="btn btn-primary open-modals btn-add-payments"
+                                                            data-open="addPay" data-head="新增收入" data-type="1"
+                                                            style="margin-top: 9px;">新增收入
+                                                    </button>
+                                                    <i class="jiange"></i>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="panel-body pay-log" style="border: none;position: relative">
+                                            <!--统计信息-->
+                                            <div class="zmbox clearfix page-title-area">
+                                                <div class="boxpart page-title">
+                                                    <span class="txt1">其它收支</span>
+                                                    <span class="txt2">共<span class="text-info" id="ortherPayNum">0</span>条</span>
+                                                </div>
+                                            </div>
+                                            <div id="shangpingzhanshi" class="porela">
+                                                <div class="table-responsive" style="margin: 0">
+                                                    <div class="new-table-headinfo">
+                                                        <span class="txt1">其它收支</span>
+                                                        <span class="txt2">共<span class="text-info" >0</span>条</span>
+                                                    </div>
+                                                    <div class="zmalertno" style="margin:10px 0 0 0;">
+                                                        <i class="icon-exclamation-sign"></i> <span>暂无数据</span>
+                                                    </div>
+                                                    <div class="table-box">
+                                                        <table id="ortherpay-table"></table>
+                                                        <div id="ortherpay-pager"></div>
+                                                    </div>
+                                                </div>
+                                                <!--分页居右-->
+                                                <div id="ajax-page" class="pagemain page-you">
+                                                    <div id="url" class="hide">
+                                                        https://b.izhangmai.com/shop/payments_list?&amp;round=1493262991
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <script src="https://sapi.map.baidu.com/api?v=2.0&amp;s=1&amp;ak=KackR6TA9CAAdNfa09wLB1m6&amp;language=zh_cn&amp;callback=baiduloadedMapApi&amp;_st_=1438393791266"
+                                type="text/javascript" async="async"></script>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+
+
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+<!-- basic scripts -->
+<div class="modal  fade in" id="payments-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+    <!--自定义收支-->
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close pay-title" data-dismiss="modal"><span
+                        aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title text-left pay-title"
+                    onclick="_hmt.push(['_trackEvent', 'shop_detail', 'add_income', '新增收入']);">新增收入</h4></div>
+            <div class="payment-edit-header" style="display: none;">
+                <button type="button" class="close pay-title" data-dismiss="modal"><span
+                        aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title text-left pay-title"
+                    onclick="_hmt.push(['_trackEvent', 'shop_detail', 'add_income', '新增收入']);">新增收入</h4>
+                <a href="javascript:;" class="edit-payments pull-right cate-title" data-toggle="tab"
+                   aria-expanded="true"
+                   data-url="https://b.izhangmai.com/shop/add_payments_input?shop_id=3235&amp;type=1">&lt;&lt; 返回</a>
+                <h4 class="modal-title text-left cate-title">编辑收入分类</h4>
+            </div>
+            <div class="tab-content" style="border: none">
+                <div id="tab-payments" class="tab-pane active">
+                    <form class="form-horizontal validation" action="https://b.izhangmai.com/shop/add_payments"
+                          method="post" data-reload="#tab-2 .pay-log">
+                        <div class="modal-body bg-white">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><span class="text-danger">*</span>类型：</label>
+                                    <div class="col-sm-6">
+                                        <div class="inpt ">
+                                            <select class="chosen-select supplier-select" name="category"
+                                                    style="display: none;">
+                                                <option value="">请添加类型...</option>
+                                            </select>
+                                            <div class="chosen-container chosen-container-single chosen-container-single-nosearch chosen-container-active"
+                                                 style="width: 100%;" title=""><a class="chosen-single"
+                                                                                  tabindex="-1"><span>请添加类型...</span>
+                                                <div><b></b></div>
+                                            </a>
+                                                <div class="chosen-drop">
+                                                    <div class="chosen-search"><input type="text" autocomplete="off"
+                                                                                      readonly=""></div>
+                                                    <ul class="chosen-results">
+                                                        <li class="active-result result-selected"
+                                                            data-option-array-index="0">请添加类型...
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-link edit-payments-cate" data-toggle="tab"
+                                            href="#tab-payments-cate" aria-expanded="false"
+                                            data-url="https://b.izhangmai.com/shop/payments_cate_input?shop_id=3235&amp;type=1">
+                                        <i class="icon-edit"></i> 编辑类型
+                                    </button>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><span class="text-danger">*</span>金额：</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" name="amount" datatype="money" value=""
+                                               nullmsg="请填写金额">
+                                    </div>
+                                    <span class="help-block m-b-none"></span>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 0">
+                                    <label class="col-sm-3 control-label">备注：</label>
+                                    <div class="col-sm-6">
+                                        <textarea class="form-control" name="remark" value=""
+                                                  style="resize:none"></textarea>
+                                        <span class="help-block m-b-none"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 0">
+                                    <div class="col-sm-6">
+                                        <input type="hidden" name="shop_id" value="3235">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary">保存</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="tab-payments-cate" class="tab-pane  payment-cate" style="max-height: 500px;overflow-y: auto">
+                    <div class="panel-body " style="border: none;position: relative;">
+                        <div class="table-responsive ">
+                            正在加载...
+                        </div>
+                    </div>
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
+            <!--<div id="url" class="hide"></div>-->
+        </div>
+    </div>
+
+</div>
+<!--新增收入/支出-->
+<div class="modals addPay" >
+    <div class="modals-dilog w-600">
+        <div class="modals-content">
+            <div class="modals-head">
+                <span>新增客户</span>
+                <div class="closeModals close-m">&times;</div>
+            </div>
+            <div class="modals-body maxheight">
+                <div class="modals-body-content">
+                    <div class="madals-container active">
+                        <!-- Tab panes -->
+                        <div class="tab-content" style="border-bottom: none">
+                            <form action="" id="addpay-form">
+                                <div class="form-group clearfix">
+                                    <label class="col-sm-3 control-label"><span class="text-danger">*</span>类型：</label>
+                                    <div class="col-sm-6">
+                                        <select name="" id="ortherselect" style="width: 100%">
+                                            <option value="0">请添加类型...</option>
+                                            <option value="1">11</option>
+                                            <option value="2">22</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="open-modals line-30 blur addTypeEdit" data-open="addTypeEdit" data-head="请填写支出分类">
+                                            <i class="icon-edit"></i>
+                                            编辑类型
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label class="col-sm-3 control-label"><span class="text-danger">*</span>金额：</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" name="amount" datatype="money" value=""
+                                               nullmsg="请填写金额">
+                                    </div>
+                                    <span class="help-block m-b-none"></span>
+                                </div>
+                                <div class="form-group clearfix" style="margin-bottom: 0">
+                                    <label class="col-sm-3 control-label">备注：</label>
+                                    <div class="col-sm-6">
+                                        <textarea class="form-control" name="remark" value=""
+                                                  style="resize:none"></textarea>
+                                        <span class="help-block m-b-none"></span>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="clearfix foots">
+                            <div class="rt">
+                                <a href="#" class="btn sure-bg">保存</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modals addTypeEdit" >
+    <div class="modals-dilog w-600">
+        <div class="modals-content">
+            <div class="modals-head">
+                <span>编辑收入分类</span>
+                <div class="close-m closeModals font-size-14 blue">&lt;&lt;返回</div>
+            </div>
+            <div class="modals-body maxheight">
+                <div class="modals-body-content">
+                    <div class="madals-container active">
+                        <!-- Tab panes -->
+                        <div class="tab-content " style="border-bottom: none;max-height: 500px;overflow-y: scroll">
+                            <form action="" id="" >
+                                <div class="form-group clearfix margin-t10">
+                                    <label class="col-sm-3 control-label text-right">收入类型：</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" name="paytype" datatype="money" value=""
+                                             >
+                                    </div>
+                                    <div  class="col-sm-3" >
+                                        <a href="#" class="btn sure-bg">保存</a>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class=" margin-t10 payList-table">
+                                <table id="payList"></table>
+                            </div>
+                        </div>
+                        <!--<div class="clearfix foots">-->
+                            <!--<div class="rt">-->
+                                <!--<a href="#" class="btn sure-bg">确定</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>-->
+
+<!--<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>-->
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+<!--<script src="../js/jqGrid.js"></script>-->
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"></script>-->
+<script src="../assets/js/date-time/bootstrap-datepicker.min.js"></script>
+<script src="../assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<script src="../jss/moment.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/daterangepicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery.datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+<script src="https://sapi.map.baidu.com/api?v=2.0&amp;s=1&amp;ak=KackR6TA9CAAdNfa09wLB1m6&amp;language=zh_cn&amp;callback=baiduloadedMapApi&amp;_st_=1438393791266"
+        type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ($(window).width() < 1420) {
+            $('.wodechaoshiapre').addClass('wodechaoshiapre-50');
+        }
+        if ($(window).width() > 1700) {
+            $('.wodechaoshiapre').attr("class", "wodechaoshiapre relativeps wodechaoshiapre-25");
+        }
+        if ($(window).width() > 1420 && $(window).width() < 1700) {
+
+            $('.wodechaoshiapre').attr("class", "wodechaoshiapre relativeps");
+        }
+        $(window).on("resize", function () {
+
+            if ($(window).width() < 1420) {
+                $('.wodechaoshiapre').addClass('wodechaoshiapre-50');
+            } else if ($(window).width() > 1420 && $(window).width() < 1700) {
+
+                $('.wodechaoshiapre').attr("class", "wodechaoshiapre relativeps");
+            } else if ($(window).width() > 1700) {
+                $('.wodechaoshiapre').attr("class", "wodechaoshiapre relativeps wodechaoshiapre-25");
+            }
+        });
+
+    });
+    var $modal = $('#modify-modal');
+    $(document).on('focus', '#coordinate', function () {
+        $('.base-info').hide();
+        $('.btn-submit').hide();
+        //$('.btn-sure').show();
+        $('#map-container').show();
+        if (!$modal.find('#keyword').val()) {
+            $modal.find('#keyword').val($modal.find('.address-input').val());
+        }
+        //加载地图
+        var lnt = $("#coordinate").attr('data-jd');
+        var lat = $("#coordinate").attr('data-wd');
+
+        if (lnt && lat) {
+            $("#show-zb").html(lnt + " , " + lat);
+        }
+        map = new BMap.Map("allmap");
+        initmap(map, lnt, lat);
+    });
+    //初始化地图
+    function initmap(map, lnt, lat) {
+        var init_prov = $("#city-box").attr('data-prov');
+        var init_city = $("#city-box").attr('data-city');
+        var init_area = $("#city-box").attr('data-area');
+        var zoom_point;
+        if (lnt && lat) {
+            var point = new BMap.Point(lnt, lat);
+            map.centerAndZoom(point, 13);
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+            zoom_point = point;
+        } else {
+            var zoom_city = '成都市';
+            if (init_city) {
+                zoom_city = init_city;
+            } else if (init_prov) {
+                zoom_city = init_prov;
+            }
+            map.centerAndZoom(zoom_city, 12);
+            zoom_point = zoom_city;
+        }
+
+        //放大缩小
+        map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+        map.addControl(new BMap.NavigationControl()); //添加默认缩放平移控件
+        //单击获取点击的经纬度
+        map.addEventListener("click", function (e) {
+            $("#show-zb").html(e.point.lng + "," + e.point.lat);
+            point = new BMap.Point(e.point.lng, e.point.lat);
+            var marker = new BMap.Marker(point);
+            map.clearOverlays();
+            map.addOverlay(marker);
+            $("#coordinate").attr('data-jd', e.point.lng);
+            $("#coordinate").attr('data-wd', e.point.lat);
+        });
+    }
+    $(document).on('click', '#mapBtn', function () {
+        var lng = $("#coordinate").attr('data-jd');
+        var lat = $("#coordinate").attr('data-wd');
+        if (lng && lat) {
+            $("#coordinate").val(lng + ' - ' + lat);
+            $("#coordinate-parent").removeClass('has-error');
+            $("#coordinate").removeClass('Validform_error');
+            $("#coordinate").next('.help-block').text('');
+
+            $('#map-container').hide();
+            $('.base-info').show();
+            $('.btn-submit').show();
+            $('.btn-sure').hide();
+        } else {
+            $("#show-zb").html('<span style="color:red">请拾取坐标！</span>');
+        }
+
+    });
+    //时间
+    // 手机号码验证
+    jQuery.validator.addMethod("isMobile", function (value, element) {
+        var length = value.length;
+        var mobile = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
+        return this.optional(element) || (length == 11 && mobile.test(value));
+    }, "请正确填写您的手机号码");
+    $('#shopBaseInfo').validate({
+        rules: {
+            address: {
+                required: true,
+            },
+            coordinate: {
+                required: true,
+            },
+            boss_name: {
+                required: true,
+            },
+            mobile: {
+                required: true,
+                minlength: 11,
+                // 自定义方法：校验手机号在数据库中是否存在
+                // checkPhoneExist : true,
+                isMobile: true
+            },
+            phone: {
+                required: true,
+                minlength: 11,
+                // 自定义方法：校验手机号在数据库中是否存在
+                // checkPhoneExist : true,
+                isMobile: true
+            },
+            send_price: {
+                required: true,
+            }
+        },
+        messages: {
+            address: {
+                required: "请填写超市地址",
+            },
+            coordinate: "请拾取超市坐标",
+            boss_name: "请填写负责人姓名",
+            mobile: {
+                required: "请填写负责人联系方式",
+                minlength: "确认手机不能小于11个字符",
+                isMobile: "请正确填写您的手机号码"
+            },
+            phone: {
+                required: "请填写超市地址",
+                minlength: "确认手机不能小于11个字符",
+                isMobile: "请正确填写配送电话"
+            },
+            send_price: {
+                required: "请填写起送金额",
+            },
+        },
+        onfocusout: function (element) {
+            $(element).valid();
+        },
+        submitHandler: function (form) {
+            var newPwd = $('#newPwd').val();
+            console.log(password)
+
+
+        },
+        debug: true,
+        success: function () {
+
+        }
+    })
+
+    //快捷查询
+    $(document).on('click', '.quick-select button', function () {
+        $(this).siblings('button').attr('class', 'btn btn-white date_type');
+        $(this).attr('class', 'btn btn-success date_type');
+        var dataType = $(this).attr('data-type');
+    })
+
+    $('#addpay-form').validate({
+        rules: {
+            address: {
+                required: true,
+            },
+            coordinate: {
+                required: true,
+            },
+            boss_name: {
+                required: true,
+            },
+            mobile: {
+                required: true,
+                minlength: 11,
+                // 自定义方法：校验手机号在数据库中是否存在
+                // checkPhoneExist : true,
+                isMobile: true
+            },
+            phone: {
+                required: true,
+                minlength: 11,
+                // 自定义方法：校验手机号在数据库中是否存在
+                // checkPhoneExist : true,
+                isMobile: true
+            },
+            send_price: {
+                required: true,
+            }
+        },
+        messages: {
+            address: {
+                required: "请填写超市地址",
+            },
+            coordinate: "请拾取超市坐标",
+            boss_name: "请填写负责人姓名",
+            mobile: {
+                required: "请填写负责人联系方式",
+                minlength: "确认手机不能小于11个字符",
+                isMobile: "请正确填写您的手机号码"
+            },
+            phone: {
+                required: "请填写超市地址",
+                minlength: "确认手机不能小于11个字符",
+                isMobile: "请正确填写配送电话"
+            },
+            send_price: {
+                required: "请填写起送金额",
+            },
+        },
+        onfocusout: function (element) {
+            $(element).valid();
+        },
+        submitHandler: function (form) {
+            var newPwd = $('#newPwd').val();
+            console.log(password)
+
+
+        },
+        debug: true,
+        success: function () {
+
+        }
+    })
+
+    var ortherpayCol= [
+        {
+            label : '时间',
+            name: 'time',
+            align:'center',
+            width: 200,
+        },
+        {
+            label: '收支名称',
+            name: 'payName',
+            width: 200,
+            align:'center',
+            sortable:true,
+            sorttype:"number"
+        },
+        {
+            label: '类型',
+            name: 'payType',
+            align:'center',
+            width: 200,
+            sortable:false,
+            formatter: function (cellvalue, options, rowObject) {
+                if(cellvalue==1){
+                    return '<span>收入</span>'
+                }else if(cellvalue==2){
+                    return '<span class="red">支出</span>'
+                }
+            }
+        },
+        {
+            label: '金额',
+            name: 'money',
+            align:'center',
+            width: 160,
+            sortable:false
+        },
+        {
+            label: '创建人',
+            name: 'creater',
+            align:'center',
+            width: 160,
+            sortable:false
+        },
+        {
+            label: '备注',
+            name: 'remake',
+            align:'center',
+            width: 200,
+        },
+        {
+            label: '操作',
+            name: 'operation',
+            align:'center',
+            width: 160,
+            formatter: function (cellvalue, options, rowObject) {
+                return '<span class="table-bar delete" onclick="delete_tab('+rowObject.id+')">删除</span>'
+            }
+
+        }
+    ];
+    jqgridTable({
+        "tableId":"#ortherpay-table",
+        "pagerId":"",
+        "url":"../data/system/ortherPay.json",
+        "colModel":ortherpayCol,
+        "footerrow":false,
+        "height":300,
+        "cellEdit":false,
+        "footerrowFun":'',
+        "multiselect":false
+
+    })
+    $.ajax({
+        url:"../data/system/ortherPay.json",
+        type:"POST",
+        data:'',
+        success: function (data) {
+            var account=data.account;
+            if(account==0){
+                $('.table-box').hide();
+            }else if(account!=0){
+                $('.table-box').show();
+                $('.zmalertno').hide();
+
+            }
+            $('#ortherPayNum').html(account)
+        },
+        error: function () {
+            alert('网络延迟或服务器端错误')
+        }
+    })
+//选择类型列表
+    var payListCol= [
+        {
+            label : '收入类型',
+            name: 'paytype',
+            align:'center',
+            width: 220,
+        },
+        {
+            label: '操作',
+            name: 'operation',
+            align:'center',
+            width: 220,
+            formatter: function (cellvalue, options, rowObject) {
+                return '<span class="table-bar delete" onclick="delete_tab('+rowObject.id+')">删除</span>'
+            }
+
+        }
+    ];
+    jqgridTable({
+        "tableId":"#payList",
+        "pagerId":"",
+        "url":"../data/system/payList.json",
+        "colModel":payListCol,
+        "footerrow":false,
+        "height":100,
+        "cellEdit":false,
+        "footerrowFun":'',
+        "multiselect":false
+
+    })
+</script>
+
+</body>
+</html>

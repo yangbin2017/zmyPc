@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.datetimepicker.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script>
+    <style>
+        .tabs-container{
+            margin: 0 ;
+            padding:20px;
+        }
+        #tab-1 {
+            background-color: #f6f6f6;
+            padding: 15px;
+        }
+        .ui-jqgrid tr.jqgrow td{
+            overflow: inherit;
+            white-space: normal;
+        }
+        .payMoney input{
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+
+        <div class="main-content-right">
+            <div class="body-content body-content-bg" style="overflow-y: scroll">
+
+                <div class="inner-scollcontent" >
+                    <div class="ibox" style="margin-bottom: 0" id="modify-shop">
+                        <div class="tabs-container">
+                            <!--功能条-->
+                            <div class="zmbox clearfix page-search-area">
+                                <!-- 输入框-->
+
+                                <form id="search-form" action="">
+                                    <div class="boxpart">
+                                        <div class="t">手机号/会员编码：</div>
+                                        <div class="inpt">
+                                            <input type="text" class="pintxt" name="phone" value="">
+                                        </div>
+
+                                        <div class="boxbtn">
+                                            <button type="submit" class="btn btn-primary" id="cheshixiaoguoid1">查询</button>
+                                        </div>
+                                    </div>
+                                    <!-- 下拉框-->
+                                    <div class="boxpart" style="margin-left:10px;padding-right: 15px">
+                                        <div class="t">生日：</div>
+                                        <div class="inpt">
+                                            <input type="text" id="birthday-search" class="pintxt birthday-time" name="birthday" value="">
+                                        </div>
+                                        <div class="t">性别：</div>
+                                        <div class="inpt ">
+                                            <div class="select-box ">
+                                                <div class="bill-input ">
+                                                    <input type="text" value="全部">
+                                                    <i class="icon-sort-down"></i>
+                                                </div>
+                                                <div class="select-down role-select" style="display: none;">
+                                                    <div class="select-list">全部</div>
+                                                    <div class="select-list">男</div>
+                                                    <div class="select-list">女</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="boxpart">
+                                        <a class="reset" href="javascript:;">清空筛选条件</a>
+                                    </div>
+                                </form>
+
+
+                            </div>
+                            <!--功能条-->
+                            <div class="zmbox clearfix page-title-area">
+                                <div class="boxpart page-title">
+        <span class="txt1">我的会员																												<!--系统文字提示-->
+								<style rel="stylesheet">
+                                    .tooltip-inner{ text-align:left;border:1px solid #dedede; background:#ffffff; color:#666;max-width:400px;
+                                    text-shadow: none !important;}
+                                    .tooltip-inner b{ margin-right:10px; display:block;margin:4px 0;}
+                                    .tooltip.right .tooltip-arrow{border-right-color: #8A8A8A;}
+                                </style>
+								<span class="icon-question-sign" style="color:#55C663;vertical-align: middle;margin-top: -3px;font-size:18px;" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="
+								<b>会员排序：</b>可以按照会员消费金额、累计获得积分、累计订单、剩余积分等排序<br>
+								<b>会员到店时间：</b>按照会员消费积分、购买商品时间统计未到店时间<br>
+								<b>是否加入APP：</b>该会员是否在使用APP端智慧超市<br>
+
+
+								"></span>
+								<script type="text/javascript">
+                                    !function(){
+
+                                        if($('[data-toggle="tooltip"]').length){
+                                            $(function () {
+                                                $('[data-toggle="tooltip"]').tooltip({'html':true})
+                                            }); return}
+                                        setTimeout(arguments.callee,30)
+
+                                    }()
+                                </script>
+            <!--系统文字提示--></span>
+                                    <span class="txt2">共<span class="text-info">1</span>个会员</span>
+                                </div>
+                                <!-- 居右区域-->
+                                <div class="pull-right">
+                                    <div style="display: none;" class="tanchukuan1 import-div">
+                                        <!--带标题内容区-->
+                                        <div class="zmwrap">
+                                            <div class="zmwrap-t">
+                                                <div class="pull-left">导入会员</div>
+                                                <div class="pull-right">
+                                                    <button class="btn btn-link guanbituanchuk" style="color: #FF6E6E;"><i class="icon-remove font-size-20"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="zmwrap-c">
+                                                <!--功能条-->
+                                                <div class="zmbox clearfix margin-left-right-0">
+                                                    <!-- 输入框-->
+                                                    <div class="boxpart">
+                                                        <div class="boxbtn">
+                                                            1.还没创建过导入数据文件，
+                                                            <a class="btn btn-primary" href="https://b.izhangmai.com/shop_members.xls">下载模版</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--功能条-->
+                                                <div class="zmbox clearfix margin-left-right-0">
+                                                    <!-- 输入框-->
+                                                    <div class="boxpart">
+                                                        <div class="boxbtn">
+                                                            2.已创建好导入数据文件，直接导入；
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr class="zmhr zmhrmargin0">
+                                                <!--功能条-->
+                                                <div class="zmbox clearfix  margin-left-right-0">
+                                                    <!-- 下拉框-->
+                                                    <div class="boxpart padding-0">
+                                                        <div class="t">所属超市：</div>
+                                                        <div class="inpt ">
+                                                            <div class="select-box ">
+                                                                <div class="bill-input ">
+                                                                    <input type="text" value="全部">
+                                                                    <i class="icon-sort-down"></i>
+                                                                </div>
+                                                                <div class="select-down role-select" style="display: none;">
+                                                                    <div class="select-list">全部</div>
+                                                                    <div class="select-list">连锁总部</div>
+                                                                    <div class="select-list">黎蓉干杂店</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--功能条-->
+                                                <div class="zmbox clearfix margin-left-right-0">
+                                                    <!-- 下拉框-->
+                                                    <div class="boxpart padding-0">
+                                                        <div class="inpt">
+                                                            <div class="input-append">
+                                                                <input style="width: 198px; height: 32px;" id="photoCover" class="pintxt" type="text" readonly="readonly" value="请选择导入的文件">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="boxpart margin-left-10- padding-0">
+                                                        <div class="boxbtn relativeps">
+                                                            <div style="width: 278px ; height: 32px ;font-size: 100px; z-index: 3 ;left: -193px; position: absolute; overflow: hidden;">
+                                                                <input type="file" name="lefile" id="lefile" style="-ms-transform: scaleX(200); transform: scaleX(200); height: 32px; position: absolute; filter:alpha(opacity=0); opacity: 0; top: 0px; right:106889px; z-index: 4; background: #ccc;">
+                                                            </div>
+                                                            <button class="btn btn-link">选择文件</button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- 输入框-->
+                                                    <div class="boxpart padding-0">
+                                                        <div class="boxbtn">
+                                                            <button class="btn btn-primary" id="upload-shop_goods_excel">上传</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="text-danger">*导入文件为.xls的excel文件，大小不超过2M；每次导入的会员数量不能超过8000条。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" id="daoruexcel">导入会员</button>
+                                    <i class="jiange"></i>
+                                    <span class="btn btn-primary btn-load open-modals" data-open="messageRecode" data-head="消息记录" > 消息记录</span>
+                                    <i class="jiange"></i>
+                                    <span class="btn btn-warning btn-send open-modals border-none" data-open="sendMessage" data-head="发送消息" > 推送消息</span>
+                                </div>
+                            </div>
+                            <div class="margin-t10" style="margin: 10px 20px 0 20px">
+                                <table id="stockOrder-table"></table>
+                                <div class="zmalertno nodata" style="margin:10px 0 0 0;">
+                                    <i class="icon-exclamation-sign"></i> <span>暂无数据</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+<!--编辑-->
+<div class="modals vipuserInfo" >
+    <div class="modals-dilog w-600">
+        <div class="modals-content">
+            <div class="modals-head">
+                <span>编辑会员信息</span>
+                <div class="close-m closeModals">&times;</div>
+            </div>
+            <div class="modals-body maxheight">
+                <div class="modals-body-content">
+                    <div class="madals-container active">
+                        <!-- Tab panes -->
+                        <div class="tab-content " style="border-bottom: none">
+                            <form class="form-horizontal validation" action="" method="post">
+                                <div class="modal-body bg-white">
+                                    <div class="row">
+                                        <div class="form-group" >
+                                            <label class="col-sm-3 control-label">会员编码：</label>
+
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="member_only_code" maxlength="20" value="" datatype="n" ignore="ignore" nullmsg="请填写会员编码！" errormsg="只能为数字" ajaxurl="https://b.izhangmai.com/vipuser/ajax_code?id=37382">
+                                                <span class="help-block m-b-none"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" >
+                                            <label class="col-sm-3 control-label">姓名：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="name" value="" maxlength="10">
+                                                <span class="help-block m-b-none"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">性别：</label>
+                                            <div class="col-sm-9 padding-top10" style="padding-top: 5px">
+                                                <div class="col-sm-2">
+                                                    <span class="i-checks"><label> <input type="radio" name="sex" value="男"> <i></i> 男</label></span>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <span class="i-checks"><label> <input type="radio" name="sex" value="女"> <i></i> 女 </label></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" >
+                                            <label class="col-sm-3 control-label"><span class="text-danger">*</span>手机号码：</label>
+
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="phone" maxlength="11" value="13340862086" datatype="mobile" nullmsg="请填写手机号！" errormsg="手机号格式错误" ajaxurl="https://b.izhangmai.com/vipuser/ajax_phone?id=37382">
+                                                <span class="help-block m-b-none"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" >
+                                            <label class="col-sm-3 control-label">生日：</label>
+
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control birthday-time" name="birthday" data-val="" value="">
+                                                <span class="help-block m-b-none"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" >
+                                            <label class="col-sm-3 control-label">剩余积分：</label>
+
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="score" maxlength="10" value="0" datatype="n|money" ignore="ignore" nullmsg="" errormsg="请正确填写积分">
+                                                <span class="help-block m-b-none"></span>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="id" value="37382">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary">确定</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--消费详情-->
+<div class="modals vipuserDetail" >
+    <div class="modals-dilog w-1040">
+        <div class="modals-content">
+            <div class="modals-head">
+                <span>会员消费详情</span>
+                <div class="close-m closeModals">&times;</div>
+            </div>
+            <div class="modals-body maxheight">
+                <div class="modals-body-content">
+                    <div class="madals-container active">
+                        <!-- Tab panes -->
+                        <div class="tab-content " style="border-bottom: none">
+                            <div class="modal-body porela formdiyigeduiqi">
+                                <table style="width: 100%; font-size: 14px; line-height: 25px;">
+                                    <tbody><tr>
+                                        <td>会员手机号：13340862086</td>
+                                        <td>累计消费金额：￥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>累计积分：0.00</td>
+                                        <td>现有积分：0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>加入时间：2017-04-21</td>
+                                        <td>是否使用APP：是</td>
+                                    </tr>
+                                    </tbody></table>
+                                <div class="tabs-container" style=" margin: 0; margin-top: 20px;">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active">
+                                            <a data-toggle="tab" href="#tab-sale" aria-expanded="true" data-url="https://b.izhangmai.com/vipuser/sale_orders?phone=13340862086">消费记录</a>
+                                        </li>
+                                        <li class="">
+                                            <a data-toggle="tab" href="#tab-sale" aria-expanded="false" data-url="https://b.izhangmai.com/vipuser/exchange_orders?phone=13340862086">兑换记录</a>
+                                        </li>
+                                        <li class="pull-right">
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" style="border: none;position: relative">
+
+                                        <div id="tab-sale" class="tab-pane active">
+                                            <div class="panel-body" style="border: none;min-height: 400px">
+                                                <div class="table-responsive  margin-0 margin-top-10">
+                                                    <div class="zmalertno" style="margin:10px 0 0 0;">
+                                                        <i class="icon-exclamation-sign"></i> <span>暂无数据</span>
+                                                    </div></div>
+                                                <!--分页居右-->
+                                                <div id="ajax-page" class="pagemain page-you">
+                                                    <div id="url" class="hide">https://b.izhangmai.com/vipuser/sale_orders?phone=13340862086&amp;_=1493256463867</div>    </div>
+                                               </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--消息记录-->
+<div class="modals messageRecode" >
+    <div class="modals-dilog w-1040">
+        <div class="modals-content">
+            <div class="modals-head">
+                <span>消息记录</span>
+                <div class="close-m closeModals">&times;</div>
+            </div>
+            <div class="modals-body maxheight">
+                <div class="modals-body-content">
+                    <div class="madals-container active">
+                        <!-- Tab panes -->
+                        <div class="tab-content " style="border-bottom: none;min-height: 200px;">
+                            <div class="margin20">
+                                <table id="messageRecode-table"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--推送消息-->
+<div class="modals sendMessage" >
+    <div class="modals-dilog w-600">
+        <div class="modals-content">
+            <div class="modals-head">
+                <span>发送消息</span>
+                <div class="close-m closeModals">&times;</div>
+            </div>
+            <div class="modals-body maxheight">
+                <div class="modals-body-content">
+                    <div class="madals-container active">
+                        <!-- Tab panes -->
+                        <div class="tab-content " style="border-bottom: none">
+                            <form action="" method="post" class="form-horizontal validation" role="form">
+                                <div class="modal-body">
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">消息内容：</label>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="content" autocomplete="off" placeholder="请输入消息内容，200字以内" maxlength="200" datatype="*" nullmsg="" errormsg="" style="height: 185px"></textarea>
+                                            <span class="help-block m-b-none input-tip" style="color: #a94442"></span>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    <div class="alert " style="text-align:left;">
+                                        <h3 style="border-bottom: 1px dashed #d4dfed;font-size: 14px;margin: 0 0 10px 0;padding:0 0 10px 0">规则：</h3>
+                                        <p style="font-size: 14px;">1、每周最多只能发送 3 条消息；</p>
+                                        <p style="font-size: 14px;">2、禁止发布虚假消息，一经发现后果自负。</p>
+                                    </div>
+                                    <div class="id-group hide"></div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" type="submit">发 送</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>-->
+
+<!--<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>-->
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+<!--<script src="../js/jqGrid.js"></script>-->
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"></script>-->
+<script src="../assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<script src="../js/jquery.datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+
+<script type="text/javascript">
+
+    $('.birthday-time').datetimepicker({
+        lang:"ch", //语言选择中文 注：旧版本 新版方法：$.datetimepicker.setLocale('ch');
+        format:"Y-m-d",      //格式化日期
+        timepicker: false
+    });
+    var shopmanageCol= [
+        {
+            label : '会员编号',
+            name: 'barcode',
+            align:'center',
+            width: 140,
+        },
+        {
+            label: '手机号',
+            name: 'shopName',
+            width: 140,
+            align:'center',
+            sortable:true,
+            sorttype:"number"
+        },
+        {
+            label: '姓名',
+            name: 'standard',
+            align:'center',
+            width: 100,
+            formatter: function (cellvalue, options, rowObject) {
+                var str='';
+                str+=cellvalue==''?'--':cellvalue;
+                return str
+            }
+        },
+        {
+            label: '性别',
+            name: 'unit',
+            align:'center',
+            width: 100,
+        },
+        {
+            label: '生日',
+            name: 'type',
+            align:'center',
+            width: 100,
+        },
+        {
+            label: '消费金额',
+            name: 'modal',
+            align:'center',
+            width: 100,
+        },
+        {
+            label: '累计获得积分',
+            name: 'purchasePrice',
+            align:'center',
+            width: 160,
+        },
+        {
+            label: '累计订单',
+            name: 'salePrice',
+            align:'center',
+            width: 100,
+        },
+        {
+            label: '剩余积分',
+            name: 'grossProfitRate',
+            align:'center',
+            width: 100,
+        },
+        {
+            label: '到店时间',
+            name: 'storeNum',
+            align:'center',
+            width: 100,
+        },
+        {
+            label: '加入时间',
+            name: 'monthSale',
+            align:'center',
+            width: 100,
+        },
+        {
+            label: '是否使用APP',
+            name: 'shopStatus',
+            align:'center',
+            width: 100,
+            formatter: function (cellvalue, options, rowObject) {
+                var str=''
+                if(cellvalue==0){
+                    str+='<span>正常</span>'
+                }else if(cellvalue==1){
+                    str+='<span class="red">特价</span>'
+                }else if(cellvalue==2){
+                    str+= '<span class="red-5">惠赠</span>'
+                }
+                return str;
+            }
+        },
+        {
+            label: '操作',
+            name: 'operation',
+            align:'center',
+            width: 200,
+            formatter: function (cellvalue, options, rowObject) {
+                var gid = "'#"+options.gid +"'";
+                var str='<div>\
+                        <span class="table-bar" onclick="vipuser_edit('+ rowObject.id + ','+ gid + ')"><i class="icon-edit"></i>编辑</span>\
+                        <span class="table-bar" onclick="vipuser_detail('+ rowObject.id + ','+ gid + ')"><i class="icon-search"></i>消费详情</span>';
+                str+='</div>'
+                return str;
+            }
+        }
+    ];
+    jqgridTable({
+        "tableId":"#stockOrder-table",
+        "pagerId":"",
+        "url":"../data/shop/shopmanageList.json",
+        "colModel":shopmanageCol,
+        "footerrow":false,
+        "height":'100%',
+        "cellEdit":false,
+        "footerrowFun":'',
+        "multiselect":false
+
+    })
+    //消息记录
+    var messageRecodeCol= [
+        {
+            label : '发布时间',
+            name: 'sendTime',
+            align:'center',
+            width: 200,
+        },
+        {
+            label: '消息内容',
+            name: 'content',
+            width: 500,
+            align:'left',
+            sortable:false,
+            sorttype:"number"
+        },
+        {
+            label: '接收人数',
+            name: 'sendNum',
+            align:'center',
+            width: 200,
+        }
+    ];
+    jqgridTable({
+        "tableId":"#messageRecode-table",
+        "pagerId":"",
+        "url":"../data/messageRecode.json",
+        "colModel":messageRecodeCol,
+        "footerrow":false,
+        "height":'100%',
+        "cellEdit":false,
+        "footerrowFun":'',
+        "multiselect":false
+
+    })
+    //编辑
+    function vipuser_edit(rowId,gid){
+        $('.vipuserInfo').show()
+    }
+    //详情
+    function vipuser_detail(rowId,gid){
+        $('.vipuserDetail').show()
+    }
+    //导入会员
+    $(document).on('click','#daoruexcel', function () {
+        $(this).siblings('.tanchukuan1').toggle()
+    })
+
+    
+</script>
+</body>
+</html>

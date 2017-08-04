@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <style rel="stylesheet" type="text/css">
+        .allpayicon1 {
+            float: left;
+            margin-left: 0px;
+            line-height: 27px;
+            font-size: 14px;
+            width: 160px;
+        }
+
+        .allpayicon1 input {
+            width: 18px;
+            display: inline;
+            height: 18px;
+            vertical-align: middle;
+            margin: 0;
+            margin-top: 0;
+        }
+
+        i, em {
+            font-style: normal;
+        }
+
+        .allpaysetbtn {
+            display: inline-block;
+            background-image: url("https://b.izhangmai.com/img/main/dayang_x1.png");
+            width: 90px;
+            height: 30px;
+            background-position: -90px 0;
+            line-height: 30px;
+            text-indent: 21px;
+            color: #FFFFFF;
+            margin-top: -4px;
+            cursor: pointer;
+            margin-left: 24px;
+        }
+
+        .allpaysetbtn-close {
+            background-position: -180px 0;
+        }
+        .allpaysetbtn-close dl{
+            padding-left: 14px;
+            display: block;
+            color: #848484;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+
+        <div class="main-content-right">
+            <div class=" body-content-bg" >
+
+                <div class="inner-scollcontent">
+                    <div class="zmwrap margin-t10">
+                        <div class="zmwrap-t">
+                            <div class="pull-left">自定义支付方式设置 </div>
+                        </div>
+                        <div class="zmwrap-c">
+                            <div style="padding: 30px 0;">
+                                <div class=" clearfix">
+                                    <div class="allpayicon1">
+                                        <input type="checkbox" class="btn-ajax no-confirm" checked="checked"  data-reload="#contentbox">刷卡支付                               <a href="javascript:;" data-url="https://b.izhangmai.com/system/remove_pay_defined?id=278" data-msg="你确定删除吗？" data-reload="#contentbox" class="btn-ajax">删除</a>
+                                    </div>
+                                    <div class="pull-left" style="padding-left: 60px;">
+                                        <button type="button" class="btn btn-primary btn-modify open-modals" data-open="addPayType" data-head="自定义支付类型">自定义添加</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" clearfix" style="padding-bottom: 30px"></div>
+                        </div>
+                    </div>
+                    <div class="zmwrap">
+                        <div class="zmwrap-t">
+                            <div class="pull-left">集成移动支付方式设置</div>
+                        </div>
+                        <div class="zmwrap-c row">
+                            <div class=" clearfix" style="padding-bottom: 30px">
+                                <div style="font-size: 16px; padding-left: 60px; float: left; margin: 24px 0 20px;">
+                                    <div class="allpayicon1" style="margin-left: 0">
+                                        <img src="https://b.izhangmai.com/img/allpay/payimg-2.jpg"><i>集成支付宝支付</i>
+                                    </div>
+
+
+                                    <a class="btn btn-primary btn-apply" style="margin: 0 14px;" href="../system/system_set_alipay.html">开通申请</a>
+                                </div>
+
+                                <div class="clearfix"></div>
+
+                                <div style="font-size: 16px; padding-left: 60px; float: left;">
+                                    <div class="allpayicon1">
+                                        <img src="https://b.izhangmai.com/img/allpay/payimg-3.jpg"><i>集成微信支付</i>
+                                    </div>
+                                    <a class="btn btn-primary btn-apply" style="margin: 0 14px;" href="../system/system_set_weixin.html">开通申请</a>
+                                </div>
+                            </div>
+
+
+                            <div class=" clearfix" style="padding-bottom: 30px"></div>
+                        </div>
+                    </div>
+
+                    <div class="zmwrap">
+                        <div class="zmwrap-t">
+                            <div class="pull-left">进货单冲减负库存</div>
+                            <div class="pull-left">
+                                <button class="btn  btn-success sync-to-shop border-none open-modals" data-open="useShopStore" data-head="应用到店铺" shop-type="1"  type="button">应用到店铺</button>
+                            </div>
+                        </div>
+                        <div class="zmwrap-c" style="height: 180px;">
+                            <div style="width: 550px;padding-left: 40px">
+                                <div class="switch-box open1">
+                                    <div class="switch-content open2"></div>
+                                    <div class="switch-open">开</div>
+                                    <div class="switch-close">关</div>
+                                </div>
+                            </div>
+                            <div style="padding-top: 20px">
+                                <p>说明：当出现商品负库存时，商品入库首先冲减负库存。</p>
+                                <p class="red">例：假设某商品当前库存为 -10，本次入库数量 20，冲减负库存，该商品入库后库存为 10</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+
+<!--添加/编辑-->
+<div class="modals addPayType">
+    <div class="modals-dilog w-600">
+        <div class="modals-content">
+            <div class="modals-head">
+                <span>自定义支付类型</span>
+                <div class="close-m closeModals">&times;</div>
+            </div>
+            <div class="modals-body maxheight">
+                <div class="modals-body-content">
+                    <div class="madals-container active">
+                        <!-- Tab panes -->
+                        <div class="tab-content " style="border-bottom: none">
+                            <form class="form-horizontal" action="" data-reload="#contentbox" method="post">
+                                <div class="modal-body bg-white">
+                                    <div class="row"><div class="form-group">
+                                        <label class="col-sm-3 control-label"><span class="text-danger">*</span>名称：</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" name="name" datatype="*" value="" nullmsg="请填写名称">
+                                        </div>
+                                        <span class="help-block m-b-none"></span>
+                                    </div>
+                                        <div class="form-group" style="margin-bottom: 0">
+                                            <label class="col-sm-3 control-label">说明：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="body" value="">
+                                                <span class="help-block m-b-none"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer margin-t10">
+                                    <button class="btn btn-primary">新增</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--应用到店铺-->
+<div class="modals useShopStore">
+    <div class="modals-dilog w-600">
+        <div class="modals-content">
+            <div class="modals-head">
+                <span>应用到店铺</span>
+                <div class="close-m closeModals">&times;</div>
+            </div>
+            <div class="modals-body maxheight">
+                <div class="modals-body-content">
+                    <div class="madals-container active">
+                        <!-- Tab panes -->
+                        <div class="tab-content " style="border-bottom: none">
+                            <div class="table-grid">
+                                <table id="useShopStore-table"></table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>-->
+
+<!--<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>-->
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+<!--<script src="../js/jqGrid.js"></script>-->
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"></script>-->
+<script src="../assets/js/date-time/bootstrap-datepicker.min.js"></script>
+<script src="../assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+
+<script type="text/javascript">
+    var useShopStoreCol = [
+        {
+            label: '店铺名称',
+            name: 'startime',
+            align: 'center',
+            width: 150,
+        },
+        {
+            label: '地址',
+            name: 'endtime',
+            width: 150,
+            align: 'center',
+            sortable: true,
+            sorttype: "number"
+        },
+        {
+            label: '负责人',
+            name: 'membername',
+            align: 'center',
+            width: 150,
+            sortable: false,
+        }
+    ];
+    jqgridTable({
+        "tableId": "#useShopStore-table",
+        "pagerId": "",
+        "url": "../data/member/memberRecordList.json",
+        "colModel": useShopStoreCol,
+        "footerrow": false,
+        "height": "100%",
+        "cellEdit": false,
+        "footerrowFun": '',
+        "multiselect": true
+
+    })
+    $(document).on('click','.btn-apply', function () {
+        var frameidSrc=$(this).attr('href');
+        localStorage.setItem('frameidSrc',frameidSrc);
+    })
+</script>
+</body>
+</html>

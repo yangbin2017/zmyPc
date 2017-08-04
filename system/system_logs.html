@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+    <link rel="stylesheet" type="text/css" href="../css/jquery.datetimepicker.css"/>
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script>
+    <style>
+        .tabs-container{
+            margin: 0 ;
+            padding:20px;
+        }
+        #tab-1 {
+            background-color: #f6f6f6;
+            padding: 15px;
+        }
+        .ui-jqgrid tr.jqgrow td{
+            overflow: inherit;
+            white-space: normal;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+
+        <div class="main-content-right">
+            <div class="body-content body-content-bg" style="overflow-y: scroll">
+
+                <div class="inner-scollcontent" >
+                    <div class="ibox" style="margin-bottom: 0" id="modify-shop">
+                        <div class="tabs-container">
+                            <!--功能条-->
+                            <div class="zmbox clearfix page-search-area">
+                                <form id="search-form" action="https://b.izhangmai.com/system/logs">
+                                    <!-- 输入框-->
+                                    <div class="boxpart">
+                                        <div class="t">操作人/关键字：</div>
+                                        <div class="inpt">
+                                            <input type="text" class="pintxt" name="keywords" value="" style="width: 200px">
+                                        </div>
+
+
+                                            <div class="t work-page">开始时间：</div>
+                                            <div class="inpt work-page">
+                                                <input type="text" class="pintxt startdate"
+                                                       name="date_log_star" style="width: 160px;">
+                                            </div>
+
+                                            <div class="t work-page">结束时间：</div>
+                                            <div class="inpt work-page">
+                                                <input type="text" class="pintxt enddate" name="date_log_end"
+                                                       style="width: 160px;">
+                                            </div>
+
+                                        <div class="boxbtn">
+                                            <button type="submit" class="btn btn-primary" id="cheshixiaoguoid1">查询</button>
+                                        </div>
+
+                                    </div>
+                                    <!-- 下拉框-->
+                                    <div class="boxpart" style="padding-right: 15px">
+                                        <div class="t">类型筛选：</div>
+                                        <div class="select-box">
+                                            <div class="bill-input ">
+                                                <input type="text" value="全部">
+                                                <i class="icon-sort-down"></i>
+                                            </div>
+                                            <div class="select-down " style="display: none;">
+                                                <div class="select-list">全部</div>
+                                                <div class="select-list">商品异动记录</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!--统计信息-->
+                            <div class="zmbox clearfix page-title-area">
+                                <div class="boxpart page-title">
+        <span class="txt1">系统日志
+            <!--系统文字提示-->
+								<style rel="stylesheet">
+                                    .tooltip-inner{ text-align:left;border:1px solid #dedede; background:#ffffff; color:#666;max-width:400px;text-shadow: none !important;
+                                        margin-top: 100px;}
+                                    .tooltip-inner b{ margin-right:10px; display:block;margin:4px 0;}
+                                    .tooltip.right .tooltip-arrow{border-right-color: #8A8A8A;}
+                                </style>
+								<span class="icon-question-sign" style="color:#55C663;vertical-align: middle;margin-top: -3px;font-size:18px;" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="
+								<b>商品异动记录：</b>记录商品的新增、退货、报损、活动以及调拨等操作<br>
+							<b>订单处理记录：</b>记录网店订单的处理的结果等操作<br>
+	<b>盘点单操作记录：</b>记录盘点单的创建、终止、更新等操作<br>
+	<b>进货单操作记录：</b>记录自主进货单或者在线采购单从下单到入库的操作<br>
+	<b>超市操作记录：</b>记录超市的新建、删除等操作<br>
+	<b>员工修改记录：</b>记录员工的增删改操作<br>
+	<b>角色修改记录：</b>对员工角色的增加、删除、修改操作记录<br>
+	<b>会员管理记录：</b>会员编辑、通过excel导入会员操作记录<br>
+
+								"></span>
+								<script type="text/javascript">
+                                    !function(){
+
+                                        if($('[data-toggle="tooltip"]').length){
+                                            $(function () {
+                                                $('[data-toggle="tooltip"]').tooltip({'html':true})
+                                            }); return}
+                                        setTimeout(arguments.callee,30)
+
+                                    }()
+                                </script>
+            <!--系统文字提示-->
+		</span>
+                                    <span class="txt2">共<span class="text-info log_num">39</span>条日志</span>
+                                </div>
+                            </div>
+                            <div class="margin-t10">
+                                <table id="systemlogs-table"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>-->
+
+<!--<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>-->
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+<!--<script src="../js/jqGrid.js"></script>-->
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"></script>-->
+<script src="../assets/js/date-time/bootstrap-datepicker.min.js"></script>
+<script src="../assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<script src="../js/jquery.datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/chosen.jquery.min.js"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+
+<script type="text/javascript">
+
+    modal.initDate("startdate","enddate");
+
+    var shopmanageCol= [
+        {
+            label : '时间',
+            name: 'barcode',
+            align:'center',
+            width: 260,
+        },
+        {
+            label: '操作人',
+            name: 'shopName',
+            width: 200,
+            align:'center',
+            sortable:true,
+            sorttype:"number"
+        },
+        {
+            label: '类型',
+            name: 'standard',
+            align:'center',
+            width: 260,
+        },
+        {
+            label: '详情',
+            name: 'unit',
+            align:'left',
+            width: 600,
+        }
+    ];
+    jqgridTable({
+        "tableId":"#systemlogs-table",
+        "pagerId":"",
+        "url":"../data/shop/shopmanageList.json",
+        "colModel":shopmanageCol,
+        "footerrow":false,
+        "height":300,
+        "cellEdit":false,
+        "footerrowFun":'',
+        "multiselect":false
+
+    })
+
+
+    var sousuokey = true;
+    var $modal_body = $('.modal-body');
+    $(document).on("change",".modal-body .quanxiantr1 .checkbox-input",function(){
+        sousuokey = true;
+    });
+
+    $(document).on("change",".modal-body .quanxiantr1 .checkbox-input",function(){
+        if($(this).is(':checked')){
+            var checkboxarr = $(this).parents(".quanxiantr1").next().find(".checkbox-input");
+            checkboxarr.each(function(){
+                $(this).prop("checked",true);
+            });
+            $(this).parents(".quanxiantr1").next().show();
+        }else if(!$(this).is(':checked') && sousuokey){
+            var checkboxarr = $(this).parents(".quanxiantr1").next()[0]
+            var checkboxarrd = $(checkboxarr).find(".checkbox-input");
+            checkboxarrd.each(function(){
+                $(this).prop("checked",false);
+            });
+        }
+    });
+
+    $(document).on("change",".modal-body .quanxiantr2 .checkbox-input",function(){
+        if(!$(this).prop("checked")){
+            sousuokey = false;
+            $(this).parents(".quanxiantr2").prev().find(".checkbox-input").prop("checked",false);
+        }else{
+            var boxarr = $(this).parents(".quanxiantr2").find(".checkbox-input");
+            var boxarrlength = $(this).parents(".quanxiantr2").find(".checkbox-input").length;
+            var xiuqukey  = 0;
+            boxarr.each(function(){
+                if( $(this).prop("checked")){
+                    xiuqukey += 1
+                }
+            });
+            if(xiuqukey == boxarrlength){
+                $(this).parents(".quanxiantr2").prev().find(".checkbox-input").prop("checked",true);
+            }
+        }
+    });
+    $(document).on("click",'.modal-body .quanxiantr1 button',function(){
+        $(this).children("i").toggleClass('icon-sort-up');
+        $(this).parents(".quanxiantr1").next().toggle();
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <style rel="stylesheet" type="text/css">
+        .allpayicon1 {
+            float: left;
+            margin-left: 0px;
+            line-height: 27px;
+            font-size: 14px;
+            width: 160px;
+        }
+
+        .allpayicon1 input {
+            width: 18px;
+            display: inline;
+            height: 18px;
+            vertical-align: middle;
+            margin: 0;
+            margin-top: 0;
+        }
+
+        i, em {
+            font-style: normal;
+        }
+
+        .allpaysetbtn {
+            display: inline-block;
+            background-image: url("https://b.izhangmai.com/img/main/dayang_x1.png");
+            width: 90px;
+            height: 30px;
+            background-position: -90px 0;
+            line-height: 30px;
+            text-indent: 21px;
+            color: #FFFFFF;
+            margin-top: -4px;
+            cursor: pointer;
+            margin-left: 24px;
+        }
+
+        .allpaysetbtn-close {
+            background-position: -180px 0;
+        }
+        .allpaysetbtn-close dl{
+            padding-left: 14px;
+            display: block;
+            color: #848484;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+
+        <div class="main-content-right">
+            <div class=" body-content-bg" >
+
+                <div class="inner-scollcontent">
+                    <div class="zmwrap margin-t10">
+                        <div class="zmwrap-t">
+                            <div class="pull-left">集成支付宝支付</div>
+                            <a class="text-info pull-right" href="../system/system_set.html">返回&gt;&gt;</a>
+                        </div>
+                        <div class="zmwrap-c" style="">
+
+                            <form class="form-horizontal validation" id="save-form" action="https://b.izhangmai.com/system/ali_pay_apply" method="post">
+                                <style>
+
+                                    .temp0812 .col-sm-3.control-label{
+                                        text-align: left;
+                                    }
+
+                                </style>
+                                <div class="modal-body bg-white temp0812">
+                                    <div class="row">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-6">
+                                            <div class="row">
+                                                <div class="form-group" style="margin-bottom: 0">
+                                                    <div class="col-sm-4 control-label">超市名称：</div>
+                                                    <div class="col-sm-6" style="line-height: 35px;">
+                                                        <span>测试1</span>
+                                                    </div>
+                                                    <span class="help-block m-b-none"></span>
+                                                </div>
+                                                <div class="form-group" style="margin-bottom: 0">
+                                                    <label class="col-sm-4 control-label">地区：</label>
+                                                    <div class="col-sm-6" style="line-height: 35px;">
+                                                        <span>四川省 - 成都市 - 金牛区</span>
+                                                    </div>
+                                                    <span class="help-block m-b-none"></span>
+                                                </div>
+                                                <div class="form-group" style="margin-bottom: 0">
+                                                    <div class="col-sm-4 control-label">地址：</div>
+                                                    <div class="col-sm-6" style="line-height: 35px;">
+                                                        <span>测试</span>
+                                                    </div>
+                                                    <span class="help-block m-b-none"></span>
+                                                </div>
+                                                <div class="form-group" style="margin-bottom: 0">
+                                                    <div class="col-sm-4 control-label">超市账号：</div>
+                                                    <div class="col-sm-6" style="line-height: 35px;">
+                                                        <span>18908086680</span>
+                                                    </div>
+                                                    <span class="help-block m-b-none"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label"><span class="text-danger">*</span>超市登录密码：</label>
+                                                    <div class="col-sm-5">
+                                                        <input style="width: 184px;display: inline;" type="password" class="form-control" name="password" datatype="*" value="" nullmsg="请输入密码">
+                                                        <span class="help-block m-b-none" style=""></span>
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label"><span class="text-danger">*</span>PID：</label>
+                                                    <div class="col-sm-5">
+                                                        <input style="    width: 184px;    display: inline;" type="text" class="form-control" name="pid" datatype="/^2088[0-9]{12}$/" value="" nullmsg="请填写PID">
+                                                        <a class="" data-toggle="modal" style="cursor: pointer;margin-left: 10px;" data-target="#alipayguidemyModal"> 如何获取PID？</a>
+                                                        <span class="help-block m-b-none" style=""></span>
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <center>
+                                                        <input id="iftongyi" nullmsg="请勾选" name="pidcheck" value="" datatype="*" checked="" type="checkbox">我已阅读并同意接受<a href="###" class="open-modals" data-open="disclaimer" data-head="免责申明">《免责声明》</a>
+                                                        <span class="help-block m-b-none" style="display: inline;"></span>
+                                                    </center>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3"></div>
+                                    </div>
+
+
+
+
+                                </div>
+                                <div class="modal-footer" style="text-align: center">
+                                    <div style="    margin-left: 330px;">
+                                        <button class="btn btn-primary" style="width: 111px">开通</button>  <span class="text-danger" style="font-size: 13px"> <i class="icon-warning-sign"></i> 请尽量保证信息正确，一旦开通后如需解绑联系客服：028-85211615</span>
+                                    </div>     </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+
+<!--添加/编辑-->
+<div class="modals addPayType">
+    <div class="modals-dilog w-600">
+        <div class="modals-content">
+            <div class="modals-head">
+                <span>自定义支付类型</span>
+                <div class="close-m closeModals">&times;</div>
+            </div>
+            <div class="modals-body maxheight">
+                <div class="modals-body-content">
+                    <div class="madals-container active">
+                        <!-- Tab panes -->
+                        <div class="tab-content " style="border-bottom: none">
+                            <form class="form-horizontal" action="" data-reload="#contentbox" method="post">
+                                <div class="modal-body bg-white">
+                                    <div class="row"><div class="form-group">
+                                        <label class="col-sm-3 control-label"><span class="text-danger">*</span>名称：</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" name="name" datatype="*" value="" nullmsg="请填写名称">
+                                        </div>
+                                        <span class="help-block m-b-none"></span>
+                                    </div>
+                                        <div class="form-group" style="margin-bottom: 0">
+                                            <label class="col-sm-3 control-label">说明：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="body" value="">
+                                                <span class="help-block m-b-none"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer margin-t10">
+                                    <button class="btn btn-primary">新增</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--免责申明-->
+<div class="modals disclaimer">
+    <div class="modals-dilog w-600">
+        <div class="modals-content">
+            <div class="modals-head">
+                <span>免责申明</span>
+                <div class="close-m closeModals">&times;</div>
+            </div>
+            <div class="modals-body maxheight">
+                <div class="modals-body-content">
+                    <div class="madals-container active">
+                        <!-- Tab panes -->
+                        <div class="tab-content " style="border-bottom: none">
+                            <form class="form-horizontal validation"method="post">
+                                <div class="modal-body bg-white" style="font-size: 14px;">
+
+
+                                    《开通绑定微信、支付宝移动支付须知》
+
+
+                                    <br>  为了方便商户更好的服务顾客，特别推出了微信、支付宝移动支付功能。
+
+                                    <br>  开通绑定微信、支付宝移动支付须知如下：
+
+                                    <br>   1、需商户自行申请支付宝签约商户、微信商户账户信息。四川掌麦科技有限公（以下简称“掌麦科技”）也可进行协助业务开通。
+
+                                    <br>   2、在申请微信商户、支付宝商户签约过程中，所涉及认证费用、收费费率等收费项目均由第三方支付公司收取，具体收费明细可拨打电话95017（微信支付客服电话）、95188（支付宝客服电话)进行了解。掌麦科技不会收取开通支付业务费用。
+
+                                    <br>    3、请商户务必填写自己的商户PID、商户号等信息，否则所产生的一切损失由商户自己承担。请妥善保管账号信息，防止泄漏带来的损失。
+
+                                    <br>    4、一个支付宝PID、微信商户号、支付密钥、APPID信息等只能绑定一个店铺超级管理账号。
+
+                                    <br>    5、成功绑定后可进行支付测试，确认是否属于自己的信息。
+
+                                    <br>    6、如有任何疑问请拨打4008815661进行咨询。
+
+
+                                    <br>   请认真阅读以上条款，点击同意则表示已知晓以上事项及承担风险责任。
+
+                                    <br>   不同意，请勿使用此功能。
+
+                                </div>
+                                <div class="modal-footer">
+
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>-->
+
+<!--<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>-->
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+<!--<script src="../js/jqGrid.js"></script>-->
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"></script>-->
+<script src="../assets/js/date-time/bootstrap-datepicker.min.js"></script>
+<script src="../assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

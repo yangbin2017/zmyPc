@@ -1,0 +1,316 @@
+{
+  "list": [
+    {
+      "mid": "1",
+      "title": "报表",
+      "icon": "icon-briefcase",
+      "url": "../main/index.html",
+      "children": [
+        {
+          "title": "",
+          "child": [
+            {
+              "cid": "",
+              "title": "汇总报表",
+              "url": "../report/index.html",
+              "status": "",
+              "usual": false
+            },
+            {
+              "cid": "",
+              "title": "销售报表",
+              "url": "../report/head_goods_sale.html",
+              "status": "",
+              "usual": false
+            },
+            {
+              "cid": "",
+              "title": "进货报表",
+              "url": "../report/head_stock.html",
+              "status": "",
+              "usual": false
+            },
+            {
+              "cid": "",
+              "title": "采购退货报表",
+              "url": "../report/head_returns.html",
+              "status": "",
+              "usual": false
+            },
+            {
+              "cid": "",
+              "title": "报损报表",
+              "url": "../report/head_damage.html",
+              "status": "",
+              "usual": false
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "mid": "2",
+      "title": "商品",
+      "icon": "icon-credit-card",
+      "url": "../shop/manage.html",
+      "children": [
+        {
+          "title": "",
+          "child": [
+            {
+              "cid": "",
+              "title": "商品管理",
+              "url": "../shop/manage.html",
+              "status": "",
+              "usual": false
+            },
+            {
+              "cid": "",
+              "title": "分类管理",
+              "url": "../shop/category_manage.html",
+              "status": "",
+              "usual": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mid": "3",
+      "title": "仓库",
+      "icon": "icon-credit-card",
+      "url": "../shop/manage.html",
+      "children": [
+        {
+          "title": "",
+          "child": [
+            {
+              "cid": "",
+              "title": "商品库存",
+              "url": "../house/house_manage.html",
+              "status": "",
+              "usual": false
+            },
+            {
+              "cid": "",
+              "title": "进价变动",
+              "url": "../house/goods_price.html",
+              "status": "",
+              "usual": true
+            },
+            {
+              "cid": "",
+              "title": "库存盘点",
+              "url": "../house/stock_list.html",
+              "status": "",
+              "usual": false
+            },
+            {
+              "cid": "",
+              "title": "领用单",
+              "url": "../house/goods_use_list.html",
+              "status": "",
+              "usual": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mid": "4",
+      "title": "网店",
+      "icon": "icon-credit-card",
+      "url": "../online/online.html",
+      "children": [
+        {
+          "title": "",
+          "child": [
+            {
+              "cid": "",
+              "title": "我的订单",
+              "url": "../online/online.html",
+              "status": "",
+              "usual": false
+            },
+            {
+              "cid": "",
+              "title": "网店评价",
+              "url": "../online/comment.html",
+              "status": "",
+              "usual": false
+            }
+
+          ]
+        }
+      ]
+    },
+    {
+      "mid": "5",
+      "title": "采购",
+      "icon": "icon-credit-card",
+      "url": "../buy/buy.html",
+      "children": [
+        {
+          "title": "",
+          "child": [
+            {
+              "cid": "",
+              "title": "我的进货单",
+              "url": "../buy/buy.html",
+              "status": "",
+              "usual": false
+            },
+            {
+              "cid": "",
+              "title": "我的退货单",
+              "url": "../buy/refund.html",
+              "status": "",
+              "usual": false
+            },
+            {
+              "cid": "",
+              "title": "我的供应商",
+              "url": "../buy/supplier.html",
+              "status": "",
+              "usual": false
+            },
+            {
+              "cid": "",
+              "title": "供应商结算",
+              "url": "../buy/supplier_order_pay.html",
+              "status": "",
+              "usual": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mid": "6",
+      "title": "调拨",
+      "icon": "icon-credit-card",
+      "url": "../transfer/transfer.html",
+      "children": [
+        {
+          "title": "",
+          "child": [
+            {
+              "cid": "",
+              "title": "调拨",
+              "url": "../transfer/transfer.html",
+              "status": "",
+              "usual": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mid": "7",
+      "title": "营销",
+      "icon": "icon-credit-card",
+      "url": "../vipuser/vipuser.html",
+      "children": [
+        {
+          "title": "",
+          "child": [
+            {
+              "cid": "",
+              "title": "我的会员",
+              "url": "../vipuser/vipuser.html",
+              "status": "",
+              "usual": false
+            },
+            {
+              "cid": "",
+              "title": "活动商品",
+              "url": "../vipuser/active_shop.html",
+              "status": "",
+              "usual": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mid": "8",
+      "title": "员工",
+      "icon": "icon-credit-card",
+      "url": "../member/member.html",
+      "children": [
+        {
+          "title": "",
+          "child": [
+            {
+              "cid": "",
+              "title": "我的员工",
+              "url": "../member/member.html",
+              "status": "",
+              "usual": false
+            },
+            {
+              "cid": "",
+              "title": "角色权限",
+              "url": "../member/roles.html",
+              "status": "",
+              "usual": false
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "mid": "9",
+      "title": "系统",
+      "icon": "icon-credit-card",
+      "url": "../system/system_info.html",
+      "children": [
+        {
+          "title": "",
+          "child": [
+            {
+              "cid": "",
+              "title": "账户信息",
+              "url": "../system/system_info.html",
+              "status": "",
+              "usual": false
+            },
+            {
+              "cid": "",
+              "title": "我的店铺",
+              "url": "../system/my_shop.html",
+              "status": "",
+              "usual": false
+            },
+            {
+              "cid": "",
+              "title": "系统日志",
+              "url": "../system/system_logs.html",
+              "status": "",
+              "usual": false
+            }
+          ,
+            {
+              "cid": "",
+              "title": "消息中心",
+              "url": "../system/system_message.html",
+              "status": "",
+              "usual": false
+            },
+            {
+              "cid": "",
+              "title": "系统设置",
+              "url": "../system/system_set.html",
+              "status": "",
+              "usual": false
+            }
+
+          ]
+        }
+      ]
+    }
+
+  ]
+}

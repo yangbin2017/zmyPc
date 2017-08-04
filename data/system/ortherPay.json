@@ -1,0 +1,25 @@
+{
+  "rows":[
+    {
+      "id":1,
+      "time":"2017-12-23",
+      "payName":"asdf",
+      "payType":1,
+      "money":"+2345",
+      "creater":"勇",
+      "remake":"阿萨德噶"
+    },
+    {
+      "id":2,
+      "time":"2017-03-23",
+      "payName":"safg",
+      "payType":2,
+      "money":"+2345",
+      "creater":"勇",
+      "remake":"施工"
+    }
+  ],
+  "account":2
+
+
+}

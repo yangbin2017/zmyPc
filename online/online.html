@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.datetimepicker.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script>
+    <style>
+        .tabs-container{
+            margin: 0 ;
+            padding:20px;
+        }
+        #tab-1 {
+            background-color: #f6f6f6;
+            padding: 15px;
+        }
+        .ui-jqgrid tr.jqgrow td{
+            overflow: inherit;
+            white-space: normal;
+        }
+        .payMoney input{
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+
+        <div class="main-content-right">
+            <div class="body-content body-content-bg" style="overflow-y: scroll">
+
+                <div class="inner-scollcontent" >
+                    <div class="ibox" style="margin-bottom: 0" id="modify-shop">
+                        <div class="tabs-container">
+                            <div class="dingdangzhuangtai clearfix">
+                                <div class="wrapdingdan">
+                                    <div class="dingdanxianzt">
+                                        <div class="wrap dingdanxianzt-out" style="padding: 0;">
+                                            <a href="##">
+                                                <span class="text-danger" id="pending-num">1</span>
+                                                <div>未处理订单
+
+                                                    <!--系统文字提示-->
+                                                    <style rel="stylesheet">
+                                                        .tooltip div.tooltip-inner{ text-align:left;border:1px solid #dedede;
+                                                            font-size: 12px; background:#ffffff; color:#666;max-width:400px;text-shadow: none}
+                                                        .tooltip-inner b{ margin-right:10px; display:block;margin:4px 0;}
+                                                        .tooltip.right .tooltip-arrow{border-right-color: #8A8A8A;}
+                                                    </style>
+								<span class="icon-exclamation-sign" style="color:#55C663;vertical-align: middle;margin-top: -3px;font-size:20px;" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="
+								<b>未处理订单：</b>顾客提交订单之后即为未处理订单，可以拒绝订单及完成理货<br>
+
+
+								"></span>
+                                                    <script type="text/javascript">
+                                                        !function(){
+
+                                                            if($('[data-toggle="tooltip"]').length){
+                                                                $(function () {
+                                                                    $('[data-toggle="tooltip"]').tooltip({'html':true})
+                                                                }); return}
+                                                            setTimeout(arguments.callee,30)
+
+                                                        }()
+                                                    </script>
+                                                    <!--系统文字提示-->
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="dingdanxianzt">
+                                        <div class="wrap" style="padding: 0;">
+                                            <a href="##">
+                                                <span class="text-info" id="sending-num">0</span>
+                                                <div>配送中订单
+                                                    <!--系统文字提示-->
+                                                    <style rel="stylesheet">
+                                                        .tooltip div.tooltip-inner{ text-align:left;border:1px solid #dedede;
+                                                            font-size: 12px; background:#ffffff; color:#666;max-width:400px;text-shadow: none}
+                                                        .tooltip-inner b{ margin-right:10px; display:block;margin:4px 0;}
+                                                        .tooltip.right .tooltip-arrow{border-right-color: #8A8A8A;}
+                                                    </style>
+								<span class="icon-exclamation-sign" style="color:#55C663;vertical-align: middle;margin-top: -3px;font-size:20px;" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="
+								<b>配送中订单：</b>备货完成即为配送中订单，配送完成需要输入收货码完成订单，如果用户在智慧超市端点击确认收货亦可<br>
+
+
+								"></span>
+                                                    <script type="text/javascript">
+                                                        !function(){
+
+                                                            if($('[data-toggle="tooltip"]').length){
+                                                                $(function () {
+                                                                    $('[data-toggle="tooltip"]').tooltip({'html':true})
+                                                                }); return}
+                                                            setTimeout(arguments.callee,30)
+
+                                                        }()
+                                                    </script>
+                                                    <!--系统文字提示-->
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="dingdanxianzt">
+                                        <div class="wrap" style="padding: 0;">
+                                            <a href="#">
+                                                <span class="text-green" id="complete-num">2</span>
+                                                <div>已送达
+                                                    <!--系统文字提示-->
+                                                    <style rel="stylesheet">
+                                                        .tooltip div.tooltip-inner{ text-align:left;border:1px solid #dedede;
+                                                            font-size: 12px; background:#ffffff; color:#666;max-width:400px;text-shadow: none}
+                                                        .tooltip-inner b{ margin-right:10px; display:block;margin:4px 0;}
+                                                        .tooltip.right .tooltip-arrow{border-right-color: #8A8A8A;}
+                                                    </style>
+								<span class="icon-exclamation-sign" style="color:#55C663;vertical-align: middle;margin-top: -3px;font-size:20px;" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="
+								<b>已送达：</b>已经完成配送的订单，可以查看订单详情<br>
+
+
+								"></span>
+                                                    <script type="text/javascript">
+                                                        !function(){
+
+                                                            if($('[data-toggle="tooltip"]').length){
+                                                                $(function () {
+                                                                    $('[data-toggle="tooltip"]').tooltip({'html':true})
+                                                                }); return}
+                                                            setTimeout(arguments.callee,30)
+
+                                                        }()
+                                                    </script>
+                                                    <!--系统文字提示-->
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="dingdanxianzt">
+                                        <div class="wrap" style="padding: 0;">
+                                            <a href="##">
+                                                <span class="text-333">3</span>
+                                                <div>全部</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--功能条-->
+                            <div class="zmbox clearfix">
+                                <form id="search-form" action="https://b.izhangmai.com/online/orders?act=">
+                                    <!--<input type="hidden" name="act" id="act" value="all">-->
+                                    <!-- 输入框-->
+                                    <div class="boxpart">
+                                        <div class="t">订单号：</div>
+                                        <div class="inpt">
+                                            <input type="text" class="pintxt" name="order_code" value="">
+                                        </div>
+                                    </div>
+                                    <div class="boxpart">
+                                        <div class="t">手机号码：</div>
+                                        <div class="inpt">
+                                            <input type="text" class="pintxt" name="phone" value="">
+                                        </div>
+                                        <div class="boxbtn">
+                                            <button type="submit" class="btn btn-primary" id="cheshixiaoguoid1">查询</button>
+                                        </div>
+                                    </div>
+                                    <div class="boxpart">
+                                        <div class="t" style="margin-left: 10px">时间：</div>
+                                        <div class="inpt">
+                                            <input type="text" class="pintxt datepicker" name="date_range" style="width: 140px;"  value="">
+                                        </div>
+                                        <div class="t" style="font-size: 18px;margin-right: 5px">-</div>
+                                        <div class="inpt">
+                                            <input type="text" class="pintxt datepicker" name="date_range" style="width: 140px;"  value="">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="margin-t10" style="margin: 10px 20px 0 20px">
+                                <table id="onlineList-table"></table>
+                                <div class="zmalertno nodata" style="margin:10px 0 0 0;">
+                                    <i class="icon-exclamation-sign"></i> <span>暂无数据</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+<!--付款-->
+<div class="modals onlineDetailInfo" >
+    <div class="modals-dilog w-1040" style="top: 20px;">
+        <div class="modals-content">
+            <div class="modals-head">
+                <span>订单详情</span>
+                <div class="close-m closeModals">&times;</div>
+            </div>
+            <div class="modals-body maxheight">
+                <div class="modals-body-content">
+                    <div class="madals-container active">
+                        <!-- Tab panes -->
+                        <div class="tab-content " style="border-bottom: none">
+                            <div class="ibox float-e-margins" style="margin-bottom:0px;">
+                                <div class="ibox-title">
+                                    <h5>基本信息</h5>
+                                </div>
+                                <div class="ibox-content" style="padding:0;">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <table class="table">
+                                                <colgroup span="2">
+                                                    <col width="30%">
+                                                    <col width="70%">
+                                                </colgroup>
+                                                <tbody>
+                                                <tr>
+                                                    <td style="border-top: none;text-align:right;">下单时间</td>
+                                                    <td style="border-top: none;">2017-04-28 16:56:15</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:right;">订单号</td>
+                                                    <td>042810253515</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:right;">支付方式</td>
+                                                    <td>货到付款</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <table class="table">
+                                                <colgroup span="2">
+                                                    <col width="30%">
+                                                    <col width="70%">
+                                                </colgroup>
+                                                <tbody>
+                                                <tr>
+                                                    <td style="border-top: none;text-align:right;">订单金额</td>
+                                                    <td style="border-top: none;">￥10.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:right;">订单状态</td>
+                                                    <td><span style="font-size: 12px;" class="label label-danger">待理货</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:right;">有效状态</td>
+                                                    <td>正常</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ibox float-e-margins" style="margin-bottom:0px;">
+                                <div class="ibox-title">
+                                    <h5>买家信息</h5>
+                                </div>
+                                <div class="ibox-content" style="padding:0;">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <table class="table">
+                                                <colgroup span="2">
+                                                    <col width="30%">
+                                                    <col width="70%">
+                                                </colgroup>
+                                                <tbody>
+                                                <tr>
+                                                    <td style="border-top: none;text-align:right;">收货人</td>
+                                                    <td style="border-top: none;">测试</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:right;">收货地址</td>
+                                                    <td>测试</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:right;">买家备注</td>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <table class="table">
+                                                <colgroup span="2">
+                                                    <col width="30%">
+                                                    <col width="70%">
+                                                </colgroup>
+                                                <tbody>
+                                                <tr>
+                                                    <td style="border-top: none;text-align:right;">电话</td>
+                                                    <td style="border-top: none;">18908086680</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:right;">取消订单理由</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:right;"></td>
+                                                    <td></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ibox float-e-margins" style="margin-bottom:0px;">
+                                <div class="ibox-title">
+                                    <h5>商品信息</h5>
+                                </div>
+                                <div class="ibox-content" style="padding:0;">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>商品名称</th>
+                                            <th>商品条码</th>
+                                            <th>单价(元)/单位</th>
+                                            <th>商品数量</th>
+                                            <th>总金额(元)</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                123121                                                                                                </td>
+                                            <td>121</td>
+                                            <td>￥10.00/袋</td>
+                                            <td><b class="red" style="font-size: 14px">x1</b></td>
+                                            <td><b class="red" style="font-size: 14px">￥10.00</b></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table invoice-total">
+                                        <colgroup span="2">
+                                            <col width="60%">
+                                            <col width="20%">
+                                            <col width="20%">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td><strong>商品数量：</strong></td>
+                                            <td>1件</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><strong>总金额：</strong></td>
+                                            <td>¥10.00</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary btn-lihuo">完成理货</button>
+                                <div class="btn-group dropup">
+                                    <button class="btn btn-danger dropdown-toggle dropup" data-toggle="dropdown">
+                                        拒绝订单
+                                        <span class="ace-icon fa fa-caret-up"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="btn-refuse text-left" data-msg="确定要标记该订单为超出配送范围吗？" style="cursor: pointer"><i class="ace-icon fa fa-eye-slash"></i> 超出配送范围</a></li>
+                                        <li><a class="btn-refuse text-left" data-msg="确定要标记该订单为虚假订单吗？" style="cursor: pointer"><i class="ace-icon fa fa-times-circle"></i> 虚假订单</a></li>
+                                        <li><a class="btn-refuse text-left" data-msg="确定要标记该订单超市先生有点忙，暂时不能送货吗？" style="cursor: pointer"><i class="ace-icon fa fa-anchor"></i> 暂时不能送货</a></li>
+                                    </ul>
+                                </div>
+                                <div class="btn btn-default closeModals" data-dismiss="modal">返回</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>-->
+
+<!--<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>-->
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+<!--<script src="../js/jqGrid.js"></script>-->
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"></script>-->
+<script src="../assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<script src="../js/jquery.datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/chosen.jquery.min.js"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+
+<script type="text/javascript">
+
+    var shopmanageCol= [
+        {
+            label : '下单时间',
+            name: 'barcode',
+            align:'center',
+            width: 200,
+        },
+        {
+            label: '订单号',
+            name: 'shopName',
+            width: 200,
+            align:'center',
+            sortable:true,
+            sorttype:"number"
+        },
+        {
+            label: '收货人',
+            name: 'standard',
+            align:'center',
+            width: 160,
+        },
+        {
+            label: '联系电话',
+            name: 'unit',
+            align:'center',
+            width: 160,
+        },
+        {
+            label: '送货地址',
+            name: 'type',
+            align:'left',
+            width: 160,
+        },
+        {
+            label: '订单金额',
+            name: 'modal',
+            align:'center',
+            width: 160,
+        },
+        {
+            label: '订单状态',
+            name: 'purchasePrice',
+            align:'center',
+            width: 160,
+        },
+        {
+            label: '操作',
+            name: 'operation',
+            align:'center',
+            width: 160,
+            formatter: function (cellvalue, options, rowObject) {
+                var gid = "'#"+options.gid +"'";
+                var str='<div>\
+                        <span class="table-bar"  onclick="online_detail('+ rowObject.id + ','+ gid + ')"><i class="icon-pencil"></i>处理</span>';
+                str+='</div>'
+                return str;
+            }
+        }
+    ];
+    jqgridTable({
+        "tableId":"#onlineList-table",
+        "pagerId":"",
+        "url":"../data/shop/shopmanageList.json",
+        "colModel":shopmanageCol,
+        "footerrow":false,
+        "height":"100%",
+        "cellEdit":false,
+        "footerrowFun":'',
+        "multiselect":false
+
+    })
+
+
+    //查看详情
+    function buy_detail(rowId,gid){
+        var href='../buy/buy_detail.html'
+        window.location.href=href;
+        localStorage.setItem('frameidSrc',href);
+    }
+    //点击切换状态wrap dingdanxianzt-out
+    $(document).on('click','.dingdanxianzt',function(){
+        $(this).find('.wrap').addClass('dingdanxianzt-out');
+        $(this).siblings('.dingdanxianzt').find('.wrap').removeClass('dingdanxianzt-out');
+    })
+    //点击处理
+    function online_detail(){
+        $('.onlineDetailInfo').show();
+    }
+</script>
+</body>
+</html>

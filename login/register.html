@@ -1,0 +1,541 @@
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <!-- 移动端浏览器识别-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- IE 兼容模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--国产浏览器高速模式-->
+    <meta name="renderer" content="webkit">
+    <title>掌麦云商户</title>
+    <link type="image/x-icon" href="../img/favicon.ico" rel="shortcut icon">
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- fontawesome-->
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <!-- 全局css-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <script type="text/javascript">
+        var _hmt = _hmt || [];
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol +
+                "hm.baidu.com/h.js%3F84c55d593eb62c608555a3695e8f66aa' type='text/javascript'%3E%3C/script%3E"));
+    </script><script src=" https://hm.baidu.com/h.js?84c55d593eb62c608555a3695e8f66aa" type="text/javascript"></script>
+    <style type="text/css">
+        #loadinggif{
+            background-color: #000;
+            opacity: 0.5;
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+        .sweet-alert h2{font-size: 18px}
+        .sweet-alert p{color: #4a4a4a}
+        .has-error .chosen-container, .form-group .Validform_error, .Validform_error, .boxpart .inpt .Validform_error {
+            border: none;
+        }
+    </style></head>
+
+<body class="zhucexin" style="min-width: 900px">
+
+<!--跳转链接-->
+<div class="tiaozhuandl"><a href="#" target="_blank">掌麦官网</a> | <a href="login.html">登录</a></div>
+
+<div class="zhucecontainer">
+    <div class="txt1">
+        掌麦云商户-注册
+    </div>
+    <div class="zhucebiaodangqu" style="min-height: 625px">
+        <form class="register-form" role="form" action="" method="post">
+            <div class="zhucebiaolist">
+                <img src="../img/zhuce/zhuce-2.png" class="zhucelistinc">
+                <input type="text" placeholder="输入手机号码" class="iptnostyle zhucshuruk" name="mobile" ajaxurl="../common/ajax_mobile?type=reg" maxlength="12" datatype="mobile" nullmsg="请输入手机号码！" errormsg="手机号码错误！" style="width:375px;font-size: 14px">
+                <div class="youtishi">
+                    <div class="pull-left">
+                        <div class="tbiao"></div>
+                    </div>
+                    <div class="ttext"></div>
+                </div>
+            </div>
+
+            <div class="zhucebiaolist">
+                <img src="../img/zhuce/zhuce-3.png" class="zhucelistinc">
+                <input type="text" placeholder="请输入右侧图片中的验证码！" class="iptnostyle zhucshuruk" name="vcode" value="" ajaxurl="../common/ajax_mobile?type=regcaptcha" maxlength="4" datatype="*" nullmsg="请输入右侧图片中的验证码！" errormsg="验证码错误！" style="width:270px;font-size: 14px">
+                <img src="../common/captcha" class="pull-right check_code chang_code" style="height:43px;width:93px;cursor:pointer;">
+                <div class="youtishi">
+                    <div class="pull-left">
+                        <div class="tbiao"></div>
+                    </div>
+                    <div class="ttext"></div>
+                </div>
+            </div>
+
+            <div class="zhucebiaolist" data-right="1">
+                <img src="../img/zhuce/zhuce-3.png" class="zhucelistinc">
+                <input type="text" placeholder="输入手机验证码" class="iptnostyle zhucshuruk" name="code" datatype="*" maxlength="8" nullmsg="请输入验证码！" style="width:270px;font-size: 14px">
+                <button type="button" class="youbianbtn get-code">获取验证码</button>
+                <div class="youtishi">
+                    <div class="pull-left">
+                        <div class="tbiao"></div>
+                    </div>
+                    <div class="ttext"></div>
+                </div>
+            </div>
+
+            <div class="zhucebiaolist ">
+                <img src="../img/zhuce/zhuce-4.png" class="zhucelistinc">
+                <input type="text" onfocus="this.type='password'" autocomplete="off" placeholder="设置密码" id="xianshimima" class="iptnostyle zhucshuruk width-333" name="password" datatype="*6-16" maxlength="20" nullmsg="请输入密码！" errormsg="6-16位字符！" style="font-size: 14px">
+                <button type="button" class="pull-right mingwenxianshi iptnostyle" id="qiehuanyscsl"><i class="icon-eye-close"></i>
+                </button>
+                <div class="youtishi">
+                    <div class="pull-left">
+                        <div class="tbiao"></div>
+                    </div>
+                    <div class="ttext"></div>
+                </div>
+            </div>
+
+            <div class="zhucetongyi">
+                <label><input type="checkbox" name="agreement" value="1">
+                    <dl>我已同意<a href="#" data-toggle="modal" data-target="#myModal">《掌麦商家使用协议》</a></dl>
+
+                </label>
+
+            </div>
+
+            <div class="xinzhuce">
+                <button type="submit" class="iptnostyle">注 册</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="footxinxi">
+    <div class="footcontainer" style="padding-left: 20px">
+        <div class="row text-666">
+            <div class="col-sm-4" style="width: 32%;float:left">
+                <div class="dibuliieb">
+                    公司名称：四川掌麦科技有限公司<br>
+                    电话：400-8815-661<br>
+                    邮箱：hr@izhangmai.com<br>
+                    传真：028-8335 3857<br>
+                    地址：四川省成都市高新区府城大道中段88号中航城市广场913室
+                </div>
+            </div>
+            <div class="col-sm-4" style="width: 32%;float:left">
+                <div class="dibuliieb">
+                    <a href="http://www.izhangmai.com/service.html?pid=2">常见问题</a><br>
+                    <a href="http://www.izhangmai.com/service.html?pid=3">新手指南</a><br>
+                    <a href="http://www.izhangmai.com/service.html?pid=4">操作视频</a><br>
+                </div>
+            </div>
+            <div class="col-sm-4" style="width: 32%;float:left">
+                产品咨询<br>
+                电话：400-8815661<br>
+                技术支持<br>
+                电话：400-8815661
+            </div>
+        </div>
+        <div class="text-666 text-center">Copyright © 2014 zhangmai 四川掌麦科技有限公司 </div>
+    </div>
+</div>
+<style type="text/css">
+    #myModal .modal-body{
+        color: black;
+    }
+</style>
+<div class="modal  fade " id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close zm-big" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">掌麦商家使用协议</h4>
+            </div>
+            <div class="modal-body" style="height: 555px;overflow-y: auto;">
+                <h1 style="text-align:center;"><span style="font-family:宋体;font-weight:bold;font-size:18.0000pt;">掌麦科技——掌麦云商户服务协议条款</span><span style="font-family:Calibri;font-weight:bold;font-size:22.0000pt;"></span></h1>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">同意以下服务条款，提交注册信息：</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">欢迎阅读</span><span style="font-family:Calibri;font-size:12.0000pt;">《</span><span style="font-family:宋体;font-size:12.0000pt;">掌麦云商户</span><span style="font-family:Calibri;font-size:12.0000pt;">》</span><span style="font-family:宋体;font-size:12.0000pt;">、《掌麦云商户收银系统》、《智慧超市》</span><span style="font-family:宋体;font-size:12.0000pt;">软件</span><span style="font-family:宋体;font-size:12.0000pt;">（以下简称“本软件”）</span><span style="font-family:宋体;font-size:12.0000pt;">服务协议</span><span style="font-family:宋体;font-size:12.0000pt;">条款</span><span style="font-family:宋体;font-size:12.0000pt;">(下称“本协议”)。本协议是您（个人或单一实体）与</span><span style="font-family:宋体;font-size:12.0000pt;">四川掌麦</span><span style="font-family:宋体;font-size:12.0000pt;">科技有限公司（以下简称“</span><span style="font-family:宋体;font-size:12.0000pt;">掌麦科技</span><span style="font-family:宋体;font-size:12.0000pt;">”）之间有关</span><span style="font-family:宋体;font-size:12.0000pt;">本</span><span style="font-family:宋体;font-size:12.0000pt;">软件产品的法律协议。</span><span style="font-family:宋体;font-size:12.0000pt;">“</span><span style="font-family:宋体;font-size:12.0000pt;">用户</span><span style="font-family:宋体;font-size:12.0000pt;">”指于掌麦云商户平台上</span><span style="font-family:宋体;font-size:12.0000pt;">进行管理营销的超市商家们</span><span style="font-family:宋体;font-size:12.0000pt;">。</span><span style="font-family:宋体;font-size:12.0000pt;">本软件产品包括</span><span style="font-family:宋体;font-size:12.0000pt;">收银机</span><span style="font-family:宋体;font-size:12.0000pt;">软件</span><span style="font-family:宋体;font-size:12.0000pt;">、手机移动软件、网址登录</span><span style="font-family:宋体;font-size:12.0000pt;">，并可能包括但不限于相关媒体、印</span><span style="font-family:宋体;font-size:12.0000pt;">刷材料、电子文档、</span><span style="font-family:宋体;font-size:12.0000pt;">掌麦</span><span style="font-family:宋体;font-size:12.0000pt;">科技提供给您的原“软件产品”的任何更新和补充资料。您一旦安装、复制、下载、访问或以其它方式使用</span><span style="font-family:宋体;font-size:12.0000pt;">本</span><span style="font-family:宋体;font-size:12.0000pt;">软件产品，即表示您同意接受本协议各项条款的约束，并且对本协议及产品说明书、声明等全部系列文件已明确知悉并接受。如您不同意本协议中的条款，请不要安装或使用</span><span style="font-family:Calibri;font-size:12.0000pt;">《</span><span style="font-family:宋体;font-size:12.0000pt;">掌麦云商户</span><span style="font-family:Calibri;font-size:12.0000pt;">》</span><span style="font-family:宋体;font-size:12.0000pt;">、《掌麦云商户收银系统》、《智慧超市》</span><span style="font-family:宋体;font-size:12.0000pt;">等</span><span style="font-family:宋体;font-size:12.0000pt;">软</span><span style="font-family:宋体;font-size:12.0000pt;">件产品。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.1000pt;"><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;">第一条、授权</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">掌麦</span><span style="font-family:宋体;font-size:12.0000pt;">科技，将</span><span style="font-family:宋体;font-size:12.0000pt;">本软件产品的使用权依据本协议的约定授予您。本软件产品受著作权法及其它知识产权法和相关</span><span style="font-family:宋体;font-size:12.0000pt;">国家</span><span style="font-family:宋体;font-size:12.0000pt;">法律法规、国际条约的保护。本软</span><span style="font-family:宋体;font-size:12.0000pt;">件产品只能在协议许可的范围、方式予以使用，而不能另行出售、复制、修改、转让等。本协议有效期间，您仅享有依据本协议约定的使用权，本软件产品的其他任何权益，均归</span><span style="font-family:宋体;font-size:12.0000pt;">掌麦</span><span style="font-family:宋体;font-size:12.0000pt;">科技所有。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.1000pt;"><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;">第二条、服务内容</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;"></span></p>
+                <p class="NewStyle18" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">2.1</span><span style="font-family:宋体;font-size:12.0000pt;">掌麦科技</span><span style="font-family:Calibri;font-size:12.0000pt;">为</span><span style="font-family:宋体;font-size:12.0000pt;">您</span><span style="font-family:Calibri;font-size:12.0000pt;">提供《</span><span style="font-family:宋体;font-size:12.0000pt;">掌麦云商户</span><span style="font-family:Calibri;font-size:12.0000pt;">》</span><span style="font-family:宋体;font-size:12.0000pt;">、《掌麦云商户收银系统》、《智慧超市》</span><span style="font-family:Calibri;font-size:12.0000pt;">软件</span><span style="font-family:宋体;font-size:12.0000pt;">，软件产品内容包括：软件激活码</span><span style="font-family:宋体;font-size:12.0000pt;">、软件二维码、</span><span style="font-family:宋体;font-size:12.0000pt;">软件的使用教程或者网络下载地址。并对</span><span style="font-family:宋体;font-size:12.0000pt;">该软件进行相应的技术维护和支持。您可以通过注册的帐号和密码使用掌麦科技所提供的软件平台功能。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">2.2除软件自有功能外享受软件免费升级、数据存储、售后技术服务等；使用期限到期后掌麦科技无义务为您保留原账号中或相关任何信息。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.1000pt;"><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;">第三条、费用及支付方式</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">3.1费用：本软件产品按年收费</span><span style="font-family:宋体;font-size:12.0000pt;">。掌麦科技有权根据市场行情调整该费用。若您不同意调整的，可停止使用本软件产品。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">3.2</span><span style="font-family:Calibri;font-size:10.5000pt;">&nbsp;</span><span style="font-family:宋体;font-size:12.0000pt;">支付方式：您将于本协议生效之日通过转账或汇款的方式一次性支付该年服务费。账号信息如下：</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;</span><span style="font-family:宋体;font-size:12.0000pt;">开户银行：中国银行股份有限公司成都高新技术开发区支行</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:30.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">账户名称：四川掌麦科技有限公司</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:30.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">账&nbsp;&nbsp;&nbsp;&nbsp;号：</span><span style="font-family:宋体;font-size:12.0000pt;">122581982048</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">3.3软件使用期限到期请自行续费，为此给您带来的任何损失掌麦科技不承担任何责任。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.1000pt;"><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;">第四条、使用条件</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">4.1您如需使用本软件，应通过您自有的本协议各个软件账号（以下可简称“您账号”）登录。并</span><span style="font-family:宋体;font-size:12.0000pt;">确保您在每个使用时段结束时，以正确步骤离开操作平台</span><span style="font-family:宋体;font-size:12.0000pt;">、退出操作软件</span><span style="font-family:宋体;font-size:12.0000pt;">。</span><span style="font-family:宋体;font-size:12.0000pt;">掌麦科技</span><span style="font-family:宋体;font-size:12.0000pt;">不能也不会对因您未能遵守本款规定而发生的任何损失或损毁负责。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;&nbsp;&nbsp;&nbsp;4.2您如需使用本软件，应符合招商标准和商户规则的要求，并且在今后使用本软件的过程中将保持一直符合招商标准和规则的要求。掌麦科技有权不时修订使用本软件的招商标准和规则，并不时对您是否符合情况进行检查，您应及时关注招商标准和规则。您如不同意招商标准和规则更新的，应停止使用本软件，否则视为接受更新后的标准和规则。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;&nbsp;&nbsp;&nbsp;4.3掌麦科技可能要求您提供相关文件材料用于核实您身份，届时您需提供相关信息、营业执照、法人或经营人身份证复印件等材料。如果您填写的信息或提供的材料不符合掌麦科技要求的，掌麦科技有权拒绝向您提供服务。您应保证您向掌麦科技提供的全部信息和材料真实、准确且不存在超过时效问题（即保证所有文件资料在本协议有效期内都处于有效状态）。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">4.4掌麦科技同意向您提供服务，但并不代表掌麦科技对您的营业资质或经营品质有任何形式的判断或承诺。&nbsp;</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;">第五条、商户承诺</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">5.1您可通过本软件发布与您的产品有关的基本信息、优惠信息等内容。用户与您交易时，用户可通过掌麦云商户服务获取上述信息。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:18.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;5.2您在本软件使用过程中，承诺并保证：</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:18.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（1）符合申请入驻时的招商标准规定的申请条件，且向掌麦科技提供（上传或填写）真实、合法、准确、有效的入驻资料，并保证诸如承诺函、电子邮件地址、联系电话、联系地址、邮政编码等内容的有效性及安全性，保证用户可以通过上述联系方式与您进行联系。同时，您也有义务在相关资料实际变更后5个工作日内申请更新有关入驻资料。如因您自身原因（包括但不限于未取得营业执照、相关经营资质）与用户发生纠纷或被相关国家主管机关处罚，您应当独立承担全部责任，如给掌麦科技造成损失的，您同意赔偿其全部损失。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:18.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（2）承诺遵守本协议、招商标准以及其他掌麦科技公布的规则、流程、通知等。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（3）有合法的权利缔结本协议，使用本软件相关服务，并在使用本软件服务期间持续拥有提供其服务的合法资质，并确保该业务符合国家法律法规和政策规定。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（4）通过本软件发布信息，以及其通过本软件服务所从事的一切活动都是合法、真实的，不得违反相关法律、法规、政策规定，不会利用本软件开展或协助开展赌博、色情、暴力、洗钱、偷税、毒品、诈骗等不合法、不健康内容的业务。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（5）不发布与您提供商品或服务无关的信息，不发布任何与您提供商品或服务无关的网络广告。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（6）对发布的交易信息中所涉商品有合法的销售权或经营权。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（7）将按照不低于《中华人民共和国消费者权益保护法》、《中华人民共和国产品质量法》及其他法规、部门规章和国家强制性标准规定的要求，提供相应的服务。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（8）保证在使用本软件服务进行交易的过程中遵守诚实信用的原则，不在交易过程中采取不正当竞争行为，不扰乱网上交易的正常秩序，不在本软件提供的平台从事与网上交易无关的行为。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（9）保证在使用本软件时实施的所有行为均遵守国家法律、法规和掌麦科技的相关规则、规定以及各种社会公共利益及公共道德。不从事任何可能对掌麦科技及本软件造成负面影响的欺诈、违法、虚假交易、骗取钱财或其他不道德的行为等，不参与任何有损本软件搭建的公平市场准则的营销活动。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（10）同意不对本软件上任何数据作商业性利用，包括但不限于在未经掌麦科技事先书面批准的情况下，以复制、传播或向他方披露等方式使用在本软件提供的平台上其他用户展示的任何资料。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（11）承诺对您的产品负有管理义务，对其产品中出现的违反国家有关法律、法规规定及您规则的信息予以立即删除。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（10）承诺将严格按照国家法律法规的规定和要求，合规守法经营。掌麦科技有权不定期对您的经营资质、线下经营现状进行抽查，并接受媒体监督，如一旦经抽查发现或经举报证实您没有合规经营或经营现状不符合相关法律规定等要求的，掌麦科技有权采取任何必要的处罚措施直至封号。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">若违反以上条例</span><span style="font-family:宋体;font-size:12.0000pt;">，我们有权随时终止</span><span style="font-family:宋体;font-size:12.0000pt;">您的使用权</span><span style="font-family:宋体;font-size:12.0000pt;">，并视为对掌麦科技侵权且</span><span style="font-family:宋体;font-size:12.0000pt;">承担相应赔偿。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:18.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;5.3您承诺其向用户提供的产品没有质量瑕疵和/或权利瑕疵，并符合法律规定及国家标准。任何第三人或其他人士因使用您提供的产品造成其人身、财产等方面损失的，您应负责赔偿并使掌麦科技免责。掌麦科技如因此而遭受损失的，掌麦科技有权进行追偿。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">5.4您同意通过本软件提供的平台或其他渠道接受掌麦科技提供的各类信息服务，包括广告信息。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">5.5您应当妥善保管其账户、账号和密码，您或您的授权人泄密所致损失需由您自行承担。如您发现他人冒用或盗用相关账户、账号或密码，您应立即以有效方式通知掌麦科技。在掌麦科技收到您有效通知前，您的账户、账号在登录状态下的行为均视为您自主操作行为，您应认可该等操作行为的效果。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="p" style="text-indent:23.2500pt;text-align:justify;"><span style="font-family:宋体;font-size:12.0000pt;">5.6您承诺通过本软件的服务实施的交易或其他行为均是合法、真实且有效的。您不得以虚假交易、虚假结算、虚增交易金额等方式干扰本软件的服务，不得实施套现、洗钱等非法行为。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="p" style="text-indent:23.2500pt;"><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;">第六条、消费者保障</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;"></span></p>
+                <p class="p" style="text-indent:23.2500pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;6.1您同意为本软件的用户提供优质的服务，保障本软件其他用户的合法权益，包括但不限于采取以下措施：</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="p" style="text-indent:23.2500pt;"><span style="font-family:宋体;font-size:12.0000pt;">（1）在您的服务页面公布消费者保障措施并严格执行，且该等保障措施不应低于国家标准、行业标准。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="p" style="text-indent:23.2500pt;"><span style="font-family:宋体;font-size:12.0000pt;">（2）不论因何种原因导致本协议解除或提前终止，您有义务配合掌麦科技进行相关的善后工作。本协议终止后，如您和用户之间的交易仍在履行期限内的，您应当保证将剩余服务期限履行完毕或自行与用户达成合理的解决方案。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="p" style="text-indent:23.2500pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;6.2您如通过本软件平台服务发布的现金券、抵价券以及其他类型的具有预付价值的商品，您应遵守相关法律规定，详细说明该等商品的使用条件、使用方法、使用限制、有效期等信息，且相关条件、限制应当合理，不得违反法律法规、商户规则的规定。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="p" style="text-indent:23.2500pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;6.3您应当严格遵守通过各种方式直接或间接向用户作出的承诺，包括但不限于通过本协议、掌麦科技制定的相关规则以及线上店铺、商品详情页面等方式向用户作出的承诺。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="p" style="text-indent:23.2500pt;text-align:justify;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;6.</span><span style="font-family:宋体;font-size:12.0000pt;">4</span><span style="font-family:宋体;font-size:12.0000pt;">您明确了解并同意您是消费者保障的责任主体。当发生您应当履行消费者保障义务的情形时，您应保证用户的消费者合法权益。对于用户因其消费者权益问题提出的要求，您应积极处理。您同意当掌麦科技受理买家提出的消费者保障维权和赔付申请时，您应积极配合，在掌麦科技要求的时间期限内提供相关证据材料，以证明与用户交易的商品或服务不存在用户提出的问题或符合交易双方的约定，并保证所提交的证据材料真实、合法。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:18.0500pt;"><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;">第七条、双方其他权利与义务</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">7.1掌麦科技在工作时间内免费给甲方提供包括电话、即时通讯工具、网络远程协助等方式的服务与技术支持；</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">7.2</span><span style="font-family:宋体;font-size:12.0000pt;">掌麦科技为您提供的软件使用每年收取年费。逾期未续费的，系统会自动暂停软件使用权直至续费重新开通；</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">7.3您全额付款到帐后，掌麦科技应在2个工作日内安排安装及调试，并有义务为您的操作人员进行软件操作培训；</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">7.4您应确保有专人对软件的使用和管理负责；</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">7.5若您的电脑设备或者操作系统和乙方提供的软件不兼容，您应配合更换电脑设备或者操作系统；</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">7.6您不得以任何形式越过掌麦科技的监管；您在经营过程中不得损害掌麦科技的利益，同时不得影响掌麦科技的声誉，因此对掌麦科技造成的损失掌麦科技有权要求您进行相应赔偿。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">7.7您及其关联公司或个人不得以任何方式私自与掌麦科技开发的客户发生业务合作，否则将按您营业收入的三倍赔偿掌麦科技，并且掌麦科技有权无条件解除与您的合作。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">7.8您不得开展任何可能伤及掌麦科技声誉和形象的活动，否则掌麦科技有权追究您的责任。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">7.9掌麦科技承诺您所提交的资料和个人用户信息只限用于本平台使用，在未征得您同意的情况下，不会向任何第三方或个人泄漏您的资料信息。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="p" style="text-indent:24.0000pt;text-align:justify;"><span style="font-family:宋体;font-size:12.0000pt;">7.10如您发布含有任何违反法律、法规、本协议约定的信息或链接的，掌麦科技有权进行屏蔽或删除等适当的处理。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="p" style="text-indent:24.0000pt;text-align:justify;"><span style="font-family:宋体;font-size:12.0000pt;">7.11为了保障您的权益，在发现您账号、账户、存在异常活动时，掌麦科技有权暂停服务的提供。您违反本协议约定的，掌麦科技也可以单方暂停或终</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="p" style="text-align:justify;"><span style="font-family:宋体;font-size:12.0000pt;">止提供服务。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="p" style="text-indent:24.0000pt;text-align:justify;"><span style="font-family:宋体;font-size:12.0000pt;">7.12如您未能依照承诺的商品或服务内容为用户提供商品、服务或优惠权益，或违反本协议其他约定的，将极大伤害掌麦科技和您的信誉。掌麦科技有权在本软件平台、相关网络页面或通过其他方式公开商户的行为，同时掌麦科技有权自行向用户支付同等价值的优惠或费用作为补救，您应当承担掌麦科技因补救行为产生的全部费用，包括但不限于采购费用、邮寄费用、补偿费用以及为挽回企业声誉和形象支出的宣传费用等。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="p" style="text-indent:24.0000pt;text-align:justify;"><span style="font-family:宋体;font-size:12.0000pt;">7.13您在使用本协议内</span><span style="font-family:'Times New Roman';font-size:12.0000pt;">《</span><span style="font-family:宋体;font-size:12.0000pt;">掌麦云商户</span><span style="font-family:'Times New Roman';font-size:12.0000pt;">》</span><span style="font-family:宋体;font-size:12.0000pt;">、《智慧超市》软件时，必须同时使用《掌麦云商户收银系统》进行商品费用结算。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.1000pt;"><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;">第八条、保密条款</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">8.1</span><span style="font-family:宋体;font-size:12.0000pt;">在注册</span><span style="font-family:宋体;font-size:12.0000pt;">或使用</span><span style="font-family:宋体;font-size:12.0000pt;">过程中，您将选择账户名和密码。您须自行负责对您的账户名和密码保密，且须对您在账户名和密码下发生的所有活动承担责任。</span><span style="font-family:宋体;font-size:12.0000pt;">掌麦</span><span style="font-family:宋体;font-size:12.0000pt;">科技不对您所保管的账户、密码被其他任何第三人使用及其产生的后果承担任何责任、义务。</span><span style="font-family:宋体;font-size:12.0000pt;"><br>
+</span><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;&nbsp;&nbsp;&nbsp;8.2您应对掌麦科技的商业秘密所严格保密,并只能在双方公司合作业务范围使用。凡涉及由双方提供项目，资金有关所有材料，包括但不限于资本营运计划，财资情报，客户名单，经营决策，项目设计，技术数据，项目商业计划书等均属保密内容。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">8.3凡未经双方书面同意而直接、间接、口头或书面形式向第三方提供涉及保密内容的行为均属泄密。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.1000pt;"><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;">第九条、风险提示</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">掌麦</span><span style="font-family:宋体;font-size:12.0000pt;">科技特别提示您：请注意本软件产品使用过程中的风险控制，使用本软件产品由您自己承担风险，此软件不包含任何使用保证，不能保证适用或不出故障。在适用法律允许的最大范围内，</span><span style="font-family:宋体;font-size:12.0000pt;">掌麦</span><span style="font-family:宋体;font-size:12.0000pt;">科技在任何情况下不就因使用或不能使用本软件产品所发生的特殊的、意外的、直接或间接的损失承担赔偿责任。对您因软件遗失、被盗、毁损、误用、或擅自修改造成的损失</span><span style="font-family:宋体;font-size:12.0000pt;">掌麦</span><span style="font-family:宋体;font-size:12.0000pt;">科技不承担任何责任。在意外的、不可预料的情况下，对于注册用户免费</span><span style="font-family:宋体;font-size:12.0000pt;">升级等</span><span style="font-family:宋体;font-size:12.0000pt;">服务承诺将自动终止。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:23.2500pt;"><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;">第十条&nbsp;免责和有限责任</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:23.2500pt;"><span style="font-family:宋体;font-size:12.0000pt;">10.1掌麦科技将按现有技术提供相应的安全措施以保障本软件服务的安全和正常运行。但由于可能存在的计算机病毒、网络通讯故障、系统维护等方面的因素以及可能发生的不可抗力事件，掌麦科技无法保证本软件服务的绝对安全和在任何条件下均能正常提供服务，对此您应当予以理解并不应要求掌麦科技在以下情况下承担责任：</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:23.2500pt;"><span style="font-family:宋体;font-size:12.0000pt;">（1）系统停机维护；</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:23.2500pt;"><span style="font-family:宋体;font-size:12.0000pt;">（2）终端设备、通讯或任何设备出现故障不能进行数据传输或迟延、不准确、错误、疏漏等的；</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:23.2500pt;"><span style="font-family:宋体;font-size:12.0000pt;">（3）因台风、地震、海啸、洪水、停电、战争、恐怖袭击等不可抗力之因素，造成系统障碍不能执行业务的；</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:12.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;&nbsp;（4）由于黑客攻击、电信部门技术调整或故障、网站升级、第三方问题等原因而造成的服务中断或者延迟。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">10.2掌麦科技依照法律规定对相关数据进行保存。因您自行删除数据或者因不可抗力、您不再继续使用服务或服务被终止等情况时，您使用服务的数据可能丢失而不可恢复。基于上述原因，掌麦科技提醒您自行对相关数据进行定期存储保存。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:18.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;10.3无论本协议是否有其他约定，掌麦科技向您承担的最大的总体责任和赔偿不超过掌麦科技收取的该您支付的服务费用的总额。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:23.2500pt;"><span style="font-family:宋体;font-size:12.0000pt;">10.4掌麦科技仅为用户和您进行交易提供相关信息服务和技术服务，掌麦科技并非用户和您交易的参与者。掌麦科技不对您和/或用户行为的合法性、有效性，您产品或服务的真实性、合法性和有效性作任何明示或暗示的担保，也不承担任何责任。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:23.2500pt;"><span style="font-family:宋体;font-size:12.0000pt;">10.5您可以自行聘请第三方为其进行管理账号、发布信息、进行交易等操作，该等第三方使用您账号、账户的行为后果应由您承担。掌麦科技可能对第三方的信息进行披露，以便您在有需要时可以从该等第三方获得所需要的服务，但是掌麦科技不对您与第三方发生的纠纷、争议和后果负责。您如因使用第三方服务而遭受损失的，应由您或第三方依照其协议约定承担和负责，掌麦科技不负责赔偿。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.1000pt;"><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;">第十一条、知识产权及相关权益</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">11.1掌麦科技拥有本软件以及相关技术的著作权、商业秘密以及其他相关的知识产权，包括但不限于与本软件有关的各种文档资料以及本软件中展示的信息内容。其它未经提及的权利亦由掌麦科技保留。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">11.2本软件所涉的标识均属于掌麦科技或掌麦科技关联公司的知识产权，并受到著作权法、商标法和其它知识产权法律的保护，未经授权您不应复制、模仿、使用或发布等。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">11.3未经掌麦科技另行书面同意，您不得为任何营利性或非营利性的目的自行实施、利用、转让或许可任何第三方实施、利用、转让上述知识产权；不得将通过本软件提供的服务获取的用户信息或其他数据作商业性的利用、提供给任何第三方或对外披露。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">11.4您向掌麦科技提供的信息内容，包含企业的名称、标志等信息，掌麦科技可以在相关网络页面或于线下宣传素材中使用以向第三方说明您参与合作的情况。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">11.5未经掌麦科技另行书面授权，您不得以掌麦科技名义发布任何信息，对外开展合作或宣称具有代理、代表权限或标明为“赞助商”、“合作伙伴”等商业合作关系。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">11.6您不得对掌麦科技服务相应软件进行修改、改编、翻译、准备衍生产品、反向工程、反向编译、反汇编、分解或尝试从软件派生源代码，违者属于侵权行为，您需承担由此产生的法律后果。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.1000pt;"><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;">第十二条、违约责任</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">12.1在使用本软件服务的过程中，如您存在侵犯第三方（如用户、知识产权权利人）权益、违反国家法律法规或其他违反本协议的行为时，除根据本协议应向掌麦科技支付违约金</span><span style="font-family:宋体;font-size:12.0000pt;">（如有）外，还应赔</span><span style="font-family:宋体;font-size:12.0000pt;">偿掌麦科技因此遭受的损失（如有），您须赔偿的损失包括但不限于：</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:18.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（1）掌麦科技被判决、裁决须对外支付的违约金或赔偿额；</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:18.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（2）掌麦科技代您向用户支付的退款、违约金或赔偿额；</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:18.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（3）掌麦科技被执行行政处罚的金额；</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:18.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（4）掌麦科技支付的律师费用、消除影响所支出的必要费用。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">12.3协议各方根据本协议的规定行使单方解约权可不承担违约责任。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">12.4当第三方以您侵权为由要求掌麦科技删除您信息时，您同意掌麦科技对删除行为不承担任何责任，如最终证明第三方为恶意或缺乏权利凭证，您同意自行向第三方进行追责。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">12.5掌麦科技因故意或重大过失导致您的利益受损时，掌麦科技对您的违约赔偿责任以您的实际损失为计算依据。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="p" style="text-indent:24.0000pt;text-align:justify;"><span style="font-family:宋体;font-size:12.0000pt;">12.6您在使用本协议内软件时，不得同时使用其他第三方提供的软件与本协议软件有竞争关系的软件服务，否则掌麦科技有权中止本协议，销毁您的账户，并不退还已支付的服务费用。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:18.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;">第十三条、协议终止及有效期</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;13.1自然终止：本协议履行完毕的，则本协议将终止。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;13.2&nbsp;提前解除：您可以提前解除本协议，但您需通过本软件提供的解约功能操作或提前30天书面通知掌麦科技；掌麦科技亦可根据合理的商业需要或国家法律法规要求等，通过合理方式提前30天通知您解除本协议。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;13.3发生下述情形时，掌麦科技可行使单方解约权：</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（1）您违反掌麦科技制定的规则并达到须被清退的程度；</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（2）您提交的信息或文件不真实、不合法、已失效或您无法证明其信息或文件的真实性、合法性、有效性；</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（3）您没有销售其商品或服务的必备资质或其商品、服务不符合国家法律法规、规章和政策；</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（</span><span style="font-family:宋体;font-size:12.0000pt;">4</span><span style="font-family:宋体;font-size:12.0000pt;">）您存在违反本协议或您规则的情形，经掌麦科技通知后，在限定的合理期限内未能改正。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">（</span><span style="font-family:宋体;font-size:12.0000pt;">5</span><span style="font-family:宋体;font-size:12.0000pt;">）其他掌麦科技依据本协议可行使单方解约权的情形。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;以上掌麦科技行使单方解约权的，掌麦科技无需承担违约责任。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">13.4本协议终止后，掌麦科技有权保留您的注册数据及以前的交易行为等记录。如您在本协议终止前存在违法行为或违反约定的行为，掌麦科技仍可行使本协议所约定的权利。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;">第十四条、法律及争议解决</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;14.1本协议适用中华人民共和国大陆地区法律。如遇本协议有关的某一特定事项缺乏明确法律规定，则应参照通用商业惯例和（或）行业惯例。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;14.2因双方就本协议的签订、履行或解释发生争议，双方应努力友好协商解决。如协商不成，掌麦科技和您同意由掌麦科技住所地法院管辖审理双方的纠纷或争议。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;14.3如本协议的任何条款被视作无效或无法执行，则该等条款可被分离，其余部份仍具有法律效力。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:30.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">14.4掌麦科技于商户过失或违约时放弃本协议规定的权利，不应视为其对您的其他或以后同类之过失或违约行为弃权。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;">第十五条、其他约定</span><span style="font-family:宋体;font-weight:bold;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;15.1掌麦科技有权将本协议项下的权利和义务转让给掌麦科技关联公司，届时无需通知您，但您应当配合签署相关转让文件，且您承诺对此不持异议。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">&nbsp;15.2掌麦科技保留在必要时对本协议进行修改的权利，相关内容将公布于本软件的服务指向的网络页面上或以其他方式通知您。如您对本协议的修改存有异议，或者您不同意掌麦科技制定的规则的，您有权选择终止本协议并停止使用本软件和相关服务，但您在终止前的行为仍受本协议最新的修改版本以及规则的约束。如果您继续使用本软件和相关服务，则视为接受协议条款的变动。</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">若您对本协议内容任意条款有疑问，可通过服务电话与我们联系：4008815661</span><span style="font-family:宋体;font-size:12.0000pt;"></span></p>
+                <p class="MsoNormal" style="text-indent:24.0000pt;"><span style="font-family:宋体;font-size:12.0000pt;">本协议最终解释权归四川掌麦科技有限公司所有。</span></p>            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-agree" data-dismiss="modal">同意并继续</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--浏览器提示-->
+<div class="popupBg" style="display:none;position: fixed"></div>
+<div class="popup" style="width:600px; height:320px; margin:-170px 0 0 -300px;  display:none;">
+    <div class="popupTitle bg">
+        <h1 class="margin-0">温馨提示</h1>
+
+        <div class="popupClose" title="关闭"> X </div>
+    </div>
+    <div class="popupArea">
+        <div class="popupAreaCenter">
+            <p class="title">很抱歉，当前浏览器无法完美呈现页面。</p>
+
+            <p class="remark">推荐使用以下浏览器：</p>
+
+            <p class="line"></p>
+
+            <div class="browserList">
+                <ul>
+                    <li><a href="https://dl.google.com/chrome/win/776B03BEAFB2810D/42.0.2311.152_chrome_installer.exe" target="_blank" title="谷歌Chrome浏览器"><img src="../img/denglu/chrome.jpg"><span>Chrome浏览器</span></a></li>
+                    <li><a href="http://www.firefox.com.cn/download/" target="_blank" title="火狐浏览器"><img src="../img/denglu/fireFox.jpg"><span>火狐浏览器</span></a></li>
+                    <li><a href="http://se.360.cn/" target="_blank" title="360安全浏览器"><img src="../img/denglu/360.jpg"><span>360安全浏览器</span></a></li>
+                    <li><a href="http://www.opera.com/zh-cn" target="_blank" title="Opera浏览器"><img src="../img/denglu/opera.jpg"><span>Opera浏览器</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--jq-->
+<script src="../js/jquery.js"></script>
+<!--btjs-->
+<script src="../js/bootstrap.js"></script>
+<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="../js/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="../js/jquery.base64.js"></script>
+<!--pagejs-->
+
+<script type="text/javascript">
+    $(function () {
+        $(document).on("click", ".popupClose", function () {
+            $(this).closest(".popup").hide();
+            $(this).closest(".popup").prev().hide();
+        });
+        function bottombjt(){
+            if ($(window).height() < 890) {
+                $(".yunpiaofu").css({top: '619px'});
+            }else{
+                $(".yunpiaofu").css({top: 'auto',bottom:"0px"});
+            }
+        }
+        bottombjt();
+        $(window).resize(function(){bottombjt()});
+        function showpop() {
+            $(".popupBg").show();
+            $(".popup").show();
+        }
+        window.onload = function () {
+
+            var browser = navigator.appName;
+            var b_version = navigator.appVersion;
+            var version = b_version.split(";");
+            if(version[1]){
+                var trim_Version = version[1].replace(/[ ]/g, "");
+                if (browser == "Microsoft Internet Explorer" && trim_Version == "MSIE6.0") {
+                    showpop();
+                }
+                else if (browser == "Microsoft Internet Explorer" && trim_Version == "MSIE7.0") {
+                    showpop();
+                }
+                else if (browser == "Microsoft Internet Explorer" && trim_Version == "MSIE8.0") {
+                    showpop();
+                }
+            }
+
+
+        };
+        $('button[type=submit]').on('click',function(){
+            var browser = navigator.appName;
+            var b_version = navigator.appVersion;
+            var version = b_version.split(";");
+            if(version[1]){
+                var trim_Version = version[1].replace(/[ ]/g, "");
+                if (browser == "Microsoft Internet Explorer" && trim_Version == "MSIE6.0") {
+                    showpop(); return false;
+                }
+                else if (browser == "Microsoft Internet Explorer" && trim_Version == "MSIE7.0") {
+                    showpop(); return false;
+                }
+                else if (browser == "Microsoft Internet Explorer" && trim_Version == "MSIE8.0") {
+                    showpop(); return false;
+                }
+            }
+        });
+//        显示密码
+        $("#qiehuanyscsl").on("click", function () {
+            $(this).find("i").toggleClass("icon-eye-close");
+            $(this).find("i").toggleClass("icon-eye-open");
+            $("#xianshimima").attr("type") == "text" ? $("#xianshimima").attr("type", "password") : $("#xianshimima").attr("type", "text");
+        });
+        $('.chang_code').on('click',function(){
+            $(this).attr('src',"../common/captcha?r="+ Math.random());
+            return false;
+        });
+        $('.btn-agree').click(function(){
+            $('input[name=agreement]').attr('checked','checked');
+        });
+        var $overlay = $('<div id="loadinggif"></div>');
+        $('.register-form').Validform({
+            tiptype:function(msg,o,cssctl){
+                //msg：提示信息;
+                //o:{obj:*,type:*,curform:*}, obj指向的是当前验证的表单元素（或表单对象），type指示提示的状态，值为1、2、3、4， 1：正在检测/提交数据，2：通过验证，3：验证失败，4：提示ignore状态, curform为当前form对象;
+                //cssctl:内置的提示信息样式控制函数，该函数需传入两个参数：显示提示信息的对象 和 当前提示的状态（既形参o中的type）;
+                if(!o.obj.is("form")){//验证表单元素时o.obj为该表单元素，全部验证通过提交表单时o.obj为该表单对象;
+                    var $obj_parent = o.obj.parent('.zhucebiaolist');
+
+                    if(o.type == 1){
+
+                    }else if(o.type == 2){
+                        if($obj_parent.attr('data-right')){
+                            $obj_parent.find('.youtishi .tbiao').html('');
+                        }else{
+                            $obj_parent.find('.youtishi .tbiao').html('<i class="icon-ok-circle text-green font-size-30"></i>');
+                        }
+                        $obj_parent.find('.youtishi .ttext').text('');
+                        $obj_parent.removeClass('cuowutishi').addClass('zhengquetishi');
+                    }else if(o.type == 3){
+                        $obj_parent.find('.youtishi .tbiao').html('<i class="icon-remove-circle font-size-30"></i>');
+                        $obj_parent.find('.youtishi .ttext').text(msg);
+                        $obj_parent.removeClass('zhengquetishi').addClass('cuowutishi');
+
+                    }else if(o.type == 4){
+
+                    }
+                    //cssctl(objtip,o.type);
+                }
+            },
+            ignoreHidden:false,
+            showAllError:false,
+            ajaxPost: true,
+            datatype:{
+                "p6-16" :/^[a-zA-Z0-9_]{6,16}$/,     //密码验证,
+                //"mobile" : /^(13[0-9]|15[012356789]|17[3678]|18[0-9]|14[57])[0-9]{8}$/,   //手机
+                "mobile" : /^1[0-9]{10}$/,   //手机
+            },
+            beforeSubmit:function(){
+                var is_agree = $('input[name=agreement]').is(':checked');
+                if(!is_agree){
+                    swal('请先阅读掌麦用户使用协议，并同意！', false, "warning");
+                    return false;
+                }
+                $("body").append($overlay);
+                //密码隐藏
+                if($(':password',$('.register-form')).length > 0){
+                    $(':password',$('.register-form')).each(function (index, pwd_obj) {
+                        var pwd = $(pwd_obj).val();
+                        $(pwd_obj).val($.base64.encode(pwd));
+                    });
+                }
+            },
+            callback: function(json){
+                //密码恢复
+                if($(':password',$('.register-form')).length > 0){
+                    $(':password',$('.register-form')).each(function (index, pwd_obj) {
+                        var pwd = $(pwd_obj).val();
+                        $(pwd_obj).val($.base64.decode(pwd));
+                    });
+                }
+                $overlay.remove();
+                var item = json.item;
+                if(json.status == 1){
+
+                    swal({title:item.msg ? item.msg : '操作成功',text:false,type:"success",timer:3000,showConfirmButton:true,allowOutsideClick:false},function(){
+                        if (item.url) {
+                            window.location.href = item.url;
+                        }else{
+                            window.location.reload();
+                        }
+                    });
+                }else{
+                    swal(item.msg ? item.msg : '系统繁忙，请稍后再试', false, "warning",1500);
+                }
+                return false;
+            }
+        });
+
+    });
+    var counter = 60;
+    var intervalid;
+    $(".get-code").click(function(){
+        var $obj     = $("input[name=mobile]");
+        var vcode    = $("input[name=vcode]").val();
+        var account  = $obj.val();
+        var $obj_parent = $obj.closest('.zhucebiaolist');
+        if($obj_parent.hasClass('zhengquetishi') && $("input[name=vcode]").closest('.zhucebiaolist').hasClass('zhengquetishi')){
+            if(account.match(/^(13[0-9]|15[012356789]|17[3678]|18[0-9]|14[57])[0-9]{8}$/)){
+                $(".get-code").removeClass('youbianbtn').addClass('youbianbtn-hui').attr('disabled','disabled').text('正在发送...');
+                getCode(account,vcode);
+            }else{
+                $obj_parent.find('.youtishi .tbiao').html('<i class="icon-remove-circle font-size-30"></i>');
+                $obj_parent.find('.youtishi .ttext').text('请正确填写手机号码！');
+                $obj_parent.removeClass('zhengquetishi').addClass('cuowutishi');
+            }
+        }else{
+            if(account.length == 0){
+                $("input[name=mobile]").focus();
+            }else{
+                if(vcode.length == 0){
+                    $("input[name=vcode]").focus();
+                }
+            }
+        }
+        return false;
+    });
+
+    function getCode(account,vcode){//获取短信验证码
+        $.ajax({
+            type: "POST",
+            url: "../common/get_code",
+            data:"vcode="+vcode+"&account="+account+"&type=reg",
+            success: function(data){
+                data = jQuery.parseJSON(data);
+                var item = data.item;
+                if(data.status == 1){
+                    intervalid = setInterval(function(){
+                        if(counter > 0){
+                            $(".get-code").text(counter+' 秒后重获');
+                            counter--;
+                        }else{
+                            clearInterval(intervalid);
+                            counter = 60;
+                            $(".get-code").removeClass('youbianbtn-hui').addClass('youbianbtn').removeAttr('disabled').text('重新获取 ');
+                        }
+                    }, 1000);
+                }else{
+                    if(item && item.obj && item.obj == 'vcode'){
+                        var $obj_parent = $("input[name=vcode]").closest('.zhucebiaolist');
+                    }else{
+                        var $obj_parent = $("input[name=mobile]").closest('.zhucebiaolist');
+                    }
+                    $obj_parent.find('.youtishi .tbiao').html('<i class="icon-remove-circle font-size-30"></i>');
+                    $obj_parent.find('.youtishi .ttext').text(item.msg ? item.msg : '系统繁忙，获取失败');
+                    $obj_parent.removeClass('zhengquetishi').addClass('cuowutishi');
+                    $(".get-code").removeClass('youbianbtn-hui').addClass('youbianbtn').removeAttr('disabled').text('获取验证码');
+                }
+            },
+            error: function(data){
+                swal('系统繁忙，请稍后再试', false, "warning",1500);
+                $(".get-code").removeClass('youbianbtn-hui').addClass('youbianbtn').removeAttr('disabled').text('获取验证码');
+            }
+        });
+    }
+    function getCaptcha(){//获取图片验证码
+        $.ajax({
+            type: "GET",
+            url: "../common/get_captcha",
+            dataType:'json',
+            success: function(json){
+                $('input[name=vcode]').val(json.item.msg);
+
+            }
+        });
+    }
+</script>
+
+
+</body></html>

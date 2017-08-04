@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.datetimepicker.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script>
+    <style>
+        .tabs-container{
+            margin: 0 ;
+            padding:20px;
+        }
+        #tab-1 {
+            background-color: #f6f6f6;
+            padding: 15px;
+        }
+        .ui-jqgrid tr.jqgrow td{
+            overflow: inherit;
+            white-space: normal;
+        }
+        .payMoney input{
+            margin-bottom: 8px;
+        }
+        .pay-form{
+            min-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+
+        <div class="main-content-right">
+            <div class="body-content body-content-bg" style="overflow-y: scroll">
+
+                <div class="inner-scollcontent" >
+                    <div class="ibox" style="margin-bottom: 0" id="modify-shop">
+                        <div class="tabs-container">
+                            <div class="zmbox clearfix page-title-area">
+                                <div class="boxpart page-title">
+                                    <span class="txt1">调拨单详情</span>
+                                </div>
+                                <div class="pull-right">
+                                    <button class="btn btn-primary btn-iframe" type="button" data-url="https://b.izhangmai.com/transfer/order_print?id=58f968235b6c245b058b4567" style="margin-left: 20px" data-form="#search-form">打 印</button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-primary  ioexcel btn-iframe" data-url="https://b.izhangmai.com/transfer/excel_export?id=58f968235b6c245b058b4567" data-form="#search-form">导 出</button>
+                                    <a class="text-info  " style="margin-left:20px;margin-right: 10px;line-height: 31px;" href="##" onclick="history.back()">&lt; 返 回</a>
+                                </div>
+                            </div>
+                            <div class="zmbox clearfix head-form" style="padding-left:10px;padding-top:5px;margin-bottom: 10px;background-color: #f0f0f0">
+
+                            </div>
+                            <form class="purchase-form" action="" method="post">
+                                <div id="shangpingzhanshi" class="porela" style="min-height: 40px" data-type="all">
+                                    <div class="table-responsive" style="overflow:inherit; margin-bottom:50px;">
+                                        <table id="transferDetail-table"></table>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>-->
+
+<!--<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>-->
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+<!--<script src="../js/jqGrid.js"></script>-->
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"></script>-->
+<script src="../assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<script src="../js/jquery.datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/chosen.jquery.min.js"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+
+<script type="text/javascript">
+
+
+    var shopmanageCol= [
+        {
+            label : '条码',
+            name: 'barcode',
+            align:'center',
+            width: 200,
+        },
+        {
+            label: '商品名称',
+            name: 'shopName',
+            width: 300,
+            align:'left',
+            sortable:true,
+            sorttype:"number"
+        },
+        {
+            label: '规格',
+            name: 'standard',
+            align:'center',
+            width: 160,
+        },
+        {
+            label: '单位',
+            name: 'standard',
+            align:'center',
+            width: 160,
+        },
+
+        {
+            label: '分类',
+            name: 'type',
+            align:'center',
+            width: 200,
+        },
+        {
+            label: '调拨价',
+            name: 'purchasePrice',
+            align:'center',
+            width: 160,
+        },
+        {
+            label: '调拨数量',
+            name: 'purchasePrice',
+            align:'center',
+            width: 160,
+        },
+        {
+            label: '小计',
+            name: 'grossProfitRate',
+            align:'center',
+            width: 160,
+        }
+    ];
+    jqgridTable({
+        "tableId":"#transferDetail-table",
+        "pagerId":"",
+        "url":"../data/shop/shopmanageList.json",
+        "colModel":shopmanageCol,
+        "footerrow":false,
+        "height":" 100%",
+        "cellEdit":false,
+        "footerrowFun":'',
+        "multiselect":false
+
+    })
+    //初始化页面
+    function buy_head_content(){
+        var buyHead='';
+        buyHead+=' <div class="clearfix">\
+                <div class="boxpart" style="width: 300px">\
+                <div class="t">调拨单号：</div>\
+        <div class="t">DB002942201704210001</div>\
+    </div>\
+        <div class="boxpart" style="width: 300px">\
+            <div class="t">创建人：</div>\
+            <div class="t">邓勇</div>\
+        </div>\
+        <div class="boxpart" style="width: 300px">\
+            <div class="t">创建时间：</div>\
+            <div class="t">2017-04-21 10:02</div>\
+        </div>\
+        <div class="boxpart" style="width: 300px">\
+            <div class="t">备注：</div>\
+            <div class="t">--</div>\
+        </div>\
+    </div>\
+        <div class="clearfix">\
+            <div class="boxpart" style="width: 300px">\
+                <div class="t">商品种数：</div>\
+                <div class="t">1</div>\
+            </div>\
+            <div class="boxpart" style="width: 300px">\
+                <div class="t">总计：</div>\
+                <div class="t">￥4.50</div>\
+            </div>\
+            <div class="boxpart" style="width: 300px">\
+                <div class="t">状态：</div>\
+                <div class="t">已完成</div>\
+            </div>\
+        </div>\
+        <div class="clearfix">\
+            <div class="boxpart" style="width: 300px">\
+                <div class="t">调入方：</div>\
+                <div class="t">连锁总部</div>\
+            </div>\
+            <div class="boxpart" style="width: 300px">\
+                <div class="t">入库人：</div>\
+                <div class="t">邓勇</div>\
+            </div>\
+            <div class="boxpart" style="width: 300px">\
+                <div class="t">入库时间：</div>\
+                <div class="t">2017-04-21 10:02</div>\
+            </div>\
+        </div>';
+        $('.head-form').empty().append(buyHead)
+    }
+    buy_head_content();
+</script>
+</body>
+</html>

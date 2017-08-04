@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.datetimepicker.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script>
+    <style>
+        .tabs-container{
+            margin: 0 ;
+            padding:20px;
+        }
+        #tab-1 {
+            background-color: #f6f6f6;
+            padding: 15px;
+        }
+        .ui-jqgrid tr.jqgrow td{
+            overflow: inherit;
+            white-space: normal;
+        }
+        .payMoney input{
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+
+        <div class="main-content-right">
+            <div class="body-content body-content-bg" style="overflow-y: scroll">
+
+                <div class="inner-scollcontent" >
+                    <div class="ibox" style="margin-bottom: 0" id="modify-shop">
+                        <div class="tabs-container">
+                            <div class="zmbox clearfix page-search-area">
+                                <form id="search-form" action="">
+                                    <div class="boxpart">
+                                        <div class="t">供应商名称：</div>
+                                        <div class="inpt">
+                                            <input type="text" class="pintxt" name="keywords" value="">
+                                        </div>
+                                        <div class="boxbtn">
+                                            <button type="submit" class="btn btn-primary" id="cheshixiaoguoid1">查询</button>
+                                        </div>
+                                    </div>
+                                    <div class="boxpart">
+                                        <a class="reset" href="javascript:;">清空筛选条件</a>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="zmbox clearfix page-title-area">
+                                <div class="boxpart page-title">
+                                    <span class="txt1">未结算</span>
+        <span class="txt2" style="font-size: 13px">
+            <span class="text-danger">2</span>个供应商，
+            共<span class="text-danger">5</span>单，
+            应收合计<span class="text-danger">￥4.50</span>，
+            应付合计<span class="text-danger">￥304.00</span>
+        </span>
+                                </div>
+                            </div>
+                            <div class="margin-t10" style="margin: 10px 20px 0 20px">
+                                <table id="supplierPay-table"></table>
+                                <div class="zmalertno nodata" style="margin:10px 0 0 0;">
+                                    <i class="icon-exclamation-sign"></i> <span>暂无数据</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>-->
+
+<!--<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>-->
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+<!--<script src="../js/jqGrid.js"></script>-->
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"></script>-->
+<script src="../assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<script src="../js/jquery.datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/chosen.jquery.min.js"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+
+<script type="text/javascript">
+
+    var supplierPayCol= [
+        {
+            label : '编号',
+            name: 'barcode',
+            align:'center',
+            width: 140,
+        },
+        {
+            label: '供应商名称',
+            name: 'standard',
+            align:'center',
+            width: 300,
+            formatter: function (cellvalue, options, rowObject) {
+                var str='';
+                str+=cellvalue==''?'--':cellvalue;
+                console.log(str)
+                return str
+            }
+        },
+        {
+            label: '地址',
+            name: 'unit',
+            align:'center',
+            width: 200,
+        },
+        {
+            label: '分类',
+            name: 'type',
+            align:'center',
+            width: 140,
+        },
+        {
+            label: '联系方式',
+            name: 'modal',
+            align:'center',
+            width: 140,
+        },
+        {
+            label: '联系人',
+            name: 'purchasePrice',
+            align:'center',
+            width: 140,
+        },
+        {
+            label: '单数',
+            name: 'salePrice',
+            align:'center',
+            width: 140,
+        },
+        {
+            label: '金额',
+            name: 'storeNum',
+            align:'center',
+            width: 140,
+        },
+
+        {
+            label: '结余合计',
+            name: 'monthSale',
+            align:'center',
+            width: 140,
+            formatter: function (cellvalue, options, rowObject) {
+                return '<span class="red">'+cellvalue+'</span>';
+            }
+        },
+        {
+            label: '操作',
+            name: 'operation',
+            align:'center',
+            width: 100,
+            formatter: function (cellvalue, options, rowObject) {
+                var gid = "'#"+options.gid +"'";
+                var str='<div>\
+                        <span class="table-bar" onclick="refund_detail('+ rowObject.id + ','+ gid + ')"><i class="icon-search"></i>详情</span>';
+                str+='</div>'
+                return str;
+            }
+        }
+    ];
+    jqgridTable({
+        "tableId":"#supplierPay-table",
+        "pagerId":"",
+        "url":"../data/shop/shopmanageList.json",
+        "colModel":supplierPayCol,
+        "footerrow":false,
+        "height":300,
+        "cellEdit":false,
+        "footerrowFun":'',
+        "multiselect":false
+
+    })
+    //查看详情
+    function refund_detail(rowId,gid){
+        var href='../buy/supplier_order_pay_detail.html'
+        window.location.href=href;
+        localStorage.setItem('frameidSrc',href);
+    }
+
+
+</script>
+</body>
+</html>

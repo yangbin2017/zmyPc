@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .tabs-container{
+            margin: 0 ;
+            padding:20px;
+        }
+        #tab-1 {
+            background-color: #f6f6f6;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+
+        <div class="main-content-right">
+            <div class="body-content body-content-bg" style="overflow-y: scroll">
+
+                <div class="inner-scollcontent" >
+                    <div class="ibox" style="margin-bottom: 0" id="modify-shop">
+                        <div class="tabs-container">
+                            <div class="zmbox clearfix page-title-area">
+                                <div class="boxpart page-title">
+                                    <span class="txt1">角色列表</span>
+                                    <span class="txt2">共 <span class="text-info">5</span> 个</span>
+                                </div>
+                                <!-- 居右区域-->
+                                <div class="pull-right">
+                                    <button class="btn btn-primary btn-auth open-modals" data-open="authoritySetting" data-head="权限设置">创建角色</button>
+                                </div>
+                            </div>
+                            <div class="margin-t10">
+                                <table id="roles-table"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+<!--权限设置-->
+<div class="modals authoritySetting" >
+    <div class="modals-dilog w-1040">
+        <div class="modals-content">
+            <div class="modals-head">
+                <span>权限设置</span>
+                <div class="close-m closeModals">&times;</div>
+            </div>
+            <div class="modals-body maxheight">
+                <div class="modals-body-content">
+                    <div class="madals-container active">
+                        <!-- Tab panes -->
+                        <div class="tab-content " style="border-bottom: none">
+                            <form class="form-horizontal " action="" method="post" data-reload="#contentbox">
+                                <div class="modal-body bg-white" style="padding-bottom: 0">
+                                    <div class="ibox" style="margin-bottom: 0">
+                                        <div class="ibox-content" style="border: none">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <div class="form-group  margin-right-10 margin-bottom-25">
+                                                        <label class="col-sm-4 control-label"><span class="text-danger">*</span>角色名称： </label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control " name="role_name" value="店长" maxlength="15" datatype="*" nullmsg="请填写角色名称！" errormsg="" >
+                                                            <span class="help-block m-b-none"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <div class="form-group  margin-right-10 margin-bottom-25">
+                                                        <label class="col-sm-2 control-label">角色描述：</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control " name="description" maxlength="50" value="超市管理负责人">
+                                                            <span class="help-block m-b-none"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="id" value="410">
+                                                <input type="hidden" name="shop_nodes[]" value="166">
+                                                <input type="hidden" name="pos_nodes[]" value="167">
+                                            </div>
+                                            <!-- 权限表格-->
+                                            <div class="table-responsive margin-left-right-0">
+                                                <table class="table text-left">
+                                                    <tbody>
+                                                    <tr><td style="border-top: none"><h4>商户平台权限设置</h4></td></tr>
+                                                    <tr class="quanxiantr1 ">
+                                                        <td><label class="control-label pull-left" style="padding-top: 5px"> <input type="checkbox" class="checkbox-input" value="" checked=""></label> <button class="btn btn-link padding-left-10 pull-left" type="button" style="padding-left: 5px">查看报表  <i class="icon-sort-down" style="display:none"></i></button></td>
+                                                    </tr>
+                                                    <tr class="quanxiantr2" style="display: none">
+                                                        <td style="display:none">
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="267" data-name="index"> <dl> &nbsp;查看报表</dl></label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="quanxiantr1 ">
+                                                        <td><label class="control-label pull-left" style="padding-top: 5px"> <input type="checkbox" class="checkbox-input" value="" checked=""></label> <button class="btn btn-link padding-left-10 pull-left" type="button" style="padding-left: 5px">商品  <i class="icon-sort-down" style=""></i></button></td>
+                                                    </tr>
+                                                    <tr class="quanxiantr2" style="display: none">
+                                                        <td style="">
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="169" checked="" data-name="add_goods"> <dl> &nbsp;新增商品</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="175" checked="" data-name="modify_goods"> <dl> &nbsp;编辑商品</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="176" checked="" data-name="modify_price"> <dl> &nbsp;编辑价格</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="177" checked="" data-name="modify_inventory"> <dl> &nbsp;编辑库存</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="178" checked="" data-name="show_stock"> <dl> &nbsp;查看库存</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="179" checked="" data-name="show_monthsale"> <dl> &nbsp;查看月销量</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="180" checked="" data-name="show_worth"> <dl> &nbsp;查看商品总价值</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="222" checked="" data-name="delete_goods"> <dl> &nbsp;下架/删除商品</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="223" checked="" data-name="stock"> <dl> &nbsp;创建盘点单</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="236" data-name="stock_detail"> <dl> &nbsp;查看盘点详情</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="268" data-name="damage"> <dl> &nbsp;报损</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="269" data-name="transfer_confirm"> <dl> &nbsp;调拨单确认</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="270" data-name="use_order"> <dl> &nbsp;领用单确认</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="271" data-name="goods_log"> <dl> &nbsp;单品进销存记录</dl></label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="quanxiantr1 ">
+                                                        <td><label class="control-label pull-left" style="padding-top: 5px"> <input type="checkbox" class="checkbox-input" value="" checked=""></label> <button class="btn btn-link padding-left-10 pull-left" type="button" style="padding-left: 5px">网店  <i class="icon-sort-down" style=""></i></button></td>
+                                                    </tr>
+                                                    <tr class="quanxiantr2" style="display: none">
+                                                        <td style="">
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="188" checked="" data-name="orders"> <dl> &nbsp;我的订单</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="189" checked="" data-name="operate"> <dl> &nbsp;处理订单</dl></label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="quanxiantr1 ">
+                                                        <td><label class="control-label pull-left" style="padding-top: 5px"> <input type="checkbox" class="checkbox-input" value="" checked=""></label> <button class="btn btn-link padding-left-10 pull-left" type="button" style="padding-left: 5px">采购  <i class="icon-sort-down" style=""></i></button></td>
+                                                    </tr>
+                                                    <tr class="quanxiantr2" style="display: none">
+                                                        <td style="">
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="182" checked="" data-name="add_order"> <dl> &nbsp;创建进货单</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="183" checked="" data-name="sure_order"> <dl> &nbsp;确认入库</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="272" data-name="add_return"> <dl> &nbsp;创建退货单</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="273" data-name="sure_return"> <dl> &nbsp;确认退货</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="274" data-name="pay_supplier"> <dl> &nbsp;供应商结算</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="275" data-name="online_buy"> <dl> &nbsp;在线采购</dl></label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="quanxiantr1 ">
+                                                        <td><label class="control-label pull-left" style="padding-top: 5px"> <input type="checkbox" class="checkbox-input" value="" checked=""></label> <button class="btn btn-link padding-left-10 pull-left" type="button" style="padding-left: 5px">营销  <i class="icon-sort-down" style=""></i></button></td>
+                                                    </tr>
+                                                    <tr class="quanxiantr2" style="display: none">
+                                                        <td style="">
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="193" checked="" data-name="manage"> <dl> &nbsp;查看会员</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="194" checked="" data-name="modify_vip"> <dl> &nbsp;编辑会员</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="195" checked="" data-name="message"> <dl> &nbsp;推送消息</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="276" data-name="set_discount"> <dl> &nbsp;活动设置</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="288" data-name="modify_score"> <dl> &nbsp;编辑积分</dl></label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="quanxiantr1 ">
+                                                        <td><label class="control-label pull-left" style="padding-top: 5px"> <input type="checkbox" class="checkbox-input" value="" checked=""></label> <button class="btn btn-link padding-left-10 pull-left" type="button" style="padding-left: 5px">超市  <i class="icon-sort-down" style=""></i></button></td>
+                                                    </tr>
+                                                    <tr class="quanxiantr2" style="display: none">
+                                                        <td style="">
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="229" checked="" data-name="add_shop"> <dl> &nbsp;新建分店</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="197" checked="" data-name="manage"> <dl> &nbsp;我的店铺</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="199" checked="" data-name="other_trade"> <dl> &nbsp;其它收支</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="198" checked="" data-name="member"> <dl> &nbsp;我的员工</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="228" checked="" data-name="supplier"> <dl> &nbsp;我的供应商</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="200" checked="" data-name="roles"> <dl> &nbsp;角色权限</dl></label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="quanxiantr1 ">
+                                                        <td><label class="control-label pull-left" style="padding-top: 5px"> <input type="checkbox" class="checkbox-input" value="" checked=""></label> <button class="btn btn-link padding-left-10 pull-left" type="button" style="padding-left: 5px">系统  <i class="icon-sort-down" style=""></i></button></td>
+                                                    </tr>
+                                                    <tr class="quanxiantr2" style="display: none">
+                                                        <td style="">
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="203" checked="" data-name="logs"> <dl> &nbsp;系统日志</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="202" checked="" data-name="message"> <dl> &nbsp;消息中心</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="230" checked="" data-name="set"> <dl> &nbsp;支付方式设置</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="242" data-name="clear_order"> <dl> &nbsp;清空销售数据</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="277" data-name="reset_inventory"> <dl> &nbsp;负库存冲减开关</dl></label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="quanxiantr1 ">
+                                                        <td><label class="control-label pull-left" style="padding-top: 5px"> <input type="checkbox" class="checkbox-input" value=""></label> <button class="btn btn-link padding-left-10 pull-left" type="button" style="padding-left: 5px">手机权限  <i class="icon-sort-down" style=""></i></button></td>
+                                                    </tr>
+                                                    <tr class="quanxiantr2" style="display: none">
+                                                        <td style="">
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="278" data-name="pring_tag"> <dl> &nbsp;打印价签</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="shop_nodes[]" value="279" data-name="casher"> <dl> &nbsp;快速收银</dl></label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="">
+                                                        <td style="border-top: none"><h4>pos系统权限设置</h4></td>
+                                                    </tr>
+                                                    <tr class="quanxiantr1 ">
+                                                        <td><label class="control-label pull-left" style="padding-top: 6px"> <input type="checkbox" class="checkbox-input" name="pos_nodes[]" value="170" checked=""></label> <button class="btn btn-link padding-left-10 pull-left" type="button" style="padding-left: 5px">pos机权限  <i class="icon-sort-down"></i></button></td>
+                                                    </tr>
+                                                    <tr class="quanxiantr2" style="display: none">
+                                                        <td>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="pos_nodes[]" value="208" checked=""> <dl>&nbsp;收银</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="pos_nodes[]" value="237" checked=""> <dl>&nbsp;退货</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="pos_nodes[]" value="204" checked=""> <dl>&nbsp;折扣</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="pos_nodes[]" value="207" checked=""> <dl>&nbsp;赠送</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="pos_nodes[]" value="238" checked=""> <dl>&nbsp;查询订单</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="pos_nodes[]" value="209" checked=""> <dl>&nbsp;添加新商品</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="pos_nodes[]" value="206" checked=""> <dl>&nbsp;添加会员</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="pos_nodes[]" value="205" checked=""> <dl>&nbsp;会员结账</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="pos_nodes[]" value="239" checked=""> <dl>&nbsp;积分兑换</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="pos_nodes[]" value="240" checked=""> <dl>&nbsp;开钱箱</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="pos_nodes[]" value="241" checked=""> <dl>&nbsp;打印价签</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="pos_nodes[]" value="286"> <dl>&nbsp;删除订单商品</dl></label>
+                                                            <label class=" control-label margin-right-10 "> <input type="checkbox" class="checkbox-input" name="pos_nodes[]" value="287"> <dl>&nbsp;显示交班金额信息</dl></label>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">确 定</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!--<div class="clearfix foots">-->
+                        <!--<div class="rt">-->
+                        <!--<a href="#" class="btn sure-bg">确定</a>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>-->
+
+<!--<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>-->
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+<!--<script src="../js/jqGrid.js"></script>-->
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"></script>-->
+<script src="../assets/js/date-time/bootstrap-datepicker.min.js"></script>
+<script src="../assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+
+<script type="text/javascript">
+    var rolesCol= [
+        {
+            label : '角色名称',
+            name: 'rolesName',
+            align:'center',
+            width: 500,
+        },
+        {
+            label: '描述',
+            name: 'describe',
+            width: 500,
+            align:'center',
+            sortable:true,
+            sorttype:"number"
+        },
+        {
+            label: '操作',
+            name: 'operation',
+            align:'center',
+            width: 300,
+            formatter: function (cellvalue, options, rowObject) {
+                var str='';
+                if(cellvalue==0){
+                    str+='<span>--</span>'
+                }else {
+                    str+='<span class="table-bar" onclick="authority_set('+rowObject.id+')"><i class="icon-edit"></i>权限设置</span>';
+                }
+                return  str;
+            }
+
+        }
+    ];
+    jqgridTable({
+        "tableId":"#roles-table",
+        "pagerId":"",
+        "url":"../data/member/rolesList.json",
+        "colModel":rolesCol,
+        "footerrow":false,
+        "height":300,
+        "cellEdit":false,
+        "footerrowFun":'',
+        "multiselect":false
+
+    })
+    //权限设置
+    function authority_set(){
+        $('.authoritySetting').show()
+    }
+        var sousuokey = true;
+        var $modal_body = $('.modal-body');
+        $(document).on("change",".modal-body .quanxiantr1 .checkbox-input",function(){
+            sousuokey = true;
+        });
+
+    $(document).on("change",".modal-body .quanxiantr1 .checkbox-input",function(){
+            if($(this).is(':checked')){
+                var checkboxarr = $(this).parents(".quanxiantr1").next().find(".checkbox-input");
+                checkboxarr.each(function(){
+                    $(this).prop("checked",true);
+                });
+                $(this).parents(".quanxiantr1").next().show();
+            }else if(!$(this).is(':checked') && sousuokey){
+                var checkboxarr = $(this).parents(".quanxiantr1").next()[0]
+                var checkboxarrd = $(checkboxarr).find(".checkbox-input");
+                checkboxarrd.each(function(){
+                    $(this).prop("checked",false);
+                });
+            }
+        });
+
+    $(document).on("change",".modal-body .quanxiantr2 .checkbox-input",function(){
+            if(!$(this).prop("checked")){
+                sousuokey = false;
+                $(this).parents(".quanxiantr2").prev().find(".checkbox-input").prop("checked",false);
+            }else{
+                var boxarr = $(this).parents(".quanxiantr2").find(".checkbox-input");
+                var boxarrlength = $(this).parents(".quanxiantr2").find(".checkbox-input").length;
+                var xiuqukey  = 0;
+                boxarr.each(function(){
+                    if( $(this).prop("checked")){
+                        xiuqukey += 1
+                    }
+                });
+                if(xiuqukey == boxarrlength){
+                    $(this).parents(".quanxiantr2").prev().find(".checkbox-input").prop("checked",true);
+                }
+            }
+        });
+    $(document).on("click",'.modal-body .quanxiantr1 button',function(){
+            $(this).children("i").toggleClass('icon-sort-up');
+            $(this).parents(".quanxiantr1").next().toggle();
+        });
+
+
+</script>
+</body>
+</html>

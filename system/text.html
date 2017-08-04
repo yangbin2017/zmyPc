@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .tabs-container{
+            margin: 0 ;
+            padding: 40px 20px;
+        }
+        #tab-1 {
+            background-color: #f6f6f6;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+
+        <div class="main-content-right">
+            <div class="body-content body-content-bg">
+
+                <div class="inner-scollcontent">
+                    <div class="ibox" style="margin-bottom: 0" id="modify-shop">
+                        <div class="tabs-container">
+                            <div class="zmbox clearfix page-title">
+                                <span class="txt1">账号信息</span>
+                            </div>
+                            <div class="tab-content" style="border: none;">
+                                <div id="tab-1" class="tab-pane active">
+                                    <form id="account-form" class="form-horizontal validation"
+                                          action="https://b.izhangmai.com/main/modify_user" method="post">
+                                        <div class="" style="height: 160px;">
+
+                                            <div class="" style="float: left;">
+                                                <img src="https://b.izhangmai.com/img/default.png"
+                                                     style="width: 120px; max-height: 120px">
+                                            </div>
+                                            <div class="" style="float: left; min-width: 500px;margin-top: 15px;">
+                                                <div class="form-group name-input"
+                                                     style="margin-bottom: 0;display: none">
+                                                    <label class="col-sm-2 control-label"
+                                                           style="padding-right: 0">姓名：</label>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" class="form-control" name="user_name"
+                                                               value="邓勇"
+                                                               maxlength="20" id="user_name" datatype="*" nullmsg="请填写姓名" errormsg="">
+                                                        <span class="help-block m-b-none">请填写姓名</span>
+                                                    </div>
+                                                    <div class="col-sm-3" style="padding-left: 0">
+                                                        <button class="btn btn-primary">保存</button>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group name-show" style="margin-bottom: 0">
+                                                    <label class="col-sm-2 control-label"
+                                                           style="padding-right: 0">姓名：</label>
+                                                    <div class="col-sm-4 user-name" style="padding-top: 7px">
+                                                        邓勇
+                                                    </div>
+                                                    <div class="col-sm-3" style="padding-left: 0">
+                                                        <button class="btn btn-primary" type="button" id="nameEdit">编辑</button>
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group" style="margin-bottom: 0">
+                                                    <label class="col-sm-2 control-label"
+                                                           style="padding-right: 0">账号：</label>
+                                                    <div class="col-sm-4" style="padding-top: 7px">
+                                                        18908086680
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="margin-bottom: 0">
+                                                    <label class="col-sm-2 control-label"
+                                                           style="padding-right: 0">角色：</label>
+                                                    <div class="col-sm-4" style="padding-top: 7px">
+                                                        超级管理员
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="text-center ">
+                                        <button data-toggle="modal" class="btn btn-success"
+                                                data-target="#password-modal"
+                                                style="margin-right: 20px;">修改密码
+                                        </button>
+                                        <a href="../common/login.html"  class="btn btn-danger" >安全退出</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+<!--修改密码-->
+<div class="modal  fade " id="password-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title text-left">修改密码</h4>
+            </div>
+            <form class="form-horizontal" action="../shop/modify_pwd" id="pwd-revise" method="post">
+                <div class="modal-body bg-white">
+                    <div class="padding-btm10">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">原密码：</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" autocomplete="off" name="pwdLong"  maxlength="16" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">新密码：</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" autocomplete="off" id="newPwd" name="newPwd" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">确认密码：</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" autocomplete="off" name="affirmPwd" value="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">确定</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>-->
+
+<!--<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>-->
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+<!--<script src="../js/jqGrid.js"></script>-->
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"></script>-->
+<script src="../assets/js/date-time/bootstrap-datepicker.min.js"></script>
+<script src="../assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+
+<script type="text/javascript">
+    $(document).on('click','#nameEdit', function () {
+        $(this).parents('.name-show').hide();
+        $(this).parents('.name-show').siblings('.name-input').show();
+    })
+    $('#user_name').on('blur', function () {
+        var username=$(this).val()
+        if(username.length==0){
+            $(this).parent().show()
+        }
+    })
+    $('#user_name').on('input', function () {
+        var username=$(this).val()
+        if(username.length==0){
+            $(this).siblings('.m-b-none').show();
+        }else {
+            $(this).siblings('span.m-b-none').hide();
+        }
+    })
+    //密码验证
+    $('#pwd-revise').validate({
+        rules: {
+            pwdLong: {
+                required: true,
+                minlength : 11,
+            },
+            newPwd: {
+                required: true,
+            },
+            affirmPwd: {
+                equalTo: "#newPwd"
+            }
+        },
+        messages: {
+            pwdLong:{
+                required:"请输入原密码",
+                minlength:"请输入6-16为密码"
+            } ,
+            newPwd: "请设置新密码",
+            affirmPwd:"输入与新密码不一致"
+        },
+        onfocusout: function(element){
+            $(element).valid();
+        },
+        submitHandler: function (form) {
+            var newPwd=$('#newPwd').val();
+            console.log(password)
+
+
+        },
+        debug: true,
+        success:function(){
+
+        }
+    })
+</script>
+</body>
+</html>

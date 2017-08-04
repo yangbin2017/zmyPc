@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.datetimepicker.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script>
+    <style>
+        .tabs-container {
+            margin: 0;
+            padding: 20px;
+        }
+
+        #tab-1 {
+            background-color: #f6f6f6;
+            padding: 15px;
+        }
+
+        .ui-jqgrid tr.jqgrow td {
+            overflow: inherit;
+            white-space: normal;
+        }
+
+        .payMoney input {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+
+        <div class="main-content-right">
+            <div class="body-content body-content-bg" style="overflow-y: scroll">
+
+                <div class="inner-scollcontent">
+                    <div class="ibox" style="margin-bottom: 0" id="modify-shop">
+                        <div class="tabs-container">
+                            <div class="clearfix page-search-area">
+                                <form role="form" id="search-form" class="form-inline">
+                                    <div class="boxpart">
+                                        <div class="t" style="margin-left: 10px">时间：</div>
+                                        <div class="inpt">
+                                            <input type="text" class="pintxt datepicker" name="date_range"
+                                                   style="width: 140px;" value="">
+                                        </div>
+                                        <div class="t" style="font-size: 18px;margin-right: 5px">-</div>
+                                        <div class="inpt">
+                                            <input type="text" class="pintxt datepicker" name="date_range"
+                                                   style="width: 140px;" value="">
+                                        </div>
+
+                                    </div>
+                                    <input type="hidden" class="cate-id" value="">
+
+                                    <div class="boxpart form-group">
+                                        <div class="btn-group">
+                                            <button type="button" style="margin-right:5px;"
+                                                    class="btn datetype btn-white"
+                                                    data-type="1" data-daterange="2017-04-25 - 2017-04-25">今天
+                                            </button>
+                                            <button type="button" style="margin-right:5px;"
+                                                    class="btn datetype btn-white"
+                                                    data-type="7" data-daterange="2017-04-24 - 2017-04-24">昨天
+                                            </button>
+                                            <button type="button" style="margin-right:5px;"
+                                                    class="btn datetype btn-white"
+                                                    data-type="2" data-daterange="2017-04-18 - 2017-04-25">近一周
+                                            </button>
+                                            <button type="button" style="margin-right:5px;"
+                                                    class="btn datetype btn-white"
+                                                    data-type="3" data-daterange="2017-04-10 - 2017-04-25">近半个月
+                                            </button>
+                                            <button type="button" style="margin-right:5px;"
+                                                    class="btn datetype default btn-success" data-type="4"
+                                                    data-daterange="2017-03-25 - 2017-04-25">近一个月
+                                            </button>
+                                            <button type="button" style="margin-right:5px;"
+                                                    class="btn datetype btn-white"
+                                                    data-type="5" data-daterange="2016-10-25 - 2017-04-25">近半年
+                                            </button>
+                                            <button type="button" style="margin-right:5px;"
+                                                    class="btn datetype btn-white"
+                                                    data-type="6" data-daterange="2016-04-25 - 2017-04-25">近一年
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="boxpart">
+                                        <a class="reset" href="javascript:;">清空筛选条件</a>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="clearfix" style="margin:5px 0;"></div>
+                            <div class="zmwrap" style="margin: 0">
+                                <div class="zmwrap-c">
+                                    <div class=" clearfix">
+                                        <div class="zuobianshuzi " style="width: 32%;">
+                                            <div class="yuan">退货单数</div>
+                                            <div class="shuzhi return-num"><span>1</span></div>
+                                        </div>
+                                        <div class="zuobianshuzi"
+                                             style="width: 32%;margin-left:2%;background-color:rgb(87,210, 201)">
+                                            <div class="yuan">退货数量</div>
+                                            <div class="shuzhi goods-num"><span>1</span></div>
+                                        </div>
+                                        <div class="zuobianshuzi zuobianshuzi-right" style="width: 32%;">
+                                            <div class="yuan">退货金额</div>
+                                            <div class="shuzhi return-money">￥<span>4.50</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row echart-area">
+                                <div class="col-xs-7 stock-echart">
+                                    <div class="echart-bg"  id="echart-stock" >
+                                    </div>
+                                    <!--<div style="width: 100%; height: 450px; display: none;"-->
+                                         <!--id="echart-stock-empty"></div>-->
+                                    <!--<div class="echart-title">退货趋势图</div>-->
+                                </div>
+                                <div class="col-xs-5 stock-ratio" id="head-stock-shop-rank" style="padding-left: 0">
+                                    <!--连锁总部商品销售分类店铺排行-->
+                                    <div class="table-responsive margin-left-right-0">
+                                        <table id="shopStat-table"></table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="margin-t10">
+                                <ul class="nav nav-tabs" role="presentation">
+                                    <li class="active"><a href="#useShop" role="tab" data-toggle="tab">供应商退货统计</a></li>
+                                    <li class=""><a href="#deleteShop" role="tab" data-toggle="tab">商品退货统计</a></li>
+                                    <button style="margin-left: 20px" type="button"
+                                            class="btn btn-primary  ioexcel pull-right" id="daochuexcel" data-url="">导 出
+                                    </button>
+                                    <button class="btn btn-primary btn-print pull-right" type="button" data-url=""
+                                            style="margin-left: 20px">打 印
+                                    </button>
+                                </ul>
+                                <div class="tab-content">
+                                    <!--功能条-->
+                                    <div role="tabpanel" id="useShop" class="tab-pane active">
+                                        <div class="panel-body">
+                                            <div  class="porela">
+                                                <div class="clearfix page-search-area">
+                                                    <div class="boxpart search_supplier" >
+                                                        <div class="t">供应商：</div>
+                                                        <div class="inpt">
+                                                            <div class="select-box ">
+                                                                <div class="bill-input ">
+                                                                    <input type="text" value="全部">
+                                                                    <i class="icon-sort-down"></i>
+                                                                </div>
+                                                                <div class="select-down role-select" style="display: none;">
+                                                                    <div class="select-list">全部</div>
+                                                                    <div class="select-list">001测试一下功能</div>
+                                                                    <div class="select-list">sadds</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="margin-t10">
+                                                    <table id="supplierReturn-table"></table>
+                                                    <div class="zmalertno nodata" style="margin:10px 0 0 0;">
+                                                        <i class="icon-exclamation-sign"></i> <span>暂无数据</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" id="deleteShop" class="tab-pane ">
+                                        <div class="panel-body">
+                                            <!--显示内容-->
+                                            <div id="" class="porela">
+                                                <div class="clearfix page-search-area">
+                                                    <div class="boxpart search_keyword" >
+                                                        <div class="t">商品名称/条码：</div>
+                                                        <div class="inpt">
+                                                            <input type="text" class="pintxt" name="keyword">
+                                                        </div>
+                                                        <div class="boxbtn">
+                                                            <button type="button"  class="btn btn-primary" id="cheshixiaoguoid1" style="margin-top: 4px">查询</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="margin-t10">
+                                                    <table id="shopReturn-table"></table>
+                                                    <div class="zmalertno nodata" style="margin:10px 0 0 0;">
+                                                        <i class="icon-exclamation-sign"></i> <span>暂无数据</span>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+<!--付款-->
+<div class="modals payMoney">
+    <div class="modals-dilog w-600">
+        <div class="modals-content">
+            <div class="modals-head">
+                <span>付款</span>
+                <div class="close-m closeModals">&times;</div>
+            </div>
+            <div class="modals-body maxheight">
+                <div class="modals-body-content">
+                    <div class="madals-container active">
+                        <!-- Tab panes -->
+                        <div class="tab-content " style="border-bottom: none">
+                            <form class="form-horizontal pay-form" method="post">
+                                <div class="modal-body bg-white">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <p><span
+                                                    style="width:100px;display: inline-block;text-align: right">供应商名称：</span><span> --</span>
+                                            </p>
+                                            <p><span
+                                                    style="width:100px;display: inline-block;text-align: right">详细地址：</span>
+                                                <span>--</span></p>
+                                            <p></p>
+                                            <div style="width:100px;display: inline-block;text-align: right">供应商分类：
+                                            </div>
+                                            --<p></p>
+                                            <p></p>
+                                            <div style="width:100px;display: inline-block;text-align: right">联系方式：</div>
+                                            --<p></p>
+                                            <p></p>
+                                            <div style="width:100px;display: inline-block;text-align: right">开户人：</div>
+                                            --<p></p>
+
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p></p>
+                                            <div style="width:100px;display: inline-block;text-align: right">联系人：</div>
+                                            --<p></p>
+                                            <p><span
+                                                    style="width:100px;display: inline-block;text-align: right">所属店铺：</span><span>--</span>
+                                            </p>
+                                            <p></p>
+                                            <div style="width:100px;display: inline-block;text-align: right">开户银行：</div>
+                                            --<p></p>
+                                            <p></p>
+                                            <div style="width:100px;display: inline-block;text-align: right">银行账号：</div>
+                                            --<p></p>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div style="margin-left: 55px;padding-bottom:10px;font-size: 14px;font-weight: bold"
+                                             id="shopStroeInfo">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">付款方式：</label>
+                                            <div class="col-sm-6">
+                                                <div class="select-box">
+                                                    <div class="bill-input ">
+                                                        <input type="text" value="请选择">
+                                                        <i class="icon-sort-down"></i>
+                                                    </div>
+                                                    <div class="select-down role-select" style="display: none;">
+                                                        <div class="select-list">现金</div>
+                                                        <div class="select-list">银行卡</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="margin-bottom: 0">
+                                            <label class="col-sm-3 control-label">优惠金额：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="discount_money"
+                                                       datatype="n|money" ignore="ignore" value="" maxlength="10">
+                                                <span class="help-block m-b-none"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="margin-bottom: 0">
+                                            <label class="col-sm-3 control-label">实付金额：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="pay_money"
+                                                       datatype="n|money" ignore="ignore" value="" maxlength="10">
+                                                <span class="help-block m-b-none"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="margin-bottom: 0">
+                                            <label class="col-sm-3 control-label">备注：</label>
+                                            <div class="col-sm-6">
+                                                <textarea name="pay_remark" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="id" value="58f981ec5b6c24541c8b4567">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary">确定</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>-->
+
+<!--<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>-->
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+<!--<script src="../js/jqGrid.js"></script>-->
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"></script>-->
+<script src="../assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<script src="../js/jquery.datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/chosen.jquery.min.js"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script src="../js/eosgi-test.js"></script>
+<script src="../js/server.js"></script>
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+
+<script type="text/javascript">
+    //供应商
+    var shopmanageCol = [
+        {
+            label: '供应商名称',
+            name: 'barcode',
+            align: 'left',
+            width: 240,
+        },
+        {
+            label: '联系人',
+            name: 'shopName',
+            width: 220,
+            align: 'center',
+            sortable: true,
+            sorttype: "number"
+        },
+        {
+            label: '联系方式',
+            name: 'standard',
+            align: 'center',
+            width: 160,
+            formatter: function (cellvalue, options, rowObject) {
+                var str = '';
+                str += cellvalue == '' ? '--' : cellvalue;
+                console.log(str)
+                return str
+            }
+        },
+        {
+            label: '单数',
+            name: 'unit',
+            align: 'center',
+            width: 160,
+        },
+        {
+            label: '退货数量',
+            name: 'type',
+            align: 'center',
+            width: 160,
+        },
+        {
+            label: '退货金额',
+            name: 'modal',
+            align: 'center',
+            width: 160,
+        },
+        {
+            label: '操作',
+            name: 'operation',
+            align: 'center',
+            width: 160,
+            formatter: function (cellvalue, options, rowObject) {
+                var gid = "'#" + options.gid + "'";
+                var str = '<span class="table-bar" onclick="supReturn_detail(' + rowObject.id + ',' + gid + ')">明细</span>';
+                return str;
+            }
+        }
+    ];
+    jqgridTable({
+        "tableId": "#supplierReturn-table",
+        "pagerId": "",
+        "url": "../data/shop/shopmanageList.json",
+        "colModel": shopmanageCol,
+        "footerrow": false,
+        "height": "100%",
+        "cellEdit": false,
+        "footerrowFun": '',
+        "multiselect": false
+
+    })
+    //商品退货
+    var shopReturnCol = [
+        {
+            label: '商品名称',
+            name: 'barcode',
+            align: 'center',
+            width: 240,
+        },
+        {
+            label: '条码',
+            name: 'shopName',
+            width: 200,
+            align: 'center',
+            sortable: true,
+            sorttype: "number"
+        },
+        {
+            label: '单位',
+            name: 'standard',
+            align: 'center',
+            width: 160,
+            formatter: function (cellvalue, options, rowObject) {
+                var str = '';
+                str += cellvalue == '' ? '--' : cellvalue;
+                console.log(str)
+                return str
+            }
+        },
+        {
+            label: '退货数量',
+            name: 'unit',
+            align: 'center',
+            width: 160,
+        },
+        {
+            label: '退货均价',
+            name: 'type',
+            align: 'center',
+            width: 160,
+        },
+        {
+            label: '退货金额',
+            name: 'modal',
+            align: 'center',
+            width: 160,
+        },
+        {
+            label: '操作',
+            name: 'operation',
+            align: 'center',
+            width: 160,
+            formatter: function (cellvalue, options, rowObject) {
+                var gid = "'#" + options.gid + "'";
+                var str = '<span class="table-bar" onclick="shopReturn_detail(' + rowObject.id + ',' + gid + ')">明细</span>';
+                return str;
+            }
+        }
+    ];
+    jqgridTable({
+        "tableId": "#shopReturn-table",
+        "pagerId": "",
+        "url": "../data/shop/shopmanageList.json",
+        "colModel": shopReturnCol,
+        "footerrow": false,
+        "height": "100%",
+        "cellEdit": false,
+        "footerrowFun": '',
+        "multiselect": false
+
+    })
+    //统计信息
+    var shopStatCol = [
+        {
+            label: '所属',
+            name: 'barcode',
+            align: 'center',
+            width: 120,
+        },
+        {
+            label: '退货单数',
+            name: 'shopName',
+            width: 120,
+            align: 'center',
+            sortable: true,
+            sorttype: "number"
+        },
+        {
+            label: '退货金额',
+            name: 'standard',
+            align: 'center',
+            width: 120,
+            formatter: function (cellvalue, options, rowObject) {
+                var str = '';
+                str += cellvalue == '' ? '--' : cellvalue;
+                console.log(str)
+                return str
+            }
+        },
+        {
+            label: '金额占比',
+            name: 'unit',
+            align: 'center',
+            width: 120,
+        }
+    ];
+    jqgridTable({
+        "tableId": "#shopStat-table",
+        "pagerId": "",
+        "url": "../data/shop/shopmanageList.json",
+        "colModel": shopStatCol,
+        "footerrow": false,
+        "height": "100%",
+        "cellEdit": false,
+        "footerrowFun": '',
+        "multiselect": false
+
+    })
+    //echart表格
+    var myChart = echarts.init(document.getElementById('echart-stock'));
+
+    var option = {
+        title:{
+            text:'退货趋势图',
+            textStyle:{
+                color:'#008acd',
+                fontSize:'16'
+            },
+            top:'0',
+            left:'2%',
+            padding:[30,0,0,20],
+
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                lineStyle:{
+                    color:'#f00'
+                }
+            },
+            formatter:'{b}<br/>{a0}:{c0}'
+        },
+        toolbox: {
+            show: true,
+            top:20,
+            right:50,
+            feature: {
+                magicType: {type: ['line', 'bar']},
+            }
+        },
+        grid : {//直角坐标系内绘图网格
+            x :40,
+            y : 80,
+            x2 : 50,
+            y2 : 30,
+            backgroundColor : 'rgba(0,0,0,0)',
+            borderWidth : 1,
+            borderColor : '#ffffff',
+            containLabel: true
+        },
+        color:['#008cee'],
+        xAxis:  {
+            type: 'category',
+            boundaryGap: false,
+            data: ['05-04','05-09','05-13','05-17','05-21','05-09','05-13','05-17','05-21'
+            ],
+//                axisTick: {length:5},
+            axisLabel: {
+                show: true,
+                interval:0,
+                textStyle: {
+                    color: '#333'
+                }
+            },
+//                splitArea: { show: true },
+            axisLine:{
+                lineStyle:{
+                    color:'#666'
+                }
+
+            },
+
+//            刻度值
+            axisTick:{
+                interval:'auto',
+                length:1
+            },
+
+            splitLine: {
+                show:true,
+                lineStyle: {
+                    // 使用深浅的间隔色
+                    color: '#ccc',
+                    type:'solid'
+                }
+            },
+//            splitArea:{
+//                show:true
+//            }
+        },
+        yAxis: {
+            name:"退货金额",
+            type: 'value',
+            splitNumber:'',
+//                splitArea: { show: true },
+            axisLabel: {
+                formatter: '￥{value}',
+                show: true,
+                textStyle: {
+                    color: '#333'
+                }
+            },
+
+            axisLine:{
+                lineStyle:{
+                    color:'#008ACD'
+                }
+
+            },
+            splitLine: {
+                lineStyle: {
+                    // 使用深浅的间隔色
+                    color: '#ddd',
+                    type:'dotted'
+                }
+            }
+
+        },
+        series: [
+            {
+                name:'金额',
+                type:'line',
+                smooth: true,
+                showSymbol: true,
+                data:[0, 5000,3000,4500,1000,233,345,2435,234],
+                textStyle: {
+                    color:'#008cee'
+                },
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                },
+                label:{
+                    normal:{
+                        show: true,
+                        position: 'top'}
+                },
+                lineStyle:{
+                    normal:{
+                        width:2,  //连线粗细
+                        color: "#FDB23F",  //连线颜色
+                    }
+                },
+                itemStyle:{
+                    color:'#f00'
+                },
+                areaStyle:'#f00',
+
+                showAllSymbol:true
+            }
+
+
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+    //查看详情
+    function supReturn_detail(rowId, gid) {
+        var href = '../report/supplier_return_detail.html'
+        window.location.href = href;
+        localStorage.setItem('frameidSrc', href);
+    }
+    function shopReturn_detail(){
+        var href = '../report/shop_return_detail.html'
+        window.location.href = href;
+        localStorage.setItem('frameidSrc', href);
+    }
+    function saveHistory() {
+        var href = '../buy/buy_add.html';
+        window.location.href = href;
+        localStorage.setItem('frameidSrc', href);
+    }
+</script>
+</body>
+</html>

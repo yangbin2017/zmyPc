@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/jquery.datetimepicker.css"/>
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script>
+    <style>
+        .tabs-container{
+            margin: 0 ;
+            padding:20px;
+        }
+        #tab-1 {
+            background-color: #f6f6f6;
+            padding: 15px;
+        }
+        .ui-jqgrid tr.jqgrow td{
+            overflow: inherit;
+            white-space: normal;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+
+        <div class="main-content-right">
+            <div class="body-content body-content-bg">
+
+                <div class="inner-scollcontent" >
+                    <div class="ibox" style="margin-bottom: 0" id="modify-shop">
+                        <div class="tabs-container">
+                            <!-- 店铺评分-->
+                            <div class="dianpupingfen clearfix">
+                                <div class="dianpupingfenleft">
+                                    <div class="zmwrap margin-left-right-0">
+                                        <div class="zmwrap-t">
+                                            <div class="pull-left">店铺信息
+                                                <!--系统文字提示-->
+                                                <style rel="stylesheet">
+                                                    .tooltip div.tooltip-inner{ text-align:left;border:1px solid #dedede;font-size: 12px; background:#ffffff;
+                                                        color:#666;max-width:400px;text-shadow: none}
+                                                    .tooltip-inner b{ margin-right:10px; display:block;margin:4px 0;}
+                                                    .tooltip.right .tooltip-arrow{border-right-color: #8A8A8A;}
+                                                </style>
+								<span class="icon-question-sign" style="color:#55C663;vertical-align: middle;margin-top: -3px;font-size:20px;" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="
+								<b>网店评价：</b>根据商家的配送速度、服务态度、货品质量以及用户评价来综合评估；不可删除和编辑<br>
+
+
+								"></span>
+                                                <script type="text/javascript">
+                                                    !function(){
+
+                                                        if($('[data-toggle="tooltip"]').length){
+                                                            $(function () {
+                                                                $('[data-toggle="tooltip"]').tooltip({'html':true})
+                                                            }); return}
+                                                        setTimeout(arguments.callee,30)
+
+                                                    }()
+                                                </script>
+                                                <!--系统文字提示-->
+                                            </div>
+                                        </div>
+                                        <div class="zmwrap-c">
+                                            <div class="pingfenbaox1">
+                                                <div>综合评分:
+                                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>                        </div>
+                                                <dl>2.4</dl>
+                                            </div>
+                                            <div class="fenshuxizhe clearfix">
+                                                <div class="zbianez">配送速度</div>
+                                                <div class="tuwenxianshi">
+                                                    <dl>
+                                                        <dt style="width:100%"></dt>
+                                                    </dl>
+                                                    <div class="jutishi">好评 100%</div>
+                                                    <dl>
+                                                        <dt class="blueco" style="width: 0%"></dt>
+                                                    </dl>
+                                                    <div class="jutishi">中评 0%</div>
+                                                    <dl>
+                                                        <dt class="mutedco" style="width: 0%"></dt>
+                                                    </dl>
+                                                    <div class="jutishi">差评 0%</div>
+                                                </div>
+                                            </div>
+                                            <div class="fenshuxizhe clearfix">
+                                                <div class="zbianez">服务态度</div>
+                                                <div class="tuwenxianshi">
+                                                    <dl>
+                                                        <dt style="width:0%"></dt>
+                                                    </dl>
+                                                    <div class="jutishi">好评 0%</div>
+                                                    <dl>
+                                                        <dt class="blueco" style="width: 0%"></dt>
+                                                    </dl>
+                                                    <div class="jutishi">中评 0%</div>
+                                                    <dl>
+                                                        <dt class="mutedco" style="width: 0%"></dt>
+                                                    </dl>
+                                                    <div class="jutishi">差评 0%</div>
+                                                </div>
+                                            </div>
+                                            <div class="fenshuxizhe clearfix">
+                                                <div class="zbianez">货品质量</div>
+                                                <div class="tuwenxianshi">
+                                                    <dl>
+                                                        <dt style="width:100%"></dt>
+                                                    </dl>
+                                                    <div class="jutishi">好评 100%</div>
+                                                    <dl>
+                                                        <dt class="blueco" style="width: 0%"></dt>
+                                                    </dl>
+                                                    <div class="jutishi">中评 0%</div>
+                                                    <dl>
+                                                        <dt class="mutedco" style="width: 0%"></dt>
+                                                    </dl>
+                                                    <div class="jutishi">差评 0%</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dianpupingfenright">
+                                    <div class="zmwrap margin-left-right-0">
+                                        <div class="zmwrap-t">
+                                            <div class="pull-left">用户评价</div>
+                                        </div>
+                                        <div id="shangpingzhanshi" class="zmwrap-c" style="position:relative;">
+                                            <div class="zmwrap-c">
+                                                <div class="yonghutouxiapjia">
+                                                    <div class="xinxineirong margin-left-right-0">
+                                                        <div class="diyihan1">
+                                                            <div class="pull-left">133*****086 综合评分：1.7分</div>
+                                                            <div class="pull-right">04-21 10:07</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="yonghutouxiapjia">
+                                                    <div class="xinxineirong margin-left-right-0">
+                                                        <div class="diyihan1">
+                                                            <div class="pull-left">133*****086 综合评分：3.2分</div>
+                                                            <div class="pull-right">04-21 09:48</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="zmwrap-c" style="padding-right: 0;">
+                                                <div id="ajax-page" class="pagemain page-you margin-left-right-0">
+                                                    <div id="url" class="hide">https://b.izhangmai.com/online/comment?</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+
+<!-- 编辑商品售价 -->
+<div class="modals editShopSale" >
+    <div class="modals-dilog w-600" style="top: 50px;min-height: 200px">
+        <div class="modals-content">
+            <div class="modals-head">
+                <span>商品售价编辑</span>
+                <div class="close-m closeModals">&times;</div>
+            </div>
+            <div class="modals-body maxheight">
+                <div class="modals-body-content">
+                    <div class="madals-container active">
+                        <!-- Tab panes -->
+                        <div class="tab-content " style="border-bottom: none;max-height: 580px;">
+                            <form class="form-horizontal" action="" method="post">
+                                <div class="modal-body editShopSale-info">
+
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary ">保存</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+</script>
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>-->
+
+<!--<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>-->
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+<!--<script src="../js/jqGrid.js"></script>-->
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"></script>-->
+<script src="../assets/js/date-time/bootstrap-datepicker.min.js"></script>
+<script src="../assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="../js/jquery.datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

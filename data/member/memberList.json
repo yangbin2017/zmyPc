@@ -1,0 +1,20 @@
+{
+  "rows":[
+    {
+      "id":1,
+      "menberName":"邓勇",
+      "phone":"18228373723",
+      "role":"超级管理员",
+      "myshop":["所有店铺"],
+      "operation":0
+    },
+    {
+      "id":2,
+      "menberName":"测试",
+      "phone":"18228373723",
+      "role":"店长",
+      "myshop":["测试一"],
+      "operation":1
+    }
+  ]
+}

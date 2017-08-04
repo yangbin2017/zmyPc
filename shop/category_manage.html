@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.datetimepicker.css"
+    / >
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if !IE]> -->
+
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script>
+    <!--树形分类rely-->
+    <link rel="stylesheet" href="../js/plugins/ztree/css/zTreeStyle.css" type="text/css">
+    <script type="text/javascript" src="../js/plugins/ztree/js/jquery.ztree.core-3.5.js"></script>
+    <script type="text/javascript" src="../js/plugins/ztree/js/jquery.ztree.excheck-3.5.js"></script>
+    <script type="text/javascript" src="../js/plugins/ztree/js/jquery.ztree.exedit-3.5.js"></script>
+    <!--树形分类rely-->
+    <!-- <![endif]-->
+    <style type="text/css">
+        .pagemain .txt1 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .pagemain .txt2 {
+            font-size: 13px;
+        }
+
+        .pagemain .txt2 span {
+            font-weight: bold;
+        }
+
+        .form-group input {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+
+        <div class="main-content-right">
+            <div class="body-content body-content-bg">
+                <div class="inner-scollcontent">
+                    <!-- tab切换-->
+                    <div class="tabs-container menu-tabs clearfix" style="margin-top: 10px">
+                        <ul id="treeDemo" class="ztree"></ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+
+
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+
+
+<!-- basic scripts -->
+
+<!--//员工列表-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<!--<script src="../assets/js/typeahead-bs2.min.js"></script>-->
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+
+<script src="../js/jquery.datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/fuelux/fuelux.tree.min.js"></script>
+<!-- Sweet alert -->
+<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+<script type="text/javascript">
+    //获取分类
+    function get_category_list() {
+        var tab_url = "../data/shop/category_manage.json";
+        $.post(tab_url, {get_list: 1}, function (json) {
+            if (json.status == 1) {
+                zNodes = json.item.data;
+            } else {
+                zNodes = [
+                    {
+                        name: "未分类", open: true, count: 1230, childOuter: false, category_id: 0
+                    }
+                ];
+            }
+            $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+        }, 'json');
+    }
+
+
+    //检查分类名称
+    function check_type_name(parent_id, type_name) {
+        var tab_url = "https://b.izhangmai.com/goods/category_name_check";
+        var ret = false;
+        $.ajax({
+            type: "post",
+            url: tab_url,
+            data: {parent_id: parent_id, type_name: type_name},
+            async: false,
+            dataType: 'json',
+            success: function (json) {
+                if (json.status == '1') {
+                    if (json.item.mark == 0) {
+                        ret = true;    //不存在
+                    } else if (json.item.mark == 1) {
+                        ret = false;    //存在
+                    }
+                } else {
+                    ret = false;
+                }
+            }
+        });
+        return ret;
+    }
+    //重命名
+    function type_rename(type_id, type_name) {
+        var tab_url = "https://b.izhangmai.com/goods/category_rename";
+        var ret = false;
+        $.ajax({
+            type: "post",
+            url: tab_url,
+            data: {type_id: type_id, type_name: type_name},
+            async: false,
+            dataType: 'json',
+            success: function (json) {
+                if (json.status == '1') {
+                    ret = true;
+                } else {
+                    ret = false;
+                }
+            }
+        });
+        return ret;
+    }
+
+
+    var tempname = "";
+    var tempNode = '';
+    var ret = '';
+    function zTreeOnRemove(event, treeId, treeNode) {
+    }
+
+
+    var isthisnodenew = false;
+    /*分类名称重命名*/
+    function zTreeOnRename(event, treeId, treeNode, isCancel) {
+        var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+
+        //console.log(treeNode)
+
+        if (treeNode.name == '') {
+            swal({
+                title: "分类名称不能为空！",
+                text: false,
+                timer: 800,
+                type: 'warning',
+                showConfirmButton: false
+            });
+
+
+            if (isthisnodenew) {
+                setTimeout(function () {
+
+
+                    var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+
+                    treeObj.removeNode(treeNode);
+//treeObj.removeNode(nodes[i]);
+
+                }, 800);
+
+                isthisnodenew = false;
+
+            }
+            treeNode.name = tempname;
+            return false;
+        }
+
+        if (treeNode.type_id == 0) {
+            treeNode.name = tempname;
+            swal({
+                title: "未分类不允许修改！",
+                text: false,
+                timer: 800,
+                type: 'warning',
+                showConfirmButton: false
+            });
+            return false;
+        }
+        if (treeNode.name == tempname) {
+            return false;
+        }
+
+
+        //检查分类名称是否重复
+        ret = check_type_name(treeNode.parent_id, treeNode.name);
+        if (ret) {
+            if (treeNode.type_id) {//修改名称
+                ret = type_rename(treeNode.type_id, treeNode.name);
+                if (ret) {
+                    /*swal({
+                     title: "修改成功！",
+                     text: false,
+                     timer: 1500,
+                     type:'success',
+                     showConfirmButton: false
+                     });*/
+                } else {
+                    treeNode.name = tempname;
+                    swal({
+                        title: "修改失败！",
+                        text: false,
+                        timer: 800,
+                        type: 'warning',
+                        showConfirmButton: false
+                    });
+                }
+            } else {//新增分类
+                var parent_id = treeNode.parent_id;
+                var type_name = treeNode.name;
+                var tab_url = "../data/category_add.json";
+                var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+                var index = treeObj.getNodeIndex(treeNode);
+                $.post(tab_url, {parent_id: parent_id, type_name: type_name, index: index}, function (json) {
+                    if (json.status == 1) {
+                        treeNode.type_id = json.item.data.type_id;
+                        $('input[data-imgid="' + treeNode.tId + '"]').attr('type-id', treeNode.type_id);
+                        $('input[data-imgid="' + treeNode.tId + '"]').attr('id', 'file_' + treeNode.type_id);
+                        $('input[data-imgid="' + treeNode.tId + '"]').attr('pic_id', '#pic_' + treeNode.type_id);
+                    } else {
+                        treeObj.removeNode(treeNode);
+                        swal({
+                            title: "添加失败！",
+                            text: false,
+                            timer: 800,
+                            type: 'warning',
+                            showConfirmButton: false
+                        });
+                    }
+                }, 'json');
+            }
+
+
+        } else {
+            treeNode.name = tempname;
+            swal({
+                title: "分类名称已存在！",
+                text: false,
+                timer: 800,
+                type: 'warning',
+                showConfirmButton: false
+            });
+
+
+            if (isthisnodenew) {
+                setTimeout(function () {
+
+
+                    var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+
+                    treeObj.removeNode(treeNode);
+//treeObj.removeNode(nodes[i]);
+
+                }, 800);
+
+                isthisnodenew = false;
+
+            }
+        }
+    }
+
+
+    function zTreeBeforeRemove(treeId, treeNode) {
+        tempNode = treeNode;
+        var treeObj = $.fn.zTree.getZTreeObj("tree");
+        if (treeNode.type_id == 0) {
+            swal('未分类不允许删除', false, "warning", 800);
+            return false;
+        }
+        var name = treeNode.name;
+        debugger;
+        swal({
+            title: "您确定要删除 " + treeNode.name + " 分类吗？",
+            text: false,
+            type: "warning",
+            showCancelButton: true,
+            closeOnConfirm: true,
+            confirmButtonText: false,
+            confirmButtonColor: "#ec6c62"
+        }, function () {
+            var type_id = treeNode.type_id;
+            var tab_url = "https://b.izhangmai.com/goods/category_delete";
+            $.post(tab_url, {type_id: type_id}, function (json) {
+                if (json.status == 1) {
+                    var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+                    treeObj.removeNode(treeNode);
+                    swal({
+                        title: "删除成功！",
+                        text: false,
+                        timer: 800,
+                        type: 'success',
+                        showConfirmButton: false
+                    });
+                }
+            }, 'json');
+        });
+        return false;
+    }
+
+
+    function zTreeBeforeRename(treeId, treeNode, newName, isCancel) {
+        tempname = treeNode.name;
+    }
+
+
+    var IDMark_Switch = "_switch",
+            IDMark_Icon = "_ico",
+            IDMark_Span = "_span",
+            IDMark_Input = "_input",
+            IDMark_Check = "_check",
+            IDMark_Edit = "_edit",
+            IDMark_Remove = "_remove",
+            IDMark_Ul = "_ul",
+            IDMark_A = "_a";
+
+    function addDiyDom(treeId, treeNode) {
+        var aObj = $("#" + treeNode.tId + IDMark_A);
+        var editStr = "<span id='diyCount_" + treeNode.tId + "'>(" + treeNode.count + ")</span>";
+        aObj.append(editStr);
+
+
+        //添加分类图
+        if (!treeNode.level) {
+            var liObj = $("#" + treeNode.tId);
+            //console.log(liObj,treeNode.type_id);
+            if (treeNode.type_id) {
+                var category_img = $('<div class="category_imgwarp"><input  type="file" pic_id="#pic_' + treeNode.type_id + '"  type-id="' + treeNode.type_id + '" id="file_' + treeNode.type_id + '" name="image" class="category_imgwarp_1"><img id="pic_' + treeNode.type_id + '" src="' + treeNode.type_pic + '" class="category_imgwarp_2"></div>');
+            } else {
+                var category_img = $('<div class="category_imgwarp"><input  type="file" pic_id="#pic_' + treeNode.type_id + '"  type-id="' + treeNode.type_id + '" id="file_' + treeNode.type_id + '" data-imgid=' + treeNode.tId + ' name="image" class="category_imgwarp_1"><img id="pic_' + treeNode.type_id + '"  class="category_imgwarp_2"></div>');
+            }
+
+            liObj.append(category_img);
+        }
+
+
+    }
+
+
+    $(".ztree").on('change', '.category_imgwarp_1', function () {
+
+        uploadImgcate("https://b.izhangmai.com/common/uploadpic?type=goods_type", $(this));
+
+
+    });
+
+    function uploadImgcate(url, $obj) {//上传图片
+        var file_id = $obj[0].id;
+        var type_id = $obj.attr('type-id');
+        var img_dom = $obj.attr('pic_id');
+
+        $.ajaxFileUpload({
+            url: url,
+            secureuri: false,
+            fileElementId: file_id,
+            dataType: 'JSON',
+            success: function (data) {
+                data = eval('(' + data + ')');
+                if (data.status == 1) {
+                    var json = data;
+                    check_logout(json);//登录超时检验
+                    $(img_dom).attr("src", data.item.data.imgurl);
+                    var tab_url = "https://b.izhangmai.com/goods/category_update_img";
+                    $.post(tab_url, {type_id: type_id, type_pic: data.item.data.img}, function (json) {
+                        if (json.status == 1) {
+
+                        } else {
+                            swal({
+                                title: "上传失败！",
+                                text: false,
+                                timer: 800,
+                                type: 'warning',
+                                showConfirmButton: false
+                            });
+                            get_category_list();
+                        }
+                    }, 'json');
+
+                } else {
+                    swal(data.item.msg, false, "warning", 1500);
+                }
+            },
+            error: function (data)//服务器响应失败处理函数
+            {
+                swal('系统繁忙，请稍后再试', false, "warning", 1500);
+            }
+        })
+
+        return false;
+    }
+
+
+    var newCount = 1;
+
+
+    function addHoverDom(treeId, treeNode) {
+        var sObj = $("#diyCount_" + treeNode.tId);
+
+        if (treeNode.editNameFlag || $("#addBtn_" + treeNode.tId).length > 0) return;
+
+        var addStr = "<span class='button add' id='addBtn_" + treeNode.tId
+                + "' title='新增分类' onfocus='this.blur();'></span>";
+
+        sObj.after(addStr);
+
+
+        var btn = $("#addBtn_" + treeNode.tId);
+
+
+        if (!treeNode.level) {
+
+
+            var addStr1 = "<span class='button addc' id='addBtn1_" + treeNode.tId
+                    + "' title='新增子分类' onfocus='this.blur();'></span>";
+            sObj.after(addStr1);
+            var btn1 = $("#addBtn1_" + treeNode.tId);
+            if (btn1) btn1.bind("click", function () {
+                var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+                if (treeNode.type_id == 0) {
+                    swal({
+                        title: "未分类不能添加子分类！",
+                        text: false,
+                        timer: 800,
+                        type: 'warning',
+                        showConfirmButton: false
+                    });
+                    return false;
+                }
+                var addnodethis = zTree.addNodes(treeNode, {parent_id: treeNode.type_id, count: 0, name: ""});
+                //console.log(addnodethis);
+
+                var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+                var nodes = addnodethis;
+                treeObj.editName(nodes[0]);
+                isthisnodenew = true;
+                return false;
+            });
+
+        }
+
+        if (btn) btn.bind("click", function () {
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+
+            if (treeNode.level) {
+                var addnodethis = zTree.addNodes(treeNode.getParentNode(), {
+                    parent_id: treeNode.parent_id,
+                    count: 0,
+                    name: ""
+                });
+
+                //console.log(addnodethis);
+
+                var nodes = addnodethis;
+
+
+                zTree.moveNode(treeNode, nodes[0], "next");
+
+
+                zTree.editName(nodes[0]);
+                isthisnodenew = true;
+                return false;
+            } else {
+                var addnodethis = zTree.addNodes(treeNode.getParentNode(), {
+                    parent_id: treeNode.parent_id,
+                    childOuter: false,
+                    count: 0,
+                    name: ""
+                });
+            }
+
+
+            //console.log(addnodethis);
+
+
+            var nodes = addnodethis;
+            zTree.moveNode(treeNode, nodes[0], "next");
+
+
+            zTree.editName(nodes[0]);
+            isthisnodenew = true;
+            return false;
+        });
+
+    }
+
+    function removeHoverDom(treeId, treeNode) {
+        $("#addBtn_" + treeNode.tId).unbind().remove();
+        $("#addBtn1_" + treeNode.tId).unbind().remove();
+    }
+
+
+    var curDragNodes;
+    function beforeDrag(treeId, treeNodes) {
+        curDragNodes = treeNodes;
+        if (treeNodes[0].type_id == 0) {
+            swal({
+                title: "未分类不能移动！",
+                text: false,
+                timer: 800,
+                type: 'warning',
+                showConfirmButton: false
+            });
+            return false;
+        }
+        return true;
+    }
+    //拖拽节点
+    function zTreeOnDrop(event, treeId, treeNodes, targetNode, moveType) {
+        var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+        var index = treeObj.getNodeIndex(treeNodes[0]);
+        var parent_id = treeNodes[0].parent_id;
+        var type_id = treeNodes[0].type_id;
+        var tab_url = "https://b.izhangmai.com/goods/category_move";
+        $.post(tab_url, {parent_id: parent_id, type_id: type_id, index: index}, function (json) {
+            if (json.status == 1) {
+                /*swal({
+                 title: "移动成功！",
+                 text: false,
+                 timer: 1500,
+                 type:'success',
+                 showConfirmButton: false
+                 });*/
+            } else {
+                swal({
+                    title: "移动失败！",
+                    text: false,
+                    timer: 800,
+                    type: 'warning',
+                    showConfirmButton: false
+                });
+                get_category_list();
+            }
+        }, 'json');
+
+
+        if (templidom) {
+            $(templidom).css({
+                "opacity": 1
+            });
+        }
+    }
+
+
+    function dropPrev(treeId, nodes, targetNode) {
+
+        if (curDragNodes[0].childOuter === false && targetNode.level == 1) {
+            return false;
+        }
+
+        var pNode = targetNode.getParentNode();
+
+        if (pNode && pNode.dropInner === false) {
+            return false;
+        } else {
+            for (var i = 0, l = curDragNodes.length; i < l; i++) {
+                var curPNode = curDragNodes[i].getParentNode();
+                if (curPNode && curPNode !== targetNode.getParentNode() && curPNode.childOuter === false) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
+    function dropInner(treeId, nodes, targetNode) {
+
+        if (curDragNodes[0].childOuter === false) {
+            return false;
+        }
+
+        if (targetNode && targetNode.dropInner === false) {
+            return false;
+        } else {
+            for (var i = 0, l = curDragNodes.length; i < l; i++) {
+                if (!targetNode && curDragNodes[i].dropRoot === false) {
+                    return false;
+                } else if (curDragNodes[i].parentTId && curDragNodes[i].getParentNode() !== targetNode && curDragNodes[i].getParentNode().childOuter === false) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    function dropNext(treeId, nodes, targetNode) {
+
+        if (curDragNodes[0].childOuter === false && targetNode.level == 1) {
+            return false;
+        }
+
+        var pNode = targetNode.getParentNode();
+        if (pNode && pNode.dropInner === false) {
+            return false;
+        } else {
+            for (var i = 0, l = curDragNodes.length; i < l; i++) {
+                var curPNode = curDragNodes[i].getParentNode();
+                if (curPNode && curPNode !== targetNode.getParentNode() && curPNode.childOuter === false) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
+    function beforeClick(treeId, treeNode, clickFlag) {
+        return true;
+    }
+
+
+    function dblClickExpand(treeId, treeNode) {
+        return false;
+    }
+
+    function zTreeOnDblClick(event, treeId, treeNode) {
+
+        $("#" + treeNode.tId + "_edit").click();
+
+
+    }
+
+
+    function setFontCss(treeId, treeNode) {
+        return treeNode.level == 0 ? {'font-weight': 'bold'} : {};
+    }
+
+
+    var templidom = {};
+    function zTreeOnDragMove(event, treeId, treeNodes) {
+
+        var templidomnnow = $(event.target).closest("li");
+
+        if (templidom == templidomnnow) {
+
+            return;
+
+        }
+
+
+        if ($(templidomnnow[0]).attr("id") == treeNodes[0].tId) {
+            //console.log(treeNodes[0].tId == $(templidomnnow[0]).attr("id"));
+            return;
+        }
+
+        if (templidom) {
+            $(templidom).css({
+                "opacity": 1
+            });
+        }
+        $(event.target).closest("li").css({
+            "opacity": 0.6
+        });
+
+        templidom = templidomnnow
+
+    }
+    ;
+
+    var setting = {
+                callback: {
+                    beforeRemove: zTreeBeforeRemove,
+                    beforeRename: zTreeBeforeRename,
+                    onRemove: zTreeOnRemove,
+                    onRename: zTreeOnRename,
+                    onDrop: zTreeOnDrop,
+                    beforeDrag: beforeDrag,
+                    beforeClick: beforeClick,
+                    onDblClick: zTreeOnDblClick,
+                    onDragMove: zTreeOnDragMove
+                },
+                edit: {
+                    enable: true,
+                    showRemoveBtn: true,
+                    showRenameBtn: true,
+                    removeTitle: "修改分类",
+                    renameTitle: "删除分类",
+                    drag: {
+                        isCopy: false,
+                        prev: dropPrev,
+                        inner: dropInner,
+                        next: dropNext
+                    }
+
+                },
+                view: {
+                    addHoverDom: addHoverDom,
+                    removeHoverDom: removeHoverDom,
+                    showLine: false,
+                    addDiyDom: addDiyDom,
+                    fontCss: setFontCss
+                }
+            }
+            ;
+
+    setting.view.dblClickExpand = dblClickExpand;
+    var zNodes = '';
+    get_category_list();
+</script>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.datetimepicker.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script>
+    <style>
+        .tabs-container{
+            margin: 0 ;
+            padding:20px;
+        }
+        #tab-1 {
+            background-color: #f6f6f6;
+            padding: 15px;
+        }
+        .ui-jqgrid tr.jqgrow td{
+            overflow: inherit;
+            white-space: normal;
+        }
+        .payMoney input{
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+
+        <div class="main-content-right">
+            <div class="body-content body-content-bg" style="overflow-y: scroll">
+
+                <div class="inner-scollcontent" >
+                    <div class="ibox" style="margin-bottom: 0" id="modify-shop">
+                        <div class="tabs-container">
+                            <div class="zmbox clearfix page-title-area">
+                                <div class="boxpart page-title">
+                                    <span class="txt1">领用单详情</span>
+                                </div>
+                                <div class="pull-right">
+                                    <button class="btn btn-primary btn-iframe" type="button" style="margin-left: 20px">打 印</button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-primary  ioexcel btn-iframe">导 出</button>
+                                    <a class="text-info  " style="margin-left:20px;margin-right: 10px;line-height: 31px;" href="javascript:void (0)" onclick="saveHistory()">&lt; 返 回</a>
+                                </div>
+
+                            </div>
+                            <div class="zmbox clearfix goodUseInfo">
+
+                            </div>
+                            <div class="zmbox clearfix  page-search-area">
+                                <form role="form" id="search-form" class="form-inline" method="get" action="">
+                                    <!-- 输入框-->
+                                    <div class="boxpart">
+                                        <div class="t">商品名称/条码：</div>
+                                        <div class="inpt">
+                                            <input type="text" class="form-control" name="keyword" id="keyword">
+                                        </div>
+                                        <div class="boxbtn">
+                                            <button type="submit" class="btn btn-primary">查询</button>
+                                        </div>
+                                    </div>
+                                    <!-- 下拉框-->
+
+                                    <div class="boxpart">
+                                        <a class="reset" href="javascript:;">清空筛选条件</a>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="margin-t10" style="margin: 10px 20px 0 20px">
+                                <table id="goodDetail-table"></table>
+                                <div class="zmalertno nodata" style="margin:10px 0 0 0;">
+                                    <i class="icon-exclamation-sign"></i> <span>暂无数据</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>-->
+
+<!--<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>-->
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+<!--<script src="../js/jqGrid.js"></script>-->
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"></script>-->
+<script src="../assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<script src="../js/jquery.datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/chosen.jquery.min.js"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+
+<script type="text/javascript">
+
+    var shopmanageCol= [
+        {
+            label : '条码',
+            name: 'barcode',
+            align:'center',
+            width: 200,
+        },
+        {
+            label: '商品名称',
+            name: 'shopName',
+            width: 200,
+            align:'left',
+            sortable:true,
+            sorttype:"number"
+        },
+        {
+            label: '单位',
+            name: 'standard',
+            align:'center',
+            width: 200,
+        },
+        {
+            label: '分类',
+            name: 'unit',
+            align:'center',
+            width: 300,
+        },
+        {
+            label: '领用价',
+            name: 'type',
+            align:'center',
+            width: 200,
+        },
+
+        {
+            label: '数量',
+            name: 'purchasePrice',
+            align:'center',
+            width: 200,
+        },
+        {
+            label: '小计',
+            name: 'operation',
+            align:'center',
+            width: 200,
+        }
+    ];
+    jqgridTable({
+        "tableId":"#goodDetail-table",
+        "pagerId":"",
+        "url":"../data/shop/shopmanageList.json",
+        "colModel":shopmanageCol,
+        "footerrow":false,
+        "height":"100%",
+        "cellEdit":false,
+        "footerrowFun":'',
+        "multiselect":false
+
+    })
+    //初始化领用单信息
+    function goodInfo(){
+        var str='';
+        str+=' <div class="clearfix">\
+                <div class="boxpart" style="width: 300px">\
+                <div class="t">领用单号：</div>\
+        <div class="t">LY002942201704210001</div>\
+    </div>\
+        <div class="boxpart" style="width: 200px">\
+            <div class="t">领用人：</div>\
+            <div class="t">邓勇</div>\
+        </div>\
+        <div class="boxpart" style="width: 200px">\
+            <div class="t">商品种数：</div>\
+            <div class="t">1</div>\
+        </div>\
+        <div class="boxpart" style="width: 300px">\
+            <div class="t">备注：</div>\
+            <div class="t">--</div>\
+        </div>\
+    </div>\
+        <div class="clearfix">\
+            <div class="boxpart" style="width: 300px">\
+                <div class="t">领用时间：</div>\
+                <div class="t">2017-04-21</div>\
+            </div>\
+            <div class="boxpart" style="width: 200px">\
+                <div class="t">状态：</div>\
+                <div class="t">已领用</div>\
+            </div>\
+            <div class="boxpart" style="width: 200px">\
+                <div class="t">总计：</div>\
+                <div class="t">￥4.50</div>\
+            </div>\
+        </div>';
+        $('.goodUseInfo').empty().append(str);
+    }
+    goodInfo()
+    //查看详情
+    function receive_detail(rowId,gid){
+        var href='../house/good_use_list_detail.html'
+        window.location.href=href;
+        localStorage.setItem('frameidSrc',href);
+    }
+    //返回
+    function saveHistory(){
+        var href='../house/goods_use_list.html';
+        window.location.href=href;
+        localStorage.setItem('frameidSrc',href);
+    }
+</script>
+</body>
+</html>

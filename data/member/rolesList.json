@@ -1,0 +1,22 @@
+{
+  "rows":[
+    {
+      "id":1,
+      "rolesName":"超级管理员",
+      "describe":"主账号",
+      "operation":0
+    },
+    {
+      "id":2,
+      "rolesName":"店长",
+      "describe":"超市管理负责人",
+      "operation":1
+    },
+    {
+      "id":3,
+      "rolesName":"普通员工",
+      "describe":"",
+      "operation":2
+    }
+  ]
+}

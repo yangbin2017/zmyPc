@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="navbar navbar-default" id="navbar">
+    <script type="text/javascript">
+        try {
+            ace.settings.check('navbar', 'fixed')
+        } catch (e) {
+        }
+    </script>
+    <!--公用头部-->
+    <div class="navbar-container daohang-main clearfix" id="navbar-container">
+        <div class="navbar-header pull-left mainchose">
+            <div class="logo lf">
+                <img src="../img/main/logo-x1.png">
+            </div>
+            <div style="float: left;padding-top: 14px; color:#FFFFFF;padding-right: 40px">
+                <h4 style="font-size: 22px;margin: 0;margin-bottom: 4px;font-weight:100;">掌麦云商户</h4>
+                <p style="margin: 0; font-size:14px;">客服电话：400-8815661</p>
+            </div>
+        </div><!-- /.navbar-header -->
+
+        <div class="navbar-header pull-right" role="navigation">
+            <ul class="nav ace-nav">
+                <li>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <i class="icon-headphones"></i>
+                        <p class="">QQ客服</p>
+                    </a>
+                </li>
+                <li>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <i class="icon-comment"></i>
+                        <div>消息</div>
+                    </a>
+                    <ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+                        <li class="dropdown-header">
+                            <a href="#">
+                                <span>进价变动</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="clearfix">
+                                <span>系统消息</span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        <i class="icon-angle-down"></i>
+                        <div>设置</div>
+                    </a>
+
+                    <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li>
+                            <a href="#" class="text-center">
+                                基本信息
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="text-center">
+                                修改密码
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="text-center">
+                                新增功能
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../common/login.html" class="text-center">
+                                退出
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="shopsList">
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+
+                        <span>连锁总店</span>
+                        <i class="icon-arrow-down"></i>
+                    </a>
+                    <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li>
+                            <a href="#" class="text-center">
+                                连锁总店
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="text-center">
+                                干荣杂货店
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="text-center">
+                                测试一
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul><!-- /.ace-nav -->
+        </div><!-- /.navbar-header -->
+    </div><!-- /.container -->
+
+</div>
+
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+        <a class="menu-toggler" id="menu-toggler" href="#">
+            <span class="menu-text"></span>
+        </a>
+        <!--公用左侧内容-->
+        <div class="sidebar" id="sidebar">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('sidebar', 'fixed')
+                } catch (e) {
+                }
+            </script>
+            <div class="left-table-list">
+                <ul class="nav nav-list active menuTab">
+                </ul><!-- /.nav-list -->
+                <!--<ul class="nav-list-usual"></ul>-->
+            </div>
+            <div class="sidebar-collapse" id="sidebar-collapse">
+                <i class="icon-double-angle-left" data-icon1="icon-double-angle-left"
+                   data-icon2="icon-double-angle-right"></i>
+            </div>
+
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('sidebar', 'collapsed')
+                } catch (e) {
+                }
+            </script>
+        </div>
+
+        <div class="main-content-right">
+            <div class="body-content body-content-bg">
+                <div class="inner-scollcontent" style="height: calc(100% - 15px);min-height: 500px">
+                    <div id="echart" style="width: 1000px;height: 500px;margin: 0 auto;"></div>
+                </div>
+
+            </div>
+        </div><!-- /.main-content -->
+
+
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+<!--修改密码-->
+<div class="modal  fade " id="password-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title text-left">修改密码</h4>
+            </div>
+            <form class="form-horizontal" action="../shop/modify_pwd" id="pwd-revise" method="post">
+                <div class="modal-body bg-white">
+                    <div class="padding-btm10">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">原密码：</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" autocomplete="off" name="pwdLong"  maxlength="16" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">新密码：</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" autocomplete="off" id="newPwd" name="newPwd" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">确认密码：</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" autocomplete="off" name="affirmPwd" value="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">确定</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>-->
+
+<!--<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>-->
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+<!--<script src="../js/jqGrid.js"></script>-->
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"></script>-->
+<script src="../assets/js/date-time/bootstrap-datepicker.min.js"></script>
+<script src="../assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+
+<script type="text/javascript">
+    //echart表格
+    var myChart = echarts.init(document.getElementById('echart'));
+
+    var option = {
+        title:{
+            text:'退货趋势图',
+            textStyle:{
+                color:'#008acd',
+                fontSize:'16'
+            },
+            top:'10%',
+            left:'5%',
+            padding:[30,0,0,50],
+
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                lineStyle:{
+                    color:'#f00'
+                }
+            },
+            formatter:'{b}<br/>{a0}:{c0}'
+        },
+        toolbox: {
+            show: true,
+            right:0,
+            feature: {
+                show:true,
+                restore: {},
+                saveAsImage: {},
+                magicType: {type: ['line', 'bar']},
+            }
+        },
+        grid : {//直角坐标系内绘图网格
+            x :80,
+            y : 80,
+            x2 : 30,
+            y2 : 80,
+            backgroundColor : 'rgba(0,0,0,0)',
+            borderWidth : 1,
+            borderColor : '#ffffff',
+            containLabel: true
+        },
+        color:['#008cee'],
+//        legend: {
+//            data:['有工程使用人数'],
+////            color:'#f00',
+//            textStyle: {
+//                color: '#008cee'          // 图例文字颜色
+//            }
+//        },
+//        calculable : true,
+        xAxis:  {
+            type: 'category',
+            boundaryGap: false,
+            data: ['05-04','05-09','05-13','05-17','05-21'
+            ],
+//                axisTick: {length:5},
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#333'
+                }
+            },
+//                splitArea: { show: true },
+            axisLine:{
+                lineStyle:{
+                    color:'#666'
+                }
+
+            },
+//            刻度值
+            axisTick:{
+                interval:'auto',
+                length:1
+            },
+
+            splitLine: {
+                show:true,
+                lineStyle: {
+                    // 使用深浅的间隔色
+                    color: '#ccc',
+                    type:'solid'
+                }
+            },
+//            splitArea:{
+//                show:true
+//            }
+        },
+        yAxis: {
+            name:"退货金额",
+            type: 'value',
+            splitNumber:'',
+//                splitArea: { show: true },
+            axisLabel: {
+                formatter: '￥{value}',
+                show: true,
+                textStyle: {
+                    color: '#333'
+                }
+            },
+
+            axisLine:{
+                lineStyle:{
+                    color:'#008ACD'
+                }
+
+            },
+            splitLine: {
+                lineStyle: {
+                    // 使用深浅的间隔色
+                    color: '#ddd',
+                    type:'dotted'
+                }
+            }
+
+        },
+        series: [
+            {
+                name:'金额',
+                type:'line',
+                smooth: true,
+
+                showSymbol: true,
+                data:[0, 5000,3000,4500,1000],
+                textStyle: {
+                    color:'#008cee'
+                },
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                },
+                label:{
+                    normal:{
+                        show: true,
+                        position: 'top'}
+                },
+                lineStyle:{
+                    normal:{
+                        width:2,  //连线粗细
+                        color: "#FDB23F",  //连线颜色
+                    }
+                },
+                itemStyle:{
+                    color:'#f00'
+                },
+                areaStyle:'#f00',
+
+                showAllSymbol:true
+            }
+
+
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</body>
+</html>

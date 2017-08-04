@@ -1,0 +1,10 @@
+{
+  "rows":[
+    {
+      "id":1,
+      "stockTime":"2017-03-23 12:00",
+      "stockUser":"邓勇",
+      "stockStore":"3"
+    }
+  ]
+}

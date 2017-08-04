@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.datetimepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/chosen.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if !IE]> -->
+
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script>
+
+    <!-- <![endif]-->
+    <style type="text/css">
+        .pagemain .txt1 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .pagemain .txt2 {
+            font-size: 13px;
+        }
+
+        .pagemain .txt2 span {
+            font-weight: bold;
+        }
+
+        .form-group input {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+
+        <div class="main-content-right">
+            <div class=" body-content-bg">
+                <div class="inner-scollcontent">
+
+                    <!-- tab切换-->
+                    <div class="tabs-container menu-tabs" style="margin-top: 10px">
+                        <ul class="nav nav-tabs" role="presentation">
+                            <li class="active"><a href="#staffList" role="tab" data-toggle="tab" data-index="0">员工列表</a>
+                            </li>
+                            <li class=""><a href="#memberRecord" role="tab" data-toggle="tab" data-index="1">交接班记录</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <!--功能条-->
+                            <div role="tabpanel" id="staffList" class="tab-pane active">
+                                <!--功能条-->
+                                <div class="zmbox clearfix page-search-area">
+                                    <form id="search-form" action="" method="get">
+                                        <!-- 输入框-->
+                                        <div class="boxpart">
+                                            <div class="t">姓名/手机号：</div>
+                                            <div class="inpt">
+                                                <input type="text" class="pintxt" name="keywords" value="">
+                                            </div>
+                                            <div class="boxbtn">
+                                                <button type="button" class="btn btn-primary staff-tel">查询</button>
+                                            </div>
+                                        </div>
+                                        <!-- 下拉框-->
+                                        <div class="boxpart" style="margin-left:15px;padding-right: 15px">
+                                            <div class="t">角色筛选：</div>
+
+                                            <div class="bill-head-box select-box inline-table">
+                                                <div class="bill-input ">
+                                                    <input type="text" value="">
+                                                    <i class="icon-sort-down"></i>
+                                                </div>
+                                                <div class="select-down role-select" style="display: none;">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 下拉框-->
+                                        <div class="boxpart " style="margin-left:15px;padding-right: 15px;">
+                                            <div class="t">店铺筛选：</div>
+                                            <div class="inpt ">
+
+                                                <div class="bill-head-box select-box inline-table">
+                                                    <div class="bill-input ">
+                                                        <input type="text" value="">
+                                                        <i class="icon-sort-down"></i>
+                                                    </div>
+                                                    <div class="select-down shop-select" style="display: none;">
+
+                                                    </div>
+                                                </div>
+                                                <!--<div class="chosen-container chosen-container-single" style="width: 200px;" title=""><a class="chosen-single" tabindex="-1"><span>测试1</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off"></div><ul class="chosen-results"></ul></div></div>-->
+                                            </div>
+                                        </div>
+                                        <div class="boxpart">
+                                            <a class="reset" href="javascript:;">清空筛选条件</a>
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <!--功能条-->
+                                <div class="zmbox clearfix page-title-area">
+                                    <div class="boxpart page-title">
+        <span class="txt1">员工列表
+            <!--系统文字提示-->
+								<span class="icon-question-sign"
+                                      style="color:#55C663;vertical-align: middle;margin-top: -3px;font-size:18px;"
+                                      aria-hidden="true" data-toggle="tooltip" data-placement="right" title=""
+                                      data-original-title="
+								<b>员工：</b>所有员工均可以编辑删除；超级管理员不可删除、不可更改权限、不可更换手机号<br>
+								<b>交接班记录：</b>员工每交一次班就会自动交接班记录，记录班上的交易金额<br>
+
+								"></span>
+								<script type="text/javascript">
+                                    !function () {
+
+                                        if ($('[data-toggle="tooltip"]').length) {
+                                            $(function () {
+                                                $('[data-toggle="tooltip"]').tooltip({'html': true})
+                                            });
+                                            return
+                                        }
+                                        setTimeout(arguments.callee, 30)
+
+                                    }()
+                                </script>
+            <!--系统文字提示-->
+		</span>
+                                        <span class="txt2">共 <span class="text-info" id="staffNum"></span>  个员工</span>
+                                    </div>
+                                    <div class="pull-right" id="btn-add-employee-btn">
+                                        <button type="button" id="addstaff" class="btn btn-primary btn-edit open-modals"
+                                                data-open="addStaff" data-head="添加员工"
+                                        >添加员工
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <table id="memberList"></table>
+                                    <div class="zmalertno nodata" style="margin:10px 0 0 0;">
+                                        <i class="icon-exclamation-sign"></i> <span>暂无数据</span>
+                                    </div>
+                                    <div class="margin-t10">
+                                        <div id="ajax-page" class="pagemain">
+                                            <div class=" pagetotal">共25条,2/2页</div>
+                                            <a href="javascript:void (0)" class="disabled">上一页</a>
+                                            <ul class="pagebtn">
+                                                <li class="active">
+                                                    <a href="#">1</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">2</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#">3</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#">4</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#">5</a>
+                                                </li>
+                                            </ul>
+                                            <a href="javascript:void (0)">下一页</a>
+                                            <div class="page-foot">
+                                                &nbsp; &nbsp;显示
+                                                <div class="select-box" style="width: 80px">
+                                                    <div class="bill-input ">
+                                                        <input type="text" value="10">
+                                                        <i class="icon-sort-down"></i>
+                                                    </div>
+                                                    <div class="select-down " style="display: none;">
+                                                        <div class="select-list">10</div>
+                                                        <div class="select-list">20</div>
+                                                        <div class="select-list">30</div>
+                                                    </div>
+                                                </div>条&nbsp;&nbsp;跳转到&nbsp;
+                                                <input type="text" class="page-input"value="1"
+                                                     style="width:48px;height: 23px;text-indent: 4px;">&nbsp;页&nbsp;
+                                                <a class="btn-primary btn-page" >确定</a>&nbsp;
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" id="memberRecord" class="tab-pane ">
+                                <!--功能条-->
+                                <div class="zmbox clearfix page-search-area">
+                                    <form id="searchs-form" action="" method="get">
+                                        <!-- 输入框-->
+                                        <div class="boxpart">
+                                            <div class="t">姓名/手机号：</div>
+                                            <div class="inpt">
+                                                <input type="text" class="pintxt" name="keywords" value="">
+                                            </div>
+                                            <div class="boxbtn">
+                                                <button type="submit" class="btn btn-primary">查询</button>
+                                            </div>
+
+                                        </div>
+                                        <div class="boxpart">
+                                            <div class="t work-page">交班开始时间：</div>
+                                            <div class="inpt work-page">
+                                                <input type="text" class="pintxt datepicker"
+                                                       name="date_range" style="width: 160px;">
+                                            </div>
+                                        </div>
+                                        <div class="boxpart">
+                                            <div class="t work-page">交班结束时间：</div>
+                                            <div class="inpt work-page">
+                                                <input type="text" class="pintxt datepicker" name="date_range"
+                                                       style="width: 160px;">
+                                            </div>
+                                        </div>
+                                        <div class="boxpart">
+                                            <a class="reset" href="javascript:;">清空筛选条件</a>
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <!--功能条-->
+                                <div class="zmbox clearfix page-title-area">
+                                    <div class="boxpart page-title">
+                                        <span class="txt1">交接班记录</span>
+                                        <span class="txt2">共 <span class="text-info">4</span>  条</span>
+                                    </div>
+                                    <div class="pull-right">
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <table id="memberRecord-table"></table>
+                                    <div class="margin-t10">
+                                        <ul class="pagination">
+                                            <li class="disabled">
+                                                <a href="#">
+                                                    <i class="icon-double-angle-left"></i>
+                                                </a>
+                                            </li>
+
+                                            <li class="active">
+                                                <a href="#">1</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">2</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">3</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">4</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">5</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">
+                                                    <i class="icon-double-angle-right"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+
+<div class="modal  fade" id="modify-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+    <!--连锁总部提示-->
+    <div class="modal-dialog" style="display: none">
+        <div class="modal-content">
+            <div class="modal-header" style="border: 0;">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title text-left" style="text-align: center;"></h4>
+            </div>
+            <div class="modal-body bg-white" style="text-align:center">
+                <img src="https://b.izhangmai.com/img/tishiicon1-1.jpg">
+            </div>
+            <div class="modal-footer" style="text-align: center;border: 0;    margin-bottom: 30px;">
+                <button class="btn btn-primary btn-show-shop"> 立即设置</button>
+            </div>
+        </div>
+    </div>
+    <!--<script type="text/javascript">-->
+    <!--$('.btn-show-shop').on('click',function(){-->
+    <!--$(this).closest('.modal-dialog').hide();-->
+    <!--$('.shop-modal').show();-->
+    <!--})-->
+    <!--</script>-->
+
+    <!--创建超市-->
+    <style type="text/css">
+        .xdsoft_datetimepicker .xdsoft_timepicker {
+            width: 126px
+        }
+
+        .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev, .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_next {
+            margin-left: 48px
+        }
+
+        .base-info .form-group {
+            margin-bottom: 15px
+        }
+
+        #store-selector {
+            height: 34px;
+        }
+
+        #store-selector .text {
+            height: 34px;
+            border-color: #d4dfed;
+            line-height: 34px
+        }
+
+        #store-selector .text b {
+            top: 6px
+        }
+
+        #store-selector .content {
+            top: 33px;
+            border-color: #d4dfed;
+        }
+
+        .required {
+            color: red
+        }
+    </style>
+    <div class="modal-dialog modal-lg shop-modal" style="width: 900px;">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title text-left">新建分店</h4>
+            </div>
+
+            <div class="modal-body bg-white" style="padding-bottom: 0">
+                <div class="ibox" style="margin-bottom: 0">
+                    <div class="tabs-container">
+                        <div class="tab-content" style="border: none;padding-bottom: 0">
+
+                            <div id="tab-1" class="tab-pane active">
+                                <form class="form-horizontal validation shop-form"
+                                      action="https://b.izhangmai.com/shop/modify" method="post"
+                                      data-reload="#contentbox">
+                                    <input type="hidden" name="shop_id" value="0">
+                                    <input type="hidden" name="is_online" value="0">
+                                    <div class="panel-body" style="border: none;min-height: 400px">
+                                        <div class="row">
+                                            <div class=" base-info">
+                                                <div class="col-lg-3">
+
+                                                    <div class="shangchuantupian" style="margin-bottom: 20px">
+                                                        <div class="tit"></div>
+                                                        <div class="shangchuankuang"
+                                                             style="margin-bottom: 0;width: 165px;height:145px">
+                                                            <input style="width: 100%;height:100%" type="file"
+                                                                   name="image" class="uploadImg" id="image">
+                                                            <img id="logo_img_up_view" src="../img/default.png"
+                                                                 class="img" style="width: 100%;height:100%">
+                                                            <input type="hidden" name="logo" id="logo_img_up" value="">
+                                                            <div class="wangshantishi">
+                                                                <div class="Validform_checktip"></div>
+                                                            </div>
+                                                        </div>
+                                                        <p style="width: 165px;text-align: center;margin-top: 10px">
+                                                            超市LOGO</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <div class="form-group"><label class="col-sm-2 control-label"><span
+                                                            class="required">*</span>超市名称：</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" name="shop_name"
+                                                                   value="" datatype="*" maxlength="30"
+                                                                   nullmsg="请填写超市名称">
+                                                            <span class="help-block m-b-none"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group"><label class="col-sm-2 control-label"><span
+                                                            class="required">*</span>所在地区：</label>
+                                                        <div class="col-sm-8">
+
+                                                            <div id="summary-stock">
+                                                                <div class="dd">
+                                                                    <div id="store-selector" class="">
+                                                                        <div class="text">
+                                                                            <div>辽宁省 - 丹东市 - 东港市</div>
+                                                                            <b></b>
+                                                                        </div>
+                                                                        <div class="close-selector"></div>
+                                                                    </div><!--store-selector end-->
+                                                                    <div id="store-prompt"><strong></strong></div>
+                                                                    <!--store-prompt end--->
+                                                                </div>
+                                                            </div>
+                                                            <input type="hidden" name="province" class="prov"
+                                                                   value="辽宁省">
+                                                            <input type="hidden" name="city" class="city" value="丹东市">
+                                                            <input type="hidden" name="area" class="area" value="东港市"
+                                                                   datatype="*" nullmsg="请选择地区">
+                                                            <span class="help-block m-b-none"></span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group has-error"><label
+                                                            class="col-sm-2 control-label"><span
+                                                            class="required">*</span>详细地址：</label>
+                                                        <div class="col-sm-8">
+                                                            <textarea type="text"
+                                                                      class="form-control address-input Validform_error"
+                                                                      name="address" maxlength="100" datatype="*"
+                                                                      nullmsg="请填写超市地址"></textarea>
+                                                            <span class="help-block m-b-none">请填写超市地址</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" id="coordinate-parent"><label
+                                                            class="col-sm-2 control-label"><span
+                                                            class="required">*</span>超市坐标：</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" name="coordinate"
+                                                                   id="coordinate" data-wd="" data-jd="" value=""
+                                                                   datatype="*" nullmsg="请拾取超市坐标！">
+                                                            <span class="help-block m-b-none"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label"><span
+                                                                class="required">*</span>负责人：</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" name="boss_name"
+                                                                   value="" datatype="font_cn" maxlength="10"
+                                                                   nullmsg="请填写负责人姓名" errormsg="请正确填写负责人姓名"
+                                                                   style="padding-left:4px;padding-right: 0">
+                                                            <span class="help-block m-b-none"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label"><span
+                                                                class="required">*</span>联系方式：</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" name="mobile"
+                                                                   value="" datatype="n6-14" maxlength="14"
+                                                                   nullmsg="请填写负责人联系方式" errormsg="请正确填写负责人联系方式"
+                                                                   style="padding-left:4px;padding-right: 0">
+                                                            <span class="help-block m-b-none"></span>
+                                                        </div>
+                                                    </div>
+                                                    <!--<div class="form-group" style="width: 54%;margin-right: 0;float: left">
+                                                        <label class="col-sm-2 control-label" style="width:65px;padding-left: 0;padding-right: 0"><span class="required">*</span>身份证号：</label>
+                                                        <div class="col-sm-4" style="width:204px;">
+                                                            <input type="text" class="form-control" name="boss_card_code" value="" datatype="id_card" maxlength="20" nullmsg="请填写负责人身份证号" errormsg="身份证号格式错误" style="padding-left:4px;padding-right: 0"/>
+                                                            <span class="help-block m-b-none"></span>
+                                                        </div>
+                                                    </div>-->
+                                                </div>
+
+                                            </div>
+                                            <div class="form-horizontal" id="map-container"
+                                                 style="width: 100%; height:430px; display: none">
+                                                <div class="form-group" style="margin-bottom: 0">
+                                                    <div class="col-sm-4">
+                                                        <div class="input-group">
+                                                            <input class="form-control" id="keyword" type="text"
+                                                                   placeholder="请输入关键字进行搜索">
+                                                        <span class="input-group-btn">
+                                                        <button class="btn btn-primary btn-search" type="button"
+                                                                style="padding: 7px 12px;"> 搜索
+                                                        </button>
+                                                        </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-8">
+                                                        <div style="width: 400px;float: left;"><span
+                                                                style="line-height: 35px;">单击地图拾取坐标：<b id="show-zb"></b></span>
+                                                        </div>
+                                                        <button class="btn btn-primary btn-hide" type="button"
+                                                                style="margin-left: 10px;float: right"> 确 定
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                                <div class="clear"></div>
+                                                <div id="allmap" style="width: 100%; height:85%;"></div>
+
+                                            </div>
+                                        </div>
+                                        <!-- 绑定代理商-->
+                                        <div class="agentbound" style="margin-top: 20px;display: none">
+                                            <h3 class="zm-h3">绑定代理商
+                                                <span class="text-danger" style="font-size: 14px; font-weight: 100;">（绑定代理商后，您将归属代理商直接管理 )</span>
+                                            </h3>
+                                            <div class="form-group"><label class="col-sm-4 control-label">代理商ID：</label>
+                                                <div class="col-sm-5">
+                                                    <!--<input class="form-control" type="text" value="" name="agent_mobile" maxlength="20" datatype="/^[a-zA-Z0-9-]{1,20}$/"  ajaxurl="" nullmsg="请输入代理商ID" errormsg="代理商ID输入有误，请仔细检查或重新联系客服索要ID" placeholder="输入代理商ID" />-->
+                                                    <input class="form-control" type="text" value="" name="agent_mobile"
+                                                           maxlength="20"
+                                                           ajaxurl="https://b.izhangmai.com/common/check_agent"
+                                                           nullmsg="请输入代理商ID" errormsg="代理商ID输入有误，请仔细检查或重新联系客服索要ID"
+                                                           placeholder="输入代理商ID">
+                                                    <span class="help-block m-b-none"></span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="agentqq" style="display: none">
+                                            <p style="font-size: 18px;">Q：如何绑定代理商？</p>
+
+                                            <p>客服服务热线：<span class="text-success"
+                                                            style="font-size: 18px; font-weight: bold;">400-8815661</span>
+                                                <i style="padding-right: 58px"></i>
+                                                在线客服：<a href="tencent://message/?Menu=yes&amp;uin=938052757&amp;Service=58&amp;SigT=A7F6FEA02730C9885B037155C864771FF9789A1C2B336ED8238CBCB1FA375BE8805210098C30A6A07607749B9D08B8E7C26C661FDA7ACB50E0A7C486BBEAF3F1BC2B80BF4A374F6A6CD6ADA44A289AE968C90A4594F90AECF3622DA6BDA957379EC9F31A1E8668F807A6BD66B38DADF512BBA8A8F0E2F8C2&amp;SigU=30E5D5233A443AB22DF0BA4CB55362055D8DCDA4D734F5B5BEF486463F3E2CBC9F88833EF33AE864634711F9A84A1E2DB4101B1C29699C208FF3C3DE5E9EC0C0A29CA3F24518673E"><img
+                                                        src="https://b.izhangmai.com/img/main/lianxiqq.png"></a></p>
+                                        </div>
+                                        <!-- 绑定代理商-->
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-submit">保 存</button>
+                <button class="btn btn-primary btn-hide btn-sure" type="button" style="display: none"> 确 定</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- basic scripts -->
+
+<!--//员工列表-->
+<div class="modals addStaff">
+    <div class="modals-dilog w-600">
+        <div class="modals-content">
+            <div class="modals-head">
+                <span>添加员工</span>
+                <div class="close-m closeModals">&times;</div>
+            </div>
+            <div class="modals-body maxheight">
+                <div class="modals-body-content">
+                    <div class="madals-container active">
+                        <!-- Tab panes -->
+                        <div class="tab-content " style="border-bottom: none">
+                            <form class="form-horizontal validation" id="staff-modals" action=""
+                                  method="post">
+                                <div class="modal-body bg-white">
+                                    <div class="row">
+
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">头像：</label>
+
+                                            <div class="col-sm-8">
+
+                                                <div class="shangchuantupian" style="margin-bottom: 5px;">
+                                                    <div class="shangchuankuang"
+                                                         style="margin-bottom: 0;width: 100px;height: 100px">
+                                                        <input type="file" name="image" class="uploadImg"
+
+                                                               style="width: 100%;height: 100%">
+                                                        <img class="img" src="../img/20151218163458.png"
+                                                             style="width: 100%;height: 100%">
+                                                        <input type="hidden" name="user_avatar" id="head_img" value="">
+                                                        <span class="help-block m-b-none"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="margin-bottom: 0">
+                                            <label class="col-sm-3 control-label"><span class="text-danger">* </span>姓名：</label>
+
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="user_name" value=""
+                                                       maxlength="10"
+                                                       datatype="*" nullmsg="请填写员工姓名！" placeholder="">
+                                                <span class="help-block m-b-none"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="margin-bottom: 0">
+                                            <label class="col-sm-3 control-label"><span class="text-danger">* </span>手机号码：</label>
+
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="user_mobile"
+                                                       id="staffPhone" maxlength="11" value=""
+                                                       datatype="mobile" nullmsg="请填写员工手机号！" autocomplete="off"
+                                                       errormsg="手机号格式错误"
+                                                >
+                                                <span class="help-block m-b-none"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" style="margin-bottom: 0">
+
+                                            <label class="col-sm-3 control-label"> <span class="text-danger">* </span>密码：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="user_password" value=""
+                                                       datatype="*6-16" nullmsg="请设置密码！" onfocus="this.type='password'"
+                                                       autocomplete="off" errormsg="6-16位字符！" placeholder="">
+                                                <span class="help-block m-b-none"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label"><span class="text-danger">* </span>角色：</label>
+                                            <div class="col-sm-4 choseover">
+                                                <div class=" select-box " style="width:200px;">
+                                                    <div class="bill-input ">
+                                                        <input type="text" name="user_role" value="">
+                                                        <i class="icon-sort-down"></i>
+                                                    </div>
+                                                    <div class="select-down staffrole-select">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label"><span class="text-danger">* </span>所属店铺：</label>
+                                            <div class="col-sm-8 choseover " id="staff-shop"
+                                                 style="max-height: 240px;overflow-y: auto;padding-top: 5px">
+
+                                            </div>
+                                        </div>
+
+                                        <input type="hidden" name="id" value="0">
+                                        <input type="hidden" name="parent_id" value="176">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" type="button" id="saveStaff">确定</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!--<div class="clearfix foots">-->
+                        <!--<div class="rt">-->
+                        <!--<a href="#" class="btn sure-bg">确定</a>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+<!-- Sweet alert -->
+<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>-->
+
+<!--<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>-->
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+<!--<script src="../js/jqGrid.js"></script>-->
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"></script>-->
+<!--<script src="../assets/js/date-time/bootstrap-datepicker.min.js"></script>-->
+<script src="../assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<script src="../js/jquery.datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/chosen.jquery.min.js"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+<script src="../js/eosgi-test.js"></script>
+<script src="../js/server.js"></script>
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+<script type="text/javascript">
+    var memberListCol = [
+        {
+            label: '姓名',
+            name: 'staffName',
+            align: 'center',
+            width: 200,
+        },
+        {
+            label: '手机号',
+            name: 'mobileNumber',
+            width: 200,
+            align: 'center',
+            sortable: true,
+            sorttype: "number"
+        },
+        {
+            label: '角色(职位)',
+            name: 'jobName',
+            align: 'center',
+            width: 200,
+            sortable: false,
+        },
+        {
+            label: '所属店铺',
+            name: 'BelongsStore',
+            align: 'left',
+            width: 160,
+            sortable: false,
+            formatter: function (cellvalue, options, rowObject) {
+                if (cellvalue.length == 0) return '';
+                var str = '';
+                for (var i = 0; i < cellvalue.length; i++) {
+                    str += '<div data-companyId="' + cellvalue[i].companyId + '">' + cellvalue[i].companyName + '</div>'
+                }
+                return str;
+            }
+        },
+        {
+            label: '操作',
+            name: 'operation',
+            align: 'left',
+            width: 180,
+            formatter: function (cellvalue, options, rowObject) {
+                var companyIdArr = rowObject.BelongsStore;
+                var companyId = [];
+                for (var i = 0; i < companyIdArr.length; i++) {
+                    companyId.push(companyIdArr[i].companyId)
+                }
+                companyId = companyId.join();
+                companyId="'"+companyId+"'";
+                var str = '';
+                var gid = "'#" + options.gid + "'";
+                str += '<span class="table-bar" onclick="member_edit(' + rowObject.mobileNumber + ',' + rowObject.companyId + ')"><i class="icon-edit"></i>编辑</span>' +
+                        '<span class="table-bar delete red" onclick="btn_delete(' + options.rowId + ',' + rowObject.staffId + ',' + companyId + ',' + gid + ')"><i class="icon-trash"></i>删除</span>';
+
+                return str;
+            }
+        }
+    ];
+    var memberRecordCol = [
+        {
+            label: '登录时间',
+            name: 'startime',
+            align: 'center',
+            width: 140,
+        },
+        {
+            label: '交班时间',
+            name: 'endtime',
+            width: 140,
+            align: 'center',
+            sortable: true,
+            sorttype: "number"
+        },
+        {
+            label: '姓名',
+            name: 'membername',
+            align: 'center',
+            width: 100,
+            sortable: false,
+        },
+        {
+            label: '手机号码',
+            name: 'phone',
+            align: 'center',
+            width: 100,
+            sortable: false,
+        },
+        {
+            label: '角色',
+            name: 'role',
+            align: 'center',
+            width: 100,
+            sortable: false,
+        },
+        {
+            label: '收银店铺',
+            name: 'cashiershop',
+            align: 'center',
+            width: 100,
+            sortable: false,
+        },
+        {
+            label: '销售笔数',
+            name: 'salenum',
+            align: 'center',
+            width: 100,
+            sortable: false,
+        },
+        {
+            label: '销售金额',
+            name: 'salemoney',
+            align: 'center',
+            width: 100,
+            sortable: false,
+        },
+        {
+            label: '现金支付',
+            name: 'moneypay',
+            align: 'center',
+            width: 100,
+            sortable: false,
+        },
+        {
+            label: '微信支付',
+            name: 'weixinpay',
+            align: 'center',
+            width: 100,
+            sortable: false,
+        },
+        {
+            label: '支付宝支付',
+            name: 'alipay',
+            align: 'center',
+            width: 100,
+            sortable: false,
+        },
+        {
+            label: '银联',
+            name: 'unionpay',
+            align: 'center',
+            width: 100,
+            sortable: false,
+        },
+        {
+            label: '退货单',
+            name: 'return_order',
+            align: 'center',
+            width: 100,
+            sortable: false,
+        },
+        {
+            label: '商品促销',
+            name: 'shop_sale',
+            align: 'center',
+            width: 100,
+            sortable: false,
+        },
+        {
+            label: '会员优惠',
+            name: 'vip_favorable',
+            align: 'center',
+            width: 100,
+            sortable: false,
+        },
+        {
+            label: '会员兑换',
+            name: 'vip_convert',
+            align: 'center',
+            width: 100,
+            sortable: false,
+        },
+    ];
+    jqgridTable({
+        "tableId": "#memberRecord-table",
+        "pagerId": "",
+        "url": "../data/member/memberRecordList.json",
+        "colModel": memberRecordCol,
+        "footerrow": false,
+        "height": "100%",
+        "cellEdit": false,
+        "footerrowFun": '',
+        "multiselect": false
+
+    })
+
+    var pageSize=20
+    $('#staff-modals').validate({
+        rules: {
+            user_name: {
+                required: true,
+            },
+            user_mobile: {
+                required: true,
+                minlength: 11,
+                // 自定义方法：校验手机号在数据库中是否存在
+                // checkPhoneExist : true,
+                isMobile: true
+            },
+            user_password: {
+                required: true,
+                minlength: 6,
+
+            },
+        },
+        messages: {
+            user_name: {
+                required: "请填写员工姓名!",
+            },
+            user_mobile: {
+                required: "请填写员工手机号！",
+                minlength: "确认手机不能小于11个字符",
+                isMobile: "手机号格式错误"
+            },
+            user_password: {
+                required: "请设置密码",
+                minlength: "密码6-16位字符！",
+            },
+
+        },
+        onfocusout: function (element) {
+            $(element).valid();
+        },
+        submitHandler: function (form) {
+            var newPwd = $('#newPwd').val();
+        },
+        debug: true,
+        success: function () {
+
+        }
+    })
+    var staffHome = {
+        loginToken: "B1EBE47605952CF875EB795F811CE3E4",
+        companyId: 12,
+        pageIndex: 1,
+        pageSize: pageSize
+    }
+    //初始化页面
+    function memberListInit() {
+        $.appServer.getStaffHomePage(staffHome, function (data) {
+            var loginToken = localStorage.getItem('loginToken')
+            if (data.flag == true) {
+                var roleList = data.output.staffHomePage;
+                console.log(roleList)
+                $('#staffNum').html(roleList.length);
+                if(roleList.length==0){
+                    alert('1')
+                    $('#memberList').hide()
+                    $('#memberList').siblings('.nodata').show();
+                    $('.pagemain').hide()
+                    return
+                }
+                roleInit(data.output.job, '.role-select');
+                shopSelectInit(data.output.subclassCompany);
+//                var staffNum=
+
+//                $("#memberList").jqGrid('clearGridData');
+                jqgirdDate({
+                    "data": roleList,
+                    "tableId": "#memberList",
+                    "pagerId": "",
+                    "colModel": memberListCol,
+                    "footerrow": false,
+                    "height": "100%",
+                    "cellEdit": false,
+                    "footerrowFun": '',
+                    "multiselect": false
+                })
+            }
+        })
+    }
+    memberListInit();
+    //分页加载
+    $(document).on('click', '.pagebtn li a', function (e) {
+        e.preventDefault();
+        var pageIndex=$(this).html();
+        localStorage.setItem('StaffpageIndex',pageIndex)
+        var staffHome = {
+            loginToken: "B1EBE47605952CF875EB795F811CE3E4",
+            companyId: 12,
+            pageIndex: pageIndex,
+            pageSize: pageSize
+        }
+        staffChangeFun(staffHome);
+    })
+    //    电话查询
+    $(document).on('click', '.staff-tel', function () {
+        var tel = $(this).parent().siblings('.inpt').find('input').val();
+        var staffHome = {loginToken: "B1EBE47605952CF875EB795F811CE3E4", companyId: 12, mobileNumber: tel,pageIndex: 1,
+            pageSize: pageSize}
+        staffChangeFun(staffHome);
+    })
+    //    角色查询
+    $(document).on('click', '.role-select>div', function () {
+        var jobId = $(this).attr('data-id');
+        var telDate = {loginToken: "B1EBE47605952CF875EB795F811CE3E4", companyId: 12, jobId: jobId,pageIndex: 1,
+            pageSize: pageSize}
+        staffChangeFun(telDate);
+    })
+    //    店铺查询
+    $(document).on('click', '.shop-select>div', function () {
+        var companyId = $(this).attr('data-id');
+
+        var telDate = {loginToken: "B1EBE47605952CF875EB795F811CE3E4", companyId: companyId,pageIndex: 1,
+            pageSize: pageSize}
+        if($(this).index()==1){
+            telDate.single='2'
+        }
+        staffChangeFun(telDate);
+    })
+    //清空查询
+    $(document).on('click', '.reset', function () {
+       var staffHome = {
+            loginToken: "B1EBE47605952CF875EB795F811CE3E4",
+            companyId: 12,
+            pageIndex: 1,
+            pageSize: pageSize
+        }
+        staffChangeFun(staffHome);
+    });
+    //查询方法
+    function staffChangeFun(staffInfo){
+        $.appServer.getStaffHomePage(staffInfo, function (data) {
+            if (data.flag == true) {
+                var roleList = data.output.staffHomePage;
+                if(roleList.length==0){
+//                    alert('1')
+                    $('#staffNum').html('0')
+                    $('#gbox_memberList').hide();
+                    $('.tab-pane.active').find('.nodata').show();
+                    return
+                }else {
+                    $('#gbox_memberList').show();
+                    $('.tab-pane.active').find('.nodata').hide();
+                }
+                $('#staffNum').html(roleList.length)
+                $("#memberList").jqGrid('clearGridData');
+                $("#memberList").jqGrid('setGridParam', {data: roleList}).trigger("reloadGrid");
+            }
+        })
+    }
+    //员工初始化
+    $.appServer.goShopAddStaff({loginToken: "B1EBE47605952CF875EB795F811CE3E4", companyId: 12}, function (data) {
+        var loginToken = localStorage.getItem('loginToken')
+        var loginPwd = $('.addStaff').find('input[name="user_password"]').val('').removeAttr('placeholder');
+        var mobileNumber = $('.addStaff').find('input[name="user_mobile"]').val('');
+        $('.addStaff').find('input[name="user_name"]').val('');
+
+        if (data.flag == true) {
+            var datas = data.output.shop;
+            roleInit(data.output.job, '.staffrole-select');
+            var shopHtml = '';
+            $('#staff-shop').empty();
+            for (var i = 0; i < datas.length; i++) {
+                shopHtml += '  <div style="padding-top: 4px">\
+                        <input type="checkbox" name="shop_group[]" value="' + datas[i].companyId + '"> ' + datas[i].companyName + '\
+                        </div>'
+            }
+            $('#staff-shop').append(shopHtml);
+        }
+    })
+    $(document).on('click', '#addstaff', function () {
+        var loginPwd = $('.addStaff').find('input[name="user_password"]').val('').removeAttr('placeholder');
+        var mobileNumber = $('.addStaff').find('input[name="user_mobile"]').val('');
+        $('.addStaff').find('input[name="user_name"]').val('');
+        $('#saveStaff').addClass('addstaffsavve')
+        $('#staff-shop>div').each(function (index, element) {
+            $(this).find('input').attr('checked', false);
+        })
+    })
+    //保存员工
+    $(document).on('click', '.addstaffsavve', function (e) {
+        alert('1')
+//        $(this).attr('disabled',true)
+        debugger;
+        e.preventDefault();
+        var parameter = formdata();
+        $.appServer.addMemberStaffUser(parameter, function (data) {
+            if (data.flag == true) {
+//                $('#saveStaff').attr('disabled',false)
+                $('#saveStaff').removeClass('addstaffsavve')
+                $('#saveStaff').parents('.modals').hide();
+
+                var pageIndex=localStorage.getItem('StaffpageIndex');
+                var staffHome = {
+                    loginToken: "B1EBE47605952CF875EB795F811CE3E4",
+                    companyId: 12,
+                    pageIndex: pageIndex,
+                    pageSize: pageSize
+                }
+                staffChangeFun(staffHome);
+
+            }
+        })
+
+    })
+    //获取form值
+    function formdata() {
+        var pictureUrl = $('.addStaff').find('img').attr('src');
+        //密码选择情况
+        var pwdChange = $('.addStaff').find('input[name="user_password"]').attr('data-change');
+        var staffName = $('.addStaff').find('input[name="user_name"]').val();
+        var loginPwd = $('.addStaff').find('input[name="user_password"]').val();
+        var mobileNumber = $('.addStaff').find('input[name="user_mobile"]').val();
+        var jobId = $('.addStaff').find('input[name="user_role"]').attr('data-id');
+        if (staffName == "") {
+            $('.addStaff').find('input[name="user_name"]').siblings('span').html('请填写员工姓名!').show()
+        } else if (mobileNumber == "") {
+            $('.addStaff').find('input[name="user_mobile"]').after('<label class="error">请填写员工手机号!</label>')
+        }
+        if (pwdChange == false) {
+            if (loginPwd == "") {
+                $('.addStaff').find('input[name="user_mobile"]').after('<label class="error">请设置密码!</label>')
+                return
+            }
+        }
+        var companys = [];
+        $('#staff-shop>div').each(function (index, element) {
+            var shopCheck = $(this).find('input').prop('checked');
+            if (shopCheck == true) {
+                var companyId = $(this).find('input').val();
+                companys.push(companyId)
+            }
+        })
+//        console.log(companys)
+        var companys = companys.join();
+        var parameter = {
+            loginToken: "B1EBE47605952CF875EB795F811CE3E4",
+//            pictureUrl:pictureUrl,
+            staffName: staffName,
+            loginPwd: loginPwd,
+            mobileNumber: mobileNumber,
+            jobId: jobId,
+            companyId: 12,
+            companys: companys
+        }
+        return parameter;
+    }
+    //    电话验证
+    $(document).on('blur', '#staffPhone', function () {
+        var mobileNumber = $(this).val();
+        var _this = this
+        console.log(mobileNumber)
+        $.appServer.goShopAddStaff({
+            loginToken: "B1EBE47605952CF875EB795F811CE3E4",
+            companyId: 12,
+            mobileNumber: mobileNumber
+        }, function (data) {
+            console.log(data);
+            var msg = data.output.staffInfo.staffName;
+            console.log(msg)
+            if (msg == false) {
+                $(_this).siblings('.error').html('可以使用！')
+                if (data.output.staffInfo.loginPwd == true) {
+                    $(_this).parents('.modals').find('input[name="user_password"]').attr('placeholder', '已有密码，不修改此项可不填');
+                    $(_this).parents('.modals').find('input[name="user_password"]').siblings('.error').hide();
+                    $(_this).parents('.modals').find('input[name="user_password"]').attr('data-change', data.output.staffInfo.loginPwd)
+                }
+//              DEBUGGER;
+            } else if (msg == true) {
+                $(_this).siblings('.error').html('该手机号码已被使用！')
+            }
+        })
+    })
+    //删除员工
+    function btn_delete(rowId, staffId, companys, gid) {
+        swal({
+            title: "确定要进行该操作吗？",
+            text: false,
+            type: "warning",
+            showCancelButton: true,
+            closeOnConfirm: true,
+            confirmButtonText: false,
+            confirmButtonColor: "#ec6c62"
+        }, function () {
+            $.appServer.updateStaffStateById({
+                        loginToken: "B1EBE47605952CF875EB795F811CE3E4",
+                        staffId: staffId,
+                        companys: companys,
+                    },
+                    function (data) {
+                        if (data.output.flag == true) {
+                            var pageIndex=localStorage.getItem('StaffpageIndex');
+                            var staffHome = {
+                                loginToken: "B1EBE47605952CF875EB795F811CE3E4",
+                                companyId: 12,
+                                pageIndex: pageIndex,
+                                pageSize: pageSize
+                            }
+                            staffChangeFun(staffHome);
+                        }
+                    })
+        });
+    }
+    //编辑员工
+    function member_edit(mobileNumber, companyId) {
+        var editInfo = {
+            loginToken: "B1EBE47605952CF875EB795F811CE3E4",
+            mobileNumber: mobileNumber,
+            companyId: 12
+        }
+        $('.addStaff').find('.modals-head span').html('修改信息')
+        $.appServer.goUpdateStaff(editInfo, function (data) {
+//            console.log(data)
+            var datas = data.output.staff;
+            if (data.flag == true) {
+
+                $('.addStaff').show().attr('data-jobId', datas.jobId)
+                        .attr('data-staffId', datas.staffId).attr('data-userId', datas.userId);
+                $('#saveStaff').addClass('editSave')
+                $('.addStaff').find('img').attr('src', datas.pictureUrl).attr('data-imgId', datas.pictureId);
+                $('.addStaff').find('input[name="user_name"]').val(datas.staffName);
+                $('.addStaff').find('input[name="user_mobile"]').val(datas.mobileNumber);
+                $('.addStaff').find('input[name="user_password"]').attr('placeholder', '不修改请留空');
+                $('.addStaff').find('input[name="user_role"]').val(datas.jobName).attr('data-jobId', datas.jobId);
+                $('label.error').hide();
+
+                $('#staff-shop>div input').attr('checked', false)
+                for (var i = 0; i < datas.BelongsStore.length; i++) {
+                    var companyIdCheck = datas.BelongsStore[i].companyId;
+                    $('#staff-shop>div').each(function (index, element) {
+                        var inputVal = $(this).find('input').val();
+//                        console.log(inputVal,companyIdCheck)
+                        if (inputVal == companyIdCheck) {
+                            $(this).find('input').prop('checked', true);
+                        }
+                    })
+                }
+
+            }
+        })
+    }
+    //编辑后保存
+    $(document).on('click', '.editSave', function () {
+        var pageIndex=localStorage.getItem('StaffpageIndex');
+        var dataInfo = formdata();
+        console.log(dataInfo)
+        var staffId=$(this).parents('.modals').attr('data-staffId')
+        var userId=$(this).parents('.modals').attr('data-userId')
+//        dataInfo.pageSize=pageSize;
+//        dataInfo.pageIndex=pageIndex;
+//        dataInfo.jobId=jobId;
+        dataInfo.staffId=staffId;
+        dataInfo.userId=userId;
+        $.appServer.upateStoreStaff(dataInfo,
+                function (data) {
+                    if (data.output.flag == true) {
+                        $('#saveStaff').parents('.modals').hide();
+                        $('.editSave').removeClass('editSave')
+
+                        var staffHome = {
+                            loginToken: "B1EBE47605952CF875EB795F811CE3E4",
+                            companyId: 12,
+                            pageIndex: pageIndex,
+                            pageSize: pageSize
+                        }
+                        staffChangeFun(staffHome);
+                    }
+                })
+    })
+    //跳转第几页
+    $(document).on('click','.btn-page', function () {
+        var pageIndex=$(this).siblings('input').val();
+        var staffHome = {
+            loginToken: "B1EBE47605952CF875EB795F811CE3E4",
+            companyId: 12,
+            pageIndex: pageIndex,
+            pageSize: pageSize
+        }
+        staffChangeFun(staffHome);
+    })
+    //
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

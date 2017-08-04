@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 移动端浏览器识别-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- IE 兼容模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--国产浏览器高速模式-->
+    <meta name="renderer" content="webkit">
+    <title>掌麦云商户</title>
+    <!--<link type="image/x-icon" href="../img/favicon.ico"  rel="shortcut icon" />-->
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- fontawesome-->
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <link rel="stylesheet" href="../font-awesome/font-awesome.min.css">
+    <!-- 下拉框-->
+    <link href="../css/plugins/chosen/chosen.css" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- 全局css-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link rel="stylesheet" type="text/css" href="../css/daterangepicker-bs3.css"/>
+    <link rel="stylesheet" href="../css/jquery.datetimepicker.css" type="text/css"/>
+    <link rel="stylesheet" href="../js/plugins/autocomplete/jquery.autocomplete.css">
+    <link href="../css/animate.css" rel="stylesheet">
+    <link href="../css/city_select.css" rel="stylesheet">
+    <!--jq-->
+    <script type="text/javascript">
+        window.shop_id = '2943';
+        var _hmt = _hmt || [];
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol +
+                "hm.baidu.com/h.js%3F84c55d593eb62c608555a3695e8f66aa' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/zm_ajax.js"></script>
+
+    <!--树形分类rely-->
+    <link rel="stylesheet" href="../js/plugins/ztree/css/zTreeStyle.css" type="text/css">
+    <script type="text/javascript" src="../js/plugins/ztree/js/jquery.ztree.core-3.5.js"></script>
+    <script type="text/javascript" src="../js/plugins/ztree/js/jquery.ztree.excheck-3.5.js"></script>
+    <script type="text/javascript" src="../js/plugins/ztree/js/jquery.ztree.exedit-3.5.js"></script>
+    <!--树形分类rely-->
+    <script type="text/javascript" src="../js/jquery.base64.js"></script>
+
+</head>
+<style type="text/css">
+    .pagemain .txt1 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .pagemain .txt2 {
+        font-size: 13px;
+    }
+
+    .pagemain .txt2 span {
+        font-weight: bold;
+    }
+</style>
+<body class="bg-hui1">
+<!--导航-->
+<div class="daohang-main">
+    <div class="mainchose">
+        <div class="logo">
+            <img src="../img/main/logo-x1.png">
+        </div>
+        <div style="float: left;padding-top: 14px; color:#FFFFFF;padding-right: 40px">
+            <h4 style="font-size: 22px;margin: 0;margin-bottom: 4px;font-weight:100;">掌麦云商户</h4>
+            <p style="margin: 0; font-size:14px;">客服电话：400-8815661</p>
+
+            <!--
+            <p style="margin: 0">在线客服：<a style="text-decoration: underline;" href="">QQ交谈</a></p>
+            -->
+
+
+        </div>
+        <a href="../main/index.html" class="haohangteam dao1" style="text-decoration:none;">
+            <span>报 表</span>
+        </a>
+        <a href="../shop/manage.html" class="haohangteam dao2" style="text-decoration:none;">
+            <span>商 品</span>
+        </a>
+        <a href="../online/online.html" class="haohangteam dao3 active"  style="text-decoration:none;">
+            <span>网店</span>
+        </a>
+        <a href="../buy/buy.html" class="haohangteam dao4" style="text-decoration:none;">
+            <span>采 购</span>
+        </a>
+        <a href="../transfer/transfer.html" class="haohangteam dao6" style="text-decoration:none;">
+            <span>调 拨</span>
+        </a>
+        <a href="../vipuser/vipuser.html" class="haohangteam dao6 active" style="text-decoration:none;">
+            <span>营 销</span>
+        </a>
+        <a href="../member/member.html" class="haohangteam dao7" style="text-decoration:none;">
+            <span>员 工</span>
+        </a>
+        <a href="../system/system_info.html" class="haohangteam dao7" style="text-decoration:none;">
+            <span>系 统</span>
+        </a>
+        <div class="yonghuxingxi">
+            <div style="float: left;color:#ffffff;padding-right: 10px;padding-top: 22px">
+
+
+            </div>
+
+            <div class="yonghu   "
+                 style="width: 60px;height:70px;padding: 0;border-left: 1px solid #2b88ec;position: relative;">
+                <a href="tencent://message/?Menu=yes&amp;uin=938052757&amp;Service=58&amp;SigT=A7F6FEA02730C9885B037155C864771FF9789A1C2B336ED8238CBCB1FA375BE8805210098C30A6A07607749B9D08B8E7C26C661FDA7ACB50E0A7C486BBEAF3F1BC2B80BF4A374F6A6CD6ADA44A289AE968C90A4594F90AECF3622DA6BDA957379EC9F31A1E8668F807A6BD66B38DADF512BBA8A8F0E2F8C2&amp;SigU=30E5D5233A443AB22DF0BA4CB55362055D8DCDA4D734F5B5BEF486463F3E2CBC9F88833EF33AE864634711F9A84A1E2DB4101B1C29699C208FF3C3DE5E9EC0C0A29CA3F24518673E">
+                    <div style="width: 60px;height: 70px;padding:17px 0 0 10px;">
+                        <div style='width:22px;height:24px;margin-left:10px;margin-bottom:5px;background: url(../img/main/daohangiconxx1.png) center no-repeat;background-size: 90%;'
+                             class="iconbellalt"></div>
+                        <p>QQ客服</p></div>
+                </a>
+            </div>
+
+            <div class="yonghu   dropdown">
+                <div class="dropdown-toggle" data-toggle="dropdown" id="new-count"><span class="iconbellalt"
+                                                                                         style="background-size: 90%;"></span><i
+                        style="display:none;"></i>
+                    <p class="dibuwenzitdaoh">消息</p></div>
+                <ul class="dropdown-menu">
+                    <!-- 免费版不显示新订单消息 -->
+                    <li style=""></li>
+                    <li style="">
+                        <a href="#goods/price"
+                           onclick="$('#new-count i').hide();$('#new-price-num').removeClass('text-danger').text('0');">
+                            进价变动 （<span class="" id="new-price-num">0</span>）</a>
+                    </li>
+                    <li class="divider" style=""></li>
+                    <li style="">
+                        <a href="#system/message"
+                           onclick="$('#new-count i').hide();$('#new-msg-num').removeClass('text-danger').text('0');">
+                            系统消息 （<span class="" id="new-msg-num">0</span>）</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div style="border-right: 1px solid #2b88ec;" class="yonghu  dropdown ">
+                <div class="dropdown-toggle" data-toggle="dropdown"><span class="iconuser"
+                                                                          style='width:24px; right: 2px; background: url(..//img/main/daohangiconxx.png) center no-repeat;background-size: 90%;'></span>
+                    <p class="dibuwenzitdaoh" style="padding-left: 3px;">设置</p></div>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="javascript:;" class="btn-base-info">基本信息</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="javascript:;" data-toggle="modal" data-target="#password-modal">修改密码</a>
+                    </li>
+
+                    <li class="divider"></li>
+                    <li>
+                        <a href="javascript:;" data-toggle="modal" data-target="#newfunction-modal">新增功能</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="../common/logout">退出</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="chaoshiqiehuan dropdown" style="min-width:172px;padding-right: 20px;">
+                <div class="dropdown-toggle" data-toggle="dropdown" style="line-height: 23px;padding-top: 16px">
+                    连锁总部 <i class="icon-caret-down"></i>                    <!--<p style="font-size: 12px">到期时间：</p>-->
+                </div>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="javascript:;" data-shop-id="2943" class=" no-confirm"
+                           data-url="../shop/switch_shop?shop_id=2943" title="连锁总部">连锁总部</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="javascript:;" data-shop-id="305" class="btn-switch no-confirm"
+                           data-url="../shop/switch_shop?shop_id=305" title="黎蓉干杂店">黎蓉干杂店</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="javascript:;" data-shop-id="2942" class="btn-switch no-confirm"
+                           data-url="../shop/switch_shop?shop_id=2942" title="测试1">测试1</a>
+                    </li>
+                    <li class="divider"></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="erjifenlie" id="menus">
+
+
+        <div class="erji">
+            <div>
+                <a href="/sales"></a>
+            </div>
+        </div>
+
+
+        <div class="erji" >
+            <div>
+                <a href="manage.html">商品管理</a>
+
+                <a href="category_manage.html">分类管理</a>
+                <a href="house_manage.html">商品库存</a>
+
+                <a href="goods_price.html">进价变动</a>
+
+                <a href="stock_stock_list.html" class="active">库存盘点</a>
+
+                <a href="goods_use_list.html">领用单</a>
+
+            </div>
+        </div>
+        <div class="erji" style="display: block">
+            <div>
+                <a href="online.html" class="active">我的订单</a>
+
+                <a href="comment.html">网店评价</a>
+
+
+            </div>
+        </div>
+
+        <div class="erji">
+            <div>
+                <a href="#buy/order">我的进货单</a>
+
+                <a href="#refund/manage">我的退货单</a>
+
+                <a href="#shop/supplier">我的供应商</a>
+
+                <a href="#buy/supplier_order_pay">供应商结算</a>
+
+                <a target="_blank" href="../mall/goods">在线采购</a>
+
+            </div>
+        </div>
+
+        <div class="erji">
+            <div>
+                <a href="#transfer/manage"></a>
+
+            </div>
+        </div>
+
+
+        <div class="erji">
+            <div>
+                <a href="#shop/member">我的员工</a>
+
+                <a href="#shop/roles">角色权限</a>
+
+            </div>
+        </div>
+
+        <div class="erji">
+            <div>
+                <a href="#system/account">账户信息</a>
+
+                <a href="#shop/manage">我的店铺</a>
+
+                <a href="#system/logs">系统日志</a>
+
+                <a href="#system/message">消息中心</a>
+
+                <a href="#system/set">系统设置</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $('.erji').on('click', 'a', function () {
+        if ($(this).attr('href') == '#system/set') {
+            window.location.href = '../system/set';
+            return false;
+        }
+
+    });
+    //绑定代理商
+    $('body').on('click', '.btn-agent', function () {
+        var href = $(this).attr('data-url');
+        $('#agent-modal').load(href, function (result) {
+            try {
+                var json = $.parseJSON(result);
+                check_logout(json);//登录超时检验
+            } catch (error) {
+            }
+            $('#agent-modal').modal('show');
+        });
+        return false;
+    });
+</script>
+<!--内容区域开始-->
+<style>
+    #shangpingzhanshi, #tab-content-box {
+        min-height: 250px;
+    }
+</style>
+<!--内容框架-->
+<div id="contentbox" class="porela" data-ajax-content="true" style="padding-right: 0px;"><iframe id="statistics" src="https://b.izhangmai.com/common/statistics?r=online/orders" marginheight="0" marginwidth="0" style="display: none;"></iframe><style type="text/css">
+    .dingdanxianzt a{width: 100%;height: 100%;text-decoration:none;padding-bottom: 28px;padding-top: 13px;display: block}
+</style>
+    <div class="srollbalck">
+        <div class="dingdangzhuangtai clearfix">
+            <div class="wrapdingdan">
+                <div class="dingdanxianzt">
+                    <div class="wrap" style="padding: 0;">
+                        <a href="online.html">
+                            <span class="text-danger" id="pending-num">1</span>
+                            <div>未处理订单
+
+                                <!--系统文字提示-->
+                                <style rel="stylesheet">
+                                    .tooltip div.tooltip-inner{ text-align:left;border:1px solid #dedede;font-size: 12px; background:#ffffff; color:#333;max-width:400px;}
+                                    .tooltip-inner b{ margin-right:10px; display:block;margin:4px 0;}
+                                    .tooltip.right .tooltip-arrow{border-right-color: #8A8A8A;}
+                                </style>
+								<span class="glyphicon glyphicon-info-sign" style="color:#55C663;vertical-align: middle;margin-top: -3px;font-size:20px;" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="
+								<b>未处理订单：</b>顾客提交订单之后即为未处理订单，可以拒绝订单及完成理货<br>
+
+
+								"></span>
+                                <script type="text/javascript">
+                                    !function(){
+
+                                        if($('[data-toggle="tooltip"]').length){
+                                            $(function () {
+                                                $('[data-toggle="tooltip"]').tooltip({'html':true})
+                                            }); return}
+                                        setTimeout(arguments.callee,30)
+
+                                    }()
+                                </script>
+                                <!--系统文字提示-->
+
+                            </div>
+
+
+                        </a>
+                    </div>
+
+                </div>
+                <div class="dingdanxianzt">
+                    <div class="wrap  dingdanxianzt-out" style="padding: 0;">
+                        <a href="online_delivery.html">
+                            <span class="text-info" id="sending-num">0</span>
+                            <div>配送中订单
+                                <!--系统文字提示-->
+                                <style rel="stylesheet">
+                                    .tooltip div.tooltip-inner{ text-align:left;border:1px solid #dedede;font-size: 12px; background:#ffffff; color:#333;max-width:400px;}
+                                    .tooltip-inner b{ margin-right:10px; display:block;margin:4px 0;}
+                                    .tooltip.right .tooltip-arrow{border-right-color: #8A8A8A;}
+                                </style>
+								<span class="glyphicon glyphicon-info-sign" style="color:#55C663;vertical-align: middle;margin-top: -3px;font-size:20px;" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="
+								<b>配送中订单：</b>备货完成即为配送中订单，配送完成需要输入收货码完成订单，如果用户在智慧超市端点击确认收货亦可<br>
+
+
+								"></span>
+                                <script type="text/javascript">
+                                    !function(){
+
+                                        if($('[data-toggle="tooltip"]').length){
+                                            $(function () {
+                                                $('[data-toggle="tooltip"]').tooltip({'html':true})
+                                            }); return}
+                                        setTimeout(arguments.callee,30)
+
+                                    }()
+                                </script>
+                                <!--系统文字提示-->
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="dingdanxianzt">
+                    <div class="wrap " style="padding: 0;">
+                        <a href="online_arrival.html">
+                            <span class="text-green" id="complete-num">2</span>
+                            <div>已送达
+                                <!--系统文字提示-->
+                                <style rel="stylesheet">
+                                    .tooltip div.tooltip-inner{ text-align:left;border:1px solid #dedede;font-size: 12px; background:#ffffff; color:#333;max-width:400px;}
+                                    .tooltip-inner b{ margin-right:10px; display:block;margin:4px 0;}
+                                    .tooltip.right .tooltip-arrow{border-right-color: #8A8A8A;}
+                                </style>
+								<span class="glyphicon glyphicon-info-sign" style="color:#55C663;vertical-align: middle;margin-top: -3px;font-size:20px;" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="
+								<b>已送达：</b>已经完成配送的订单，可以查看订单详情<br>
+
+
+								"></span>
+                                <script type="text/javascript">
+                                    !function(){
+
+                                        if($('[data-toggle="tooltip"]').length){
+                                            $(function () {
+                                                $('[data-toggle="tooltip"]').tooltip({'html':true})
+                                            }); return}
+                                        setTimeout(arguments.callee,30)
+
+                                    }()
+                                </script>
+                                <!--系统文字提示-->
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="dingdanxianzt">
+                    <div class="wrap" style="padding: 0;">
+                        <a href="online_all.html">
+                            <span class="text-333">3</span>
+                            <div>全部</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--功能条-->
+        <div class="zmbox clearfix">
+            <form id="search-form" action="https://b.izhangmai.com/online/orders?act=">
+                <!--<input type="hidden" name="act" id="act" value="all">-->
+                <!-- 输入框-->
+                <div class="boxpart">
+                    <div class="t">订单号：</div>
+                    <div class="inpt">
+                        <input type="text" class="pintxt" name="order_code" value="">
+                    </div>
+                </div>
+                <div class="boxpart">
+                    <div class="t">手机号码：</div>
+                    <div class="inpt">
+                        <input type="text" class="pintxt" name="phone" value="">
+                    </div>
+                    <div class="boxbtn">
+                        <button type="submit" class="btn btn-primary" id="cheshixiaoguoid1">查询</button>
+                    </div>
+                </div>
+                <div class="boxpart">
+
+
+                    <div class="t">下单时间：</div>
+                    <div class="inpt">
+                        <input type="text" class="pintxt" name="date_range" style="width: 200px;" id="date-range-picker" value="">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--显示内容-->
+        <div id="shangpingzhanshi" class="porela">
+            <div class="table-responsive">
+                <div class="new-table-headinfo">
+                    <span class="txt1">订单列表</span>
+                    <span class="txt2">共<span class="text-info">1</span>笔订单</span>
+                </div>
+                <table class="table table-bordered table-hover">
+                    <thead class="gudingbiaotou stuckMenu">
+                    <tr>
+                        <th>下单时间</th>
+                        <th>订单号</th>
+                        <th>收货人</th>
+                        <th>联系电话</th>
+                        <th>送货地址</th>
+                        <th>订单金额</th>
+                        <th class="min-w100">订单状态</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2017-04-28 16:56:15</td>
+                        <td>042810253515</td>
+                        <td>测试</td>
+                        <td>18908086680</td>
+                        <td style="text-align: left">测试</td>
+                        <td>￥10.00</td>
+                        <td class="min-w100">
+                            <span class="text-info">配送中</span>
+                        </td>
+                        <td class="text-center">
+                            <a href="#" class="text-info btn-detail" data-id="590303afab66a424058b45a2"><i class="icon-pencil"></i> 详情</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <script type="text/javascript">
+                    $('.gudingbiaotou').stickUp();
+                </script>
+            </div>
+            <!--分页居右-->
+            <div id="ajax-page" class="pagemain page-you">
+                <div id="url" class="hide">https://b.izhangmai.com/online/orders?act=sending</div>
+            </div>
+        </div>
+    </div>
+    <div id="page-modal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;"><!--订单详情-->
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">订单详情</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="ibox float-e-margins" style="margin-bottom:0px;">
+                        <div class="ibox-title">
+                            <h5>基本信息</h5>
+                        </div>
+                        <div class="ibox-content" style="padding:0;">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6">
+                                    <table class="table">
+                                        <colgroup span="2">
+                                            <col width="30%">
+                                            <col width="70%">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <td style="border-top: none;text-align:right;">下单时间</td>
+                                            <td style="border-top: none;">2017-04-21 10:07:15</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:right;">订单号</td>
+                                            <td>042151505399</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:right;">支付方式</td>
+                                            <td>货到付款</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-sm-6">
+                                    <table class="table">
+                                        <colgroup span="2">
+                                            <col width="30%">
+                                            <col width="70%">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <td style="border-top: none;text-align:right;">订单金额</td>
+                                            <td style="border-top: none;">￥10.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:right;">订单状态</td>
+                                            <td><span style="font-size: 12px;" class="label label-success">已完成</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:right;">有效状态</td>
+                                            <td>正常</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-xs-12 col-sm-6">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="ibox float-e-margins" style="margin-bottom:0px;">
+                        <div class="ibox-title">
+                            <h5>商家信息</h5>
+                        </div>
+                        <div class="ibox-content" style="padding:0;">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <table class="table">
+                                        <colgroup span="2">
+                                            <col width="30%">
+                                            <col width="70%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td style="border-top: none;text-align:right;">超市名称</td>
+                                                <td style="border-top: none;">测试1</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:right;">联系电话</td>
+                                                <td>18908086680</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:right;">起送价格</td>
+                                                <td>￥10.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-sm-6">
+                                    <table class="table">
+                                        <colgroup span="2">
+                                            <col width="30%">
+                                            <col width="70%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td style="border-top: none;text-align:right;">联系人</td>
+                                                <td style="border-top: none;">测试</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:right;">超市地址</td>
+                                                <td>测试</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:right;">超市账号</td>
+                                                <td>18908086680</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     -->
+                    <div class="ibox float-e-margins" style="margin-bottom:0px;">
+                        <div class="ibox-title">
+                            <h5>买家信息</h5>
+                        </div>
+                        <div class="ibox-content" style="padding:0;">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <table class="table">
+                                        <colgroup span="2">
+                                            <col width="30%">
+                                            <col width="70%">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <td style="border-top: none;text-align:right;">收货人</td>
+                                            <td style="border-top: none;">测试</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:right;">收货地址</td>
+                                            <td>测试</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:right;">买家备注</td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-sm-6">
+                                    <table class="table">
+                                        <colgroup span="2">
+                                            <col width="30%">
+                                            <col width="70%">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <td style="border-top: none;text-align:right;">电话</td>
+                                            <td style="border-top: none;">18908086680</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:right;">取消订单理由</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:right;"></td>
+                                            <td></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox float-e-margins" style="margin-bottom:0px;">
+                        <div class="ibox-title">
+                            <h5>商品信息</h5>
+                        </div>
+                        <div class="ibox-content" style="padding:0;">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>商品名称</th>
+                                    <th>商品条码</th>
+                                    <th>单价(元)/单位</th>
+                                    <th>商品数量</th>
+                                    <th>总金额(元)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        123                                                                                                </td>
+                                    <td>123</td>
+                                    <td>￥10.00/袋</td>
+                                    <td><b class="red" style="font-size: 14px">x1</b></td>
+                                    <td><b class="red" style="font-size: 14px">￥10.00</b></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="table invoice-total">
+                                <colgroup span="2">
+                                    <col width="60%">
+                                    <col width="20%">
+                                    <col width="20%">
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td><strong>商品数量：</strong></td>
+                                    <td>1件</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><strong>总金额：</strong></td>
+                                    <td>¥10.00</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn btn-default" data-dismiss="modal">返回</div>
+                </div>
+            </div>
+        </div><iframe id="statistics" src="https://b.izhangmai.com/common/statistics?r=online/detail" marginheight="0" marginwidth="0" style="display: none;"></iframe></div>
+
+</div>
+
+<script type="text/javascript">
+    $('.tip-close').click(function () {
+        $('#contentbox').removeAttr('style');
+    })
+</script>
+<!--编辑-->
+<div class="modal  fade " id="open-online-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+<!--修改密码-->
+<div class="modal  fade " id="password-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title text-left">修改密码</h4>
+            </div>
+            <form class="form-horizontal" action="../shop/modify_pwd" method="post">
+                <div class="modal-body bg-white">
+                    <div class="padding-btm10">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">原密码：</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" name="old_password" value=""
+                                       datatype="*6-16" nullmsg="请输入原密码！" errormsg="密码格式错误！">
+                                <span class="help-block m-b-none"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">新密码：</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" name="password" value="" datatype="*6-16"
+                                       nullmsg="请设置密码！" errormsg="6-16位字符！">
+                                <span class="help-block m-b-none"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">确认密码：</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" name="password_again" value="" datatype="*"
+                                       recheck="password" nullmsg="请再次输入密码！" errormsg="两次密码输入不一致！">
+                                <span class="help-block m-b-none"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">确定</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<!--基本信息-->
+<div class="modal  fade " id="baseinfo-modal" tabindex="-1" role="dialog" aria-hidden="true">
+
+</div>
+
+<!--绑定代理商-->
+<div class="modal  fade " id="agent-modal" tabindex="-1" role="dialog" aria-hidden="true">
+
+</div>
+<!--新增功能幻灯片-->
+
+<!-- Modal -->
+<div class="modal fade" id="newfunction-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document" style="width:843px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">新增功能</h4>
+            </div>
+            <div class="modal-body">
+
+
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <style rel="stylesheet">
+                        #newfunctioncar .active {
+                            background: #3696FD;
+                        }
+
+                        #newfunction-modal .carousel-caption h3 {
+                            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+                        }
+
+                        #newfunction-modal .carousel-caption {
+                            background: white;
+                        }
+
+                    </style>
+                    <ol class="carousel-indicators" id="newfunctioncar">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"
+                            style="border: 1px solid #3696FD;"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"
+                            style="border: 1px solid #3696FD;"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"
+                            style="border: 1px solid #3696FD;"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="3"
+                            style="border: 1px solid #3696FD;"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="4"
+                            style="border: 1px solid #3696FD;"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="5"
+                            style="border: 1px solid #3696FD;"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="6"
+                            style="border: 1px solid #3696FD;"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <style rel="stylesheet">
+
+                        #carousel-innerxbox1 .item img {
+
+                            margin: auto;
+                            display: block;
+                            padding-top: 72px;
+
+                        }
+
+                    </style>
+                    <div class="carousel-inner" role="listbox" id="carousel-innerxbox1">
+
+                        <div class="item active" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;">
+                                <img src="../img/newfx1.png" alt="...">
+                            </div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">1、新增五项报表，经营数据一目了然</h3>
+                            </div>
+                        </div>
+
+
+                        <div class="item" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img
+                                    src="../img/newfx42.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">2、新增会员价、批量操作、保质期管理等多项商品便捷操作功能</h3>
+                            </div>
+                        </div>
+
+                        <div class="item" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img
+                                    src="../img/newfx3.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">3、新增调拨单和退货单功能，优化了进货单功能，单据管理更方便</h3>
+                            </div>
+                        </div>
+
+                        <div class="item" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img
+                                    src="../img/newfx24.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">4、新增会员导入和编辑功能，会员管理更快捷</h3>
+                            </div>
+                        </div>
+
+                        <div class="item" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img
+                                    src="../img/newfx5.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">5、新增其它收支功能</h3>
+                            </div>
+                        </div>
+
+                        <div class="item" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img
+                                    src="../img/newfx6.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">6、新增供应商管理功能</h3>
+                            </div>
+                        </div>
+
+                        <div class="item" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img
+                                    src="../img/newfx7.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">7、新增POS收银端自定义支付模式，并且支持支付宝和微信支付</h3>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">知道了</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--新增功能幻灯片-->
+
+
+<!--公共弹框-->
+<div class="modal  fade " id="common-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true"></div>
+
+<!--内容区域结束-->
+<!--btjs-->
+<script src="../js/bootstrap.js"></script>
+<!--下拉框-->
+<script src="../js/plugins/chosen/chosen.jquery.js"></script>
+<!-- Sweet alert -->
+<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+<!--<script src="js/alert_ie8.js"></script>-->
+<!--pagejs-->
+<script src="../js/Validform_v5.3.2_min.js"></script>
+<script src="../js/ajaxfileupload.js"></script>
+<script src="../js/echarts-all.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/moment.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/daterangepicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery.datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/plugins/autocomplete/jquery.autocomplete.min.js"></script>
+<script src="../js/city_select.js"></script>
+<script src="../js/jquery.slimscroll.js"></script>
+<!--<script src="../js/stickUp.js"></script>-->
+<script src="../js/dataTables/jquery.dataTables.js"></script>
+<script src="../js/dataTables/jquery.dataTables.bootstrap.js"></script>
+<script src="../js/dataTables/extensions/TableTools/dataTables.tableTools.js"></script>
+<script src="../js/dataTables/extensions/ColVis/dataTables.colVis.js"></script>
+<script src="../js/zhangmai.js"></script>
+<script type="text/javascript" src="../js/floattablehead.js"></script>
+<!-- 百度地图抓到本地 -->
+<!--<script type="text/javascript" src="js/baiduMap.js"  async="async"></script>-->
+<!--
+<script src="https://sapi.map.baidu.com/api?v=2.0&s=1&ak=KackR6TA9CAAdNfa09wLB1m6&language=zh_cn&callback=baiduloadedMapApi&_st_=1438393791266" type="text/javascript"></script>
+ -->
+<!-- <script src="https://sapi.map.baidu.com/api?v=2.0&s=1&ak=KackR6TA9CAAdNfa09wLB1m6&language=zh_cn&callback=baiduloadedMapApi&_st_=1438393791266" type="text/javascript"></script> -->
+<script>
+
+    //公共iframe
+    $('body').append('<iframe id="common-iframe" src="about:blank" marginheight="0" marginwidth="0" style="display: none;"></iframe>');
+    var daohangs = $(".haohangteam");
+    var erjifu = $(".erjifenlie .erji");
+    var erji = $(".erjifenlie .erji div a");
+    var daohangjib1 = $(".haohangteam ");
+    var daohangjib2 = $(".erjifenlie .erji ");
+    var daohangjib3 = $(".erjifenlie a ");
+    var erjileft = $(".erjifenlie");
+    $(function () {
+        //导航切换
+
+        $('.daohang-main').on('click', 'a', function () {
+            var hash = $.trim(window.location.hash);
+            if (hash == $(this).attr('href')) {
+                window.location.reload();
+            }
+            if ($(this).hasClass('haohangteam')) {
+                $('.daohang-main .logo').click();
+            }
+        });
+//        $('#contentbox').menu_ajax({
+//            default_url: 'analysis/sales',
+//            content_url: function (hash) {
+//                return '../' + hash;
+//            }
+//        });
+
+        $('#password-modal').on('show.bs.modal hidden.bs.modal', function () {
+            $('#password-modal input').val('');
+            $('#password-modal .form-group').removeClass('has-error').removeClass('has-success');
+            $('#password-modal .help-block').text('');
+
+        });
+        validationForm($('#password-modal form'));
+
+        var $online_modal = $('#open-online-modal');
+        $online_modal.on('show.bs.modal', function () {
+            validationForm($online_modal.find('form'));
+            $(".chosen-select").chosen({disable_search: true, width: '100%'});
+            $online_modal.find('.form_time1').datetimepicker({
+                datepicker: false,
+                format: 'H:i',
+                step: 30,
+                allowTimes: allow_times(5, 11)
+            });
+            $online_modal.find('.form_time2').datetimepicker({
+                datepicker: false,
+                format: 'H:i',
+                step: 30,
+                allowTimes: allow_times(16, 23)
+            });
+        });
+        $('.btn-base-info').on('click', function () {
+            $("#baseinfo-modal").load('../main/user_info', function (json) {
+                try {
+                    json = $.parseJSON(json);
+                    check_logout(json);//登录超时检验
+                } catch (error) {
+                }
+                $("#baseinfo-modal").modal('show');
+            });
+        });
+        getNews();
+        setInterval(function () {//新订单提示获取
+            getNews();
+        }, 30000);
+        $('#contentbox').on('click', '.echart-legend dl', function () {
+            var echart_legend = $(this).closest('.echart-legend');
+            $('dl', echart_legend).removeClass('active');
+            $(this).addClass('active');
+        });
+//搜索表单提交
+        $('#contentbox').on('submit', '#search-form', function () {
+            $('#batch-form').html('');
+            var data = $(this).serialize();
+            $(this).zm_ajax({content_area: '#shangpingzhanshi', content_data: data});
+            return false;
+        });
+        //下拉提交表单
+        $('#contentbox').on('change', '#search-form select', function () {
+            if ($(this).hasClass('goods_type_id')) {
+                $('#search-form').find(".goods_son_id").val('');
+            }
+            $(this).closest('form').submit();
+        });
+        //快捷时间筛选
+        $('#contentbox').on('click', '.quick-select a', function () {
+            var $sub_form = $(this).closest('form');
+            var data_daterange = $(this).attr('data-daterange');
+            $sub_form.find('input[name=date_range]').val(data_daterange);
+            $(this).closest('.quick-select').find('a').removeClass('active');
+            $(this).addClass('active');
+            $sub_form.submit();
+            return false;
+        });
+        //分页
+        $('#contentbox').on('click', '#shangpingzhanshi #ajax-page a', function () {
+            $(this).zm_ajax({content_area: '#shangpingzhanshi'});
+            return false;
+        });
+
+        //排序
+        $('#contentbox').on('click', 'a.sort-link', function () {
+            $(this).zm_ajax({content_area: '#shangpingzhanshi'});
+            return false;
+        });
+        //打印/导出
+        $('#contentbox').on('click', '.btn-iframe', function () {
+            var data_url = $(this).attr('data-url');
+            var search_form = $(this).attr('data-form');
+            if (search_form) {
+                var post_data = $(search_form).serialize();
+                data_url = data_url + '&' + post_data
+            }
+            $('#common-iframe').attr('src', data_url);
+            return false;
+        });
+    });
+
+    //获取新消息
+    function getNews() {
+        $.ajax({
+            url: "../data/get_news.json",
+            type: 'post',
+            dataType: 'json',
+            success: function (json) {
+                var item = json.item;
+                if (json.status === 1) {
+                    if (json.item.mark != 9999) {
+                        var order_num = parseInt(item.order_count);
+                        var price_num = parseInt(item.price_count);
+                        var msg_num = parseInt(item.sys_count);
+                        var new_count = order_num + price_num;
+                        $('#new-order-num').text(order_num);
+                        $('#new-price-num').text(price_num);
+                        $('#new-msg-num').text(msg_num);
+                        if (new_count > 0) {
+                            $('#new-count').find('i').show();
+                        } else {
+                            $('#new-count').find('i').hide();
+                        }
+                        if (order_num > 0) {
+                            $('#new-order-num').addClass('text-danger');
+                        } else {
+                            $('#new-order-num').removeClass('text-danger');
+                        }
+                        if (price_num > 0) {
+                            $('#new-price-num').addClass('text-danger');
+                        } else {
+                            $('#new-price-num').removeClass('text-danger');
+                        }
+                        if (msg_num > 0) {
+                            $('#new-msg-num').addClass('text-danger');
+                        } else {
+                            $('#new-msg-num').removeClass('text-danger');
+                        }
+
+                        if (item.order_html) {
+                            if ($('#new_order_window').length > 0) {
+                                $('#new_order_window').remove();
+                            }
+                            $("body").append(item.order_html);
+                            if (order_num > 0) {
+                                sound(1);//新订单提示
+                            } else {
+                                sound(2);//其它提示
+                            }
+                        } else {
+                            if ($('#new_order_window').length > 0) {
+                                $('#new_order_window').remove();
+                            }
+                        }
+
+                    }
+                }
+            }
+        });
+    }
+
+
+    /*播放声音*/
+    function sound(type) {
+        $("#bgs,#chatAudio").remove();
+        var url = '../img/';
+        if (navigator.userAgent.indexOf("MSIE") != -1) { //ie
+            $('<bgsound loop="1" id="bgs"/>').appendTo('body');
+            if (type == 1) {
+                //新订单提示
+                document.all.bgs.src = url + "sound/notify.wav";
+            } else {
+                //其它提示
+                document.all.bgs.src = url + "sound/Orion.wav";
+            }
+
+        }
+        if (window.applicationCache) { //html5
+            if (type == 1) {
+                //新订单提示
+                $('<audio id="chatAudio"><source src="' + url + 'sound/notify.mp3" type="audio/mpeg"><source src="' + url + 'sound/notify.wav" type="audio/wav"></audio>').appendTo('body'); //载入声音文件
+            } else {
+                //其它提示
+                $('<audio id="chatAudio"><source src="' + url + 'sound/Orion.mp3" type="audio/mpeg"><source src="' + url + 'sound/Orion.wav" type="audio/wav"></audio>').appendTo('body'); //载入声音文件
+            }
+
+            $('#chatAudio')[0].play();
+        }
+    }
+    //营业时间优化
+    function allow_times(start_num, end_num) {
+        var times_data = [];
+        var num = '';
+
+        times_data.push('00:00');
+        for (var i = start_num; i <= end_num; i++) {
+            num = i < 10 ? '0' + i : i;
+            times_data.push(num + ':00');
+            times_data.push(num + ':30');
+        }
+
+        return times_data;
+    }
+    $(function () {
+        //设置每页显示条数
+        $('#contentbox').on('change', '#ajax-page .size-select', function () {
+            var size_val = $(this).val();
+            $.ajax({
+                url: "../main/page_size?size=" + size_val,
+                type: 'get',
+                dataType: 'json',
+                success: function (json) {
+                    $('#search-form').submit();
+                }
+            });
+        });
+        //清空筛选条件
+        $('#contentbox').on('click', '.reset', function () {
+            var form_obj = $(this).closest('form');
+            var nav_type = form_obj.find('input[name=nav_type]').val();
+            form_obj.find('input').val('');
+            form_obj.find('select').val('');
+            $('.quick-select a,.quick-select .btn', form_obj).removeClass('btn-success').addClass('btn-white');
+            //下拉框
+            form_obj.find("select").trigger("chosen:updated.chosen");
+            form_obj.find('input[name=nav_type]').val(nav_type);
+            form_obj.submit();
+            return false;
+        });
+        //初始化分类筛选
+        select_goods_type('#search-form');
+    })
+    //公共分类选择
+    function select_goods_type(dom) {
+        $('body').on('change', dom + ' .goods_type_id', function (evt, params) {
+            var $obj = $('body ' + dom);
+            $obj.find(".goods_son_id option").remove();
+            $obj.find(".goods_son_id").val('').append("<option value=''>全部</option>");
+            if (params.selected > 0) {
+                $.ajax({
+                    type: 'POST',
+                    async: false,
+                    dataType: 'json',
+                    data: {id: params.selected},
+                    url: '../main/get_category',
+                    success: function (json) {
+                        check_logout(json);//登录超时检验
+                        if (json.status == 1) {
+                            $.each(json.item.list, function (index, val) {
+                                $obj.find(".goods_son_id").append("<option value='" + val['type_id'] + "'>" + val['type_name'] + "</option>");
+                            });
+                        }
+                    }
+                });
+            }
+            $obj.find(".goods_son_id").trigger("chosen:updated.chosen");
+        });
+    }
+</script>
+<script type="text/javascript">
+    $('#date-range-picker').daterangepicker({
+        maxDate: '2017-04-22'
+    }).on('apply.daterangepicker', function (ev, picker) {
+        $('#search-form').submit();
+        return false;
+    });
+    $(".chosen-select").chosen({disable_search: true});
+
+
+</script>
+<script type="text/javascript">
+    modal_load('.button-open-online','#open-online-modal');
+    var $modal = $('#page-modal');
+    var $overlay = $('<div id="loadinggif"></div>').css({height:$(document).height()});
+    $('#search-form').on('submit',function(){
+        var data = $('#search-form').serialize();
+        //$('.dingdangzhuangtai .wrap').removeClass('dingdanxianzt-out').eq(3).addClass('dingdanxianzt-out');
+        $(this).zm_ajax({content_area : '#shangpingzhanshi',content_data: data});
+        return false;
+    });
+    $('#shangpingzhanshi').on('click','#ajax-page a',function(){
+        $(this).zm_ajax({content_area : '#shangpingzhanshi'});
+        return false;
+    });
+    $('#date-range-picker').daterangepicker({
+        maxDate: '2017-04-22'
+    }).on('apply.daterangepicker', function(ev, picker){
+        $('#search-form').submit();
+    });
+    $('#shangpingzhanshi').on('click','.btn-detail',function(){
+        var id = $(this).attr('data-id');
+        $("body").append($overlay);
+        $modal.load('https://b.izhangmai.com/online/detail',{id:id},function(result){
+            $overlay.remove();
+            try{
+                var json = $.parseJSON(result);
+                check_logout(json);//登录超时检验
+            }catch(error){}
+            $modal.modal('show');
+        });
+        return false;
+    });
+
+    //完成订单
+    $modal.on('click','.btn-complete',function(){
+        $modal.modal('hide');
+        var href = $(this).attr('data-url');
+        swal({
+                    title: "请输入该订单的收货码：",
+                    text: false,
+                    type: "input",
+                    showCancelButton: true,
+                    showLoaderOnConfirm: true,
+                    closeOnConfirm: false,
+                    showLoaderOnConfirm: true,
+                    animation: "slide-from-top",
+                    inputPlaceholder: "请输入收货码"
+                },
+                function(code){
+                    if (code === false) {
+                        $modal.modal('show');
+                        return false;
+                    }
+                    var regxp = /^\d{4}$/;//正整数
+                    if(!regxp.test(code)){
+                        swal.showInputError("收货码为四位数字");
+                        return false;
+                    }
+                    $("body").append($overlay);
+                    $.ajax({type: 'POST',dataType: 'json', data: {code:code}, url: href, success: function(json){
+                        $overlay.remove();
+                        if(json.status == 1){
+                            if(json.item.mark == 9999){
+                                swal({title:'登录超时，请重新登录',text:false,type:"warning"},function(){
+                                    sweetAlert.close();
+                                    window.location.href = json.item.url;
+                                });
+                                return false;
+                            }
+                            var sending_num = parseInt($('#sending-num').text())-1;
+                            $('#sending-num').text(sending_num);
+                            var complete_num = parseInt($('#complete-num').text())+1;
+                            $('#complete-num').text(complete_num);
+                            if($('#url').length > 0){
+                                $(this).zm_ajax({content_area : '#shangpingzhanshi',content_url: $('#url').text(),loading_html:'<div class="hide"></div>>'});
+                            }
+                            swal({title:json.item.msg ? json.item.msg : '操作成功',text:false,type:"success",timer: 1000},function(){
+                                sweetAlert.close();
+                                if($('#url').length > 0){
+                                }else{
+                                    window.location.reload();
+                                }
+                            });
+                        }else{
+                            swal({title:json && json.item.msg ? json.item.msg : '系统繁忙，请稍后再试',text:false,type:"warning"},function(){
+                                $modal.modal('show');
+                            });
+                        }
+                    },error: function(){
+                        swal({title:'系统繁忙，请稍后再试',text:false,type:"warning"},function(){
+                            $modal.modal('show');
+                        });
+                    }});
+                });
+    });
+    //完成理货,取消订单
+    $modal.on('click','.btn-lihuo,.btn-refuse',function(){
+        var $obj_btn = $(this);
+        var msg = $(this).attr('data-msg') ? $(this).attr('data-msg') : '确定要进行该操作吗？';
+        var url = $(this).attr('data-url');
+        swal({
+            title: msg,
+            text: false,
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#ff6e6e",
+            confirmButtonText: "确定",
+            cancelButtonText: "取消",
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+        }, function () {
+
+            $('.sweet-overlay,.sweet-alert').hide();
+            $.ajax({type: 'POST',dataType: 'json', url: url, success: function(json){
+                $('.modal').modal('hide');
+                var item = json.item;
+                if(json.status == 1){
+                    check_logout(json);//登录超时检验
+                    if($('#url').length > 0){
+                        $(this).zm_ajax({content_area : '#shangpingzhanshi',content_url: $('#url').text(),loading_html:'<div class="hide"></div>>'});
+                    }
+                    var pending_num = parseInt($('#pending-num').text())-1;
+                    $('#pending-num').text(pending_num);
+                    if($obj_btn.hasClass('btn-lihuo')){
+                        var sending_num = parseInt($('#sending-num').text())+1;
+                        $('#sending-num').text(sending_num);
+                    }
+
+                    swal({title:item.msg ? item.msg : '操作成功',text:false,type:"success",timer:1000},function(){
+                        sweetAlert.close();
+                        if (item.url) {
+                            window.location.href = item.url;
+                        }else{
+                            if($('#url').length > 0){
+
+                            }else{
+                                window.location.reload();
+                            }
+                        }
+                    });
+
+                }else{
+                    swal(item.msg ? item.msg : '系统繁忙，请稍后再试', false, "warning",1500);
+                }
+            },error: function(){
+                swal('系统繁忙，请稍后再试', false, "warning");
+            }});
+        });
+        return false;
+
+    });
+    $(window).on("scroll", function () {
+        $('.isStuck').css("left", function(i,old){
+            var nleft = $(this).offset().left;
+            //console.log($(window).scrollLeft());
+            //return nleft
+            return -($(window).scrollLeft()-21)
+        });
+    });
+</script>
+</body>
+</html>

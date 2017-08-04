@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script>
+    <style>
+        .tabs-container{
+            margin: 0 ;
+            padding:20px;
+        }
+        #tab-1 {
+            background-color: #f6f6f6;
+            padding: 15px;
+        }
+        .ui-jqgrid tr.jqgrow td{
+            overflow: inherit;
+            white-space: normal;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+
+        <div class="main-content-right">
+            <div class="body-content body-content-bg" style="overflow-y: scroll">
+
+                <div class="inner-scollcontent" >
+                    <div class="ibox" style="margin-bottom: 0" id="modify-shop">
+                        <div class="tabs-container">
+                            <div class="zmbox clearfix page-search-area">
+                                <form role="form" id="search-form" class="form-inline" action="https://b.izhangmai.com/house/manage">
+                                    <!-- 输入框-->
+                                    <div class="boxpart">
+                                        <div class="t">商品名/条码：</div>
+                                        <div class="inpt">
+                                            <input type="text" class="pintxt" name="keyword">
+                                        </div>
+                                        <div class="boxbtn">
+                                            <button type="submit" class="btn btn-primary" id="cheshixiaoguoid1">查询</button>
+                                        </div>
+                                    </div>
+                                    <!-- 下拉框-->
+                                    <div class="boxpart" style="padding-right: 15px">
+                                        <div class="t">分类筛选：</div>
+                                        <div class="inpt ">
+                                            <div class="select-box " >
+                                                <div class="bill-input ">
+                                                    <input type="text" value="全部">
+                                                    <i class="icon-sort-down"></i>
+                                                </div>
+                                                <div class="select-down goods_type_id" style="display: none;">
+                                                    <div class="select-list">全部</div>
+                                                    <div class="select-list">休闲食品</div>
+                                                    <div class="select-list">饮料</div>
+                                                    <div class="select-list">烟酒</div>
+                                                    <div class="select-list">熟食速食</div>
+                                                    <div class="select-list">生活日用</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inpt ">
+                                            <div class="select-box " >
+                                                <div class="bill-input ">
+                                                    <input type="text" value="全部">
+                                                    <i class="icon-sort-down"></i>
+                                                </div>
+                                                <div class="select-down goods_son_id" style="display: none;">
+                                                    <div class="select-list">全部</div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="boxpart" style="padding-right: 15px">
+                                        <div class="t">类型：</div>
+                                        <div class="inpt ">
+                                            <div class="select-box " >
+                                                <div class="bill-input ">
+                                                    <input type="text" value="全部">
+                                                    <i class="icon-sort-down"></i>
+                                                </div>
+                                                <div class="select-down " style="display: none;">
+                                                    <div class="select-list">全部</div>
+                                                    <div class="select-list">普通</div>
+                                                    <div class="select-list">组合</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="boxpart">
+                                        <a class="reset" href="javascript:;">清空筛选条件</a>
+                                    </div>
+                                </form>
+                            </div>
+                            <!--功能条-->
+                            <div class="zmbox clearfix page-title-area">
+                                <div class="boxpart page-title">
+                                    <span class="txt1">商品列表</span>
+                                    <span class="txt2">共<span class="text-info">5</span>个商品，</span>
+                                    <span class="txt2">总进价：<span class="text-danger">￥828.00</span>,</span>
+                                    <span class="txt2">总计价值：<span class="text-danger">￥1284.00</span></span>
+                                </div>
+                                <div class="pull-right"></div>
+                            </div>
+                            <div class="margin-t10">
+                                <table id="shopHousManage-table"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../assets/js/jquery.sparkline.min.js"></script>
+
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>-->
+
+<!--<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>-->
+<script src="../assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="../assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+<!--<script src="../js/jqGrid.js"></script>-->
+<!--<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"></script>-->
+<script src="../assets/js/date-time/bootstrap-datepicker.min.js"></script>
+<script src="../assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+<!-- ace scripts -->
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery.gritter.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+<!--<script src="../js/echarts.min.js"></script>-->
+<!-- inline scripts related to this page -->
+
+<script type="text/javascript">
+
+    var shopmanageCol= [
+        {
+            label : '条码',
+            name: 'barcode',
+            align:'center',
+            width: 180,
+        },
+        {
+            label: '商品名称',
+            name: 'shopName',
+            width: 220,
+            align:'left',
+        },
+        {
+            label: '规格',
+            name: 'standard',
+            align:'center',
+            width: 100,
+        },
+        {
+            label: '单位',
+            name: 'unit',
+            align:'center',
+            width: 100,
+        },
+        {
+            label: '分类',
+            name: 'type',
+            align:'center',
+            width: 140,
+        },
+        {
+            label: '类型',
+            name: 'modal',
+            align:'center',
+            width: 100,
+        },
+        {
+            label: '进价',
+            name: 'purchasePrice',
+            align:'center',
+            width: 100,
+        },
+        {
+            label: '售价',
+            name: 'salePrice',
+            align:'center',
+            width: 100,
+        },
+        {
+            label: '毛利率',
+            name: 'grossProfitRate',
+            align:'center',
+            width: 100,
+        },
+        {
+            label: '总入库',
+            name: 'storeNum',
+            align:'center',
+            width: 100,
+        },
+        {
+            label: '总出库',
+            name: 'monthSale',
+            align:'center',
+            width: 100,
+        },
+        {
+            label: '现有库存',
+            name: 'shopStatus',
+            align:'center',
+            width: 100,
+        },
+        {
+            label: '操作',
+            name: 'operation',
+            align:'center',
+            width: 160,
+            formatter: function (cellvalue, options, rowObject) {
+                var gid = "'#"+options.gid +"'";
+                var str='<span class="table-bar" onclick="store_detail('+ rowObject.id + ','+ gid + ')"><i class="icon-search"></i>库存明细</span>';
+
+                return str;
+            }
+        }
+    ];
+    jqgridTable({
+        "tableId":"#shopHousManage-table",
+        "pagerId":"",
+        "url":"../data/shop/shopmanageList.json",
+        "colModel":shopmanageCol,
+        "footerrow":false,
+        "height":300,
+        "cellEdit":false,
+        "footerrowFun":'',
+        "multiselect":false
+
+    });
+
+
+
+    //编辑商品
+    function store_detail(rowId,gid){
+        var href='../house/house_list_detail.html'
+        $(window.parent.document).find('#frameid').attr('src',href)
+        $(window.parents).find('#frameid').attr('src',href)
+        localStorage.setItem('frameidSrc',href);
+    }
+
+
+</script>
+</body>
+</html>

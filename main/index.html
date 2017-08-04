@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>测试</title>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui-1.10.3.full.min.css"/>
+    <link rel="stylesheet" href="../assets/css/datepicker.css"/>
+    <link rel="stylesheet" href="../assets/css/ui.jqgrid.css"/>
+    <!--<link rel="stylesheet" href="../css/jqGrid.css">-->
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/zmht2.css">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <!--<link rel="stylesheet" href="../css/common.css">-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="../assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        iframe{
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+        .body-content{
+            overflow: hidden;
+        }
+        #rightMenu{
+            position: absolute;
+            z-index: 99999;
+            top: 0;left: 0;
+            background:#fff;
+            border: 1px solid #ddd;
+            padding: 10px 0px;
+            border-radius: 5px;
+        }
+        #rightMenu div{
+            cursor: pointer;
+            width: 100%;
+            padding: 0 20px;
+            height: 30px;
+            line-height: 30px;
+            white-space:nowrap
+        }
+        #rightMenu div:hover{
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+<div class="navbar navbar-default" id="navbar">
+    <script type="text/javascript">
+        try {
+            ace.settings.check('navbar', 'fixed')
+        } catch (e) {
+        }
+    </script>
+    <!--公用头部-->
+    <div class="navbar-container daohang-main clearfix" id="navbar-container">
+        <div class="navbar-header pull-left mainchose">
+            <div class="logo lf">
+                <img src="../img/main/logo-x1.png">
+            </div>
+            <div style="float: left;padding-top: 14px; color:#FFFFFF;padding-right: 40px">
+                <h4 style="font-size: 22px;margin: 0;margin-bottom: 4px;font-weight:100;">掌麦云商户</h4>
+                <p style="margin: 0; font-size:14px;">客服电话：400-8815661</p>
+            </div>
+        </div><!-- /.navbar-header -->
+
+        <div class="navbar-header pull-right" role="navigation">
+            <ul class="nav ace-nav">
+                <li>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <i class="icon-headphones"></i>
+                        <p class="">QQ客服</p>
+                    </a>
+                </li>
+                <li>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <i class="icon-comment"></i>
+                        <div>消息</div>
+                    </a>
+                    <ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close" id="message-info">
+                        <li >
+                            <a href="#../house/goods_price.html">
+                                <span>进价变动</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#../system/system_message.html">
+                                <span>系统消息</span>
+                            </a>
+
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        <i class="icon-cog"></i>
+                        <div>设置</div>
+                    </a>
+
+                    <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li>
+                            <a href="javascript:void (0)" data-toggle="modal" class="text-center"
+                               data-target="#baseinfo-modal">
+                                基本信息
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void (0)" data-toggle="modal" class="text-center"
+                               data-target="#password-modal">
+                                修改密码
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void (0)" data-toggle="modal" class="text-center"
+                               data-target="#newfunction-modal">
+                                新增功能
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../login/login.html" class="text-center">
+                                退出
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="shopsList">
+                    <a data-toggle="dropdown" href="javascript:void (0)" class="dropdown-toggle">
+
+                        <span>连锁总店</span>
+                        <i class="icon-sort-down"></i>
+                    </a>
+                    <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li>
+                            <a href="javascript:void (0)" class="text-center">
+                                连锁总店
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void (0)" class="text-center">
+                                干荣杂货店
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void (0)" class="text-center">
+                                测试一
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul><!-- /.ace-nav -->
+        </div><!-- /.navbar-header -->
+    </div><!-- /.container -->
+</div>
+
+<div class="main-container" id="main-container">
+    <!-- <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script> -->
+
+    <div class="main-container-inner">
+        <a class="menu-toggler" id="menu-toggler" href="#">
+            <span class="menu-text"></span>
+        </a>
+        <!--公用左侧内容-->
+        <div class="sidebar" id="sidebar">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('sidebar', 'fixed')
+                } catch (e) {
+                }
+            </script>
+            <div class="left-table-list">
+                <ul class="nav nav-list active menuTab">
+                </ul><!-- /.nav-list -->
+                <!--<ul class="nav-list-usual"></ul>-->
+            </div>
+            <div class="sidebar-collapse" id="sidebar-collapse">
+                <i class="icon-double-angle-left" data-icon1="icon-double-angle-left"
+                   data-icon2="icon-double-angle-right"></i>
+            </div>
+
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('sidebar', 'collapsed')
+                } catch (e) {
+                }
+            </script>
+        </div>
+        <div class="main-content-right">
+            <div class="body-content body-content-bg">
+                <iframe id="frameid" frameborder=0 width=100% height=100% marginheight=0 marginwidth=0 scrolling=auto src=""></iframe>
+            </div>
+        </div><!-- /.main-content -->
+    </div><!-- /.main-container-inner -->
+</div><!-- /.main-container -->
+<div class="modals-bg"></div>
+
+<div class="modal fade in" id="newfunction-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog" role="document" style="width:843px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close " data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel">新增功能</h4>
+            </div>
+            <div class="modal-body">
+
+
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <style rel="stylesheet">
+                        #newfunctioncar .active{
+                            background:#3696FD;
+                        }
+                        #newfunction-modal .carousel-caption h3{    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);}
+                        #newfunction-modal .carousel-caption{
+                            background: white;
+                        }
+
+                    </style>
+                    <ol class="carousel-indicators" id="newfunctioncar">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="" style="border: 1px solid #3696FD;"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1" style="border: 1px solid #3696FD;" class=""></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2" style="border: 1px solid #3696FD;" class=""></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="3" style="border: 1px solid #3696FD;" class=""></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="4" style="border: 1px solid #3696FD;" class=""></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="5" style="border: 1px solid #3696FD;" class=""></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="6" style="border: 1px solid #3696FD;" class="active"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <style rel="stylesheet">
+
+                        #carousel-innerxbox1 .item img{
+
+                            margin: auto;
+                            display: block;
+                            padding-top: 72px;
+
+                        }
+
+                    </style>
+                    <div class="carousel-inner" role="listbox" id="carousel-innerxbox1">
+
+                        <div class="item active" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;">
+                                <img src="https://b.izhangmai.com/img/newfx1.png" alt="...">
+                            </div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">1、新增五项报表，经营数据一目了然</h3>
+                            </div>
+                        </div>
+
+
+                        <div class="item" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img src="https://b.izhangmai.com/img/newfx42.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">2、新增会员价、批量操作、保质期管理等多项商品便捷操作功能</h3>
+                            </div>
+                        </div>
+
+                        <div class="item" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img src="https://b.izhangmai.com/img/newfx3.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">3、新增调拨单和退货单功能，优化了进货单功能，单据管理更方便</h3>
+                            </div>
+                        </div>
+
+                        <div class="item" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img src="https://b.izhangmai.com/img/newfx24.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">4、新增会员导入和编辑功能，会员管理更快捷</h3>
+                            </div>
+                        </div>
+
+                        <div class="item" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img src="https://b.izhangmai.com/img/newfx5.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">5、新增其它收支功能</h3>
+                            </div>
+                        </div>
+
+                        <div class="item" style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img src="https://b.izhangmai.com/img/newfx6.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">6、新增供应商管理功能</h3>
+                            </div>
+                        </div>
+
+                        <div class="item " style="">
+                            <div style="height:600px;display: block;vertical-align: middle;"><img src="https://b.izhangmai.com/img/newfx7.png" alt="..."></div>
+                            <div class="carousel-caption">
+                                <h3 style="color:#3696FD;">7、新增POS收银端自定义支付模式，并且支持支付宝和微信支付</h3>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control carousel-btn"  href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="icon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control carousel-btn"   href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="icon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default colseModals" data-dismiss="modal">知道了</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 基本信息-->
+<div class="modal  fade in" id="baseinfo-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 21px;">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close zm-big" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+            </button>
+            <h4 class="modal-title">基本信息</h4>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal validation" action="" method="post">
+
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3">
+                        <img src="https://b.izhangmai.com/img/avatar.jpg" style="width: 120px; max-height: 120px">
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="form-group name-input" style="margin-bottom: 0;display: none">
+                            <label class="col-sm-2 control-label" style="padding-right: 0">姓名：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="user_name" value="邓勇" maxlength="20" datatype="*" nullmsg="请填写姓名" errormsg="">
+                                <span class="help-block m-b-none"></span>
+                            </div>
+                            <div class="col-sm-3" style="padding-left: 0">
+                                <button type="button" class="btn btn-primary">保存</button>
+                            </div>
+                        </div>
+                        <div class="form-group name-show" style="margin-bottom: 0">
+                            <label class="col-sm-2 control-label" style="padding-right: 0">姓名：</label>
+                            <div class="col-sm-4 user-name" style="padding-top: 7px">
+                                邓勇                            </div>
+                            <div class="col-sm-3" style="padding-left: 0">
+                                <button class="btn btn-primary" type="button">编辑</button>
+                            </div>
+
+                        </div>
+                        <div class="form-group" style="margin-bottom: 0">
+                            <label class="col-sm-2 control-label" style="padding-right: 0">帐号：</label>
+                            <div class="col-sm-4" style="padding-top: 7px">
+                                18908086680                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 0">
+                            <label class="col-sm-2 control-label" style="padding-right: 0">角色：</label>
+                            <div class="col-sm-4" style="padding-top: 7px">
+                                超级管理员                            </div>
+                        </div>
+                        <!--<p>姓名：</p>
+                        <p>帐号：</p>
+                        <p>角色：</p>-->
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+    </div>
+
+</div>
+</div>
+
+<!--修改密码-->
+<div class="modal  fade " id="password-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title text-left">修改密码</h4>
+            </div>
+            <form class="form-horizontal" action="" id="pwd-revise" method="post">
+                <div class="modal-body bg-white">
+                    <div class="padding-btm10">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">原密码：</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" autocomplete="off" name="pwdLong"  maxlength="16" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">新密码：</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" autocomplete="off" id="newPwd" name="newPwd" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">确认密码：</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" autocomplete="off" name="affirmPwd" value="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">确定</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../js/home.js"></script>
+
+<script type="text/javascript">
+
+
+    var obj = { one:1, two:2, three:3, four:4};
+    $.each(obj, function(key, val) {
+        console.log(key);
+        console.log(val);
+    });
+</script>
+</body>
+</html>
